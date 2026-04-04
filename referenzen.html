@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Referenzen – VALORIS Webdesign Zwickau</title>
+<meta name="description" content="Unsere Kundenprojekte live erleben. Websites für Handwerker, Gastronomie und Dienstleister in Zwickau und Sachsen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf9f7;--bg2:#f0ebe2;--bg3:#e6dfd3;
+  --dark:#0d0d0b;--dark2:#141410;--dark3:#1c1c18;
+  --ink:#171714;--warm:#5c5c54;--muted:#8f8f86;
+  --gold:#b8873a;--gold-lt:#ddb15a;--gold-dk:#7a5820;
+  --gold-pale:rgba(184,135,58,.12);
+  --line:rgba(23,23,23,.1);--line-d:rgba(255,255,255,.08);
+  --r:6px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:72px;
+  background:rgba(250,249,247,.95);backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--line);
+}
+.nav-logo{display:flex;flex-direction:column;line-height:1;gap:3px}
+.nav-logo-v{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
+.nav-logo-sub{font-size:.42rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--warm);font-weight:400;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-cta{display:inline-flex;align-items:center;padding:10px 22px;border:1px solid var(--gold);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--gold);transition:all .25s;border-radius:2px}
+.nav-cta:hover{background:var(--gold);color:#fff}
+.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-ham span{display:block;width:24px;height:1.5px;background:var(--ink)}
+.nav-mobile{display:none;position:fixed;inset:0;z-index:490;background:var(--bg);padding:100px 40px 40px;flex-direction:column;gap:32px}
+.nav-mobile.open{display:flex}
+.nav-mobile a{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;border-bottom:1px solid var(--line);padding-bottom:20px}
+
+/* PAGE HERO */
+.page-hero{
+  padding:160px 48px 80px;background:var(--dark);
+  position:relative;overflow:hidden;
+}
+.page-hero-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 50% 60% at 80% 50%,rgba(184,135,58,.08) 0%,transparent 60%);
+}
+.page-hero-content{position:relative;z-index:2;max-width:700px}
+.page-eyebrow{font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.page-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.page-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.2rem);font-weight:300;line-height:1.05;color:#fff;margin-bottom:24px}
+.page-h em{font-style:italic;color:var(--gold-lt)}
+.page-sub{color:rgba(255,255,255,.45);font-size:1rem;line-height:1.75;max-width:520px}
+
+/* FILTER BAR */
+.filter-bar{
+  padding:32px 48px;background:var(--bg2);
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);
+}
+.filter-label{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-right:8px}
+.filter-btn{
+  padding:8px 18px;border:1px solid var(--line);border-radius:20px;
+  font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--warm);
+  cursor:pointer;transition:all .2s;background:transparent;
+}
+.filter-btn:hover,.filter-btn.active{border-color:var(--gold);color:var(--gold);background:var(--gold-pale)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}.delay-4{transition-delay:.32s}
+
+/* PROJECTS GRID */
+.projects-section{padding:80px 48px}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+
+/* PROJECT CARD */
+.project-card{
+  border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;background:var(--bg);
+  transition:all .4s cubic-bezier(.16,1,.3,1);
+}
+.project-card:hover{transform:translateY(-8px);box-shadow:0 40px 80px rgba(0,0,0,.12);border-color:var(--gold)}
+.project-card.featured{grid-column:1/-1}
+
+/* PREVIEW AREA */
+.preview-wrap{
+  position:relative;overflow:hidden;background:#f0ede8;
+  height:360px;
+}
+.project-card.featured .preview-wrap{height:500px}
+.preview-device{
+  position:absolute;inset:0;display:flex;align-items:flex-start;
+  padding:20px;justify-content:center;
+}
+.browser-mock{
+  width:100%;background:#fff;border-radius:8px;
+  box-shadow:0 20px 60px rgba(0,0,0,.2);overflow:hidden;
+  height:calc(100% - 40px);
+}
+.browser-bar{
+  background:#f0f0f0;padding:10px 16px;display:flex;gap:6px;align-items:center;
+  border-bottom:1px solid #e0e0e0;
+}
+.b-dot{width:10px;height:10px;border-radius:50%}
+.b-dot:nth-child(1){background:#ff5f56}
+.b-dot:nth-child(2){background:#febc2e}
+.b-dot:nth-child(3){background:#27c940}
+.b-url{
+  background:#e8e8e8;border-radius:4px;padding:4px 12px;
+  font-size:.65rem;color:#888;margin-left:10px;flex:1;max-width:300px;
+}
+.iframe-container{
+  width:160%;height:160%;
+  transform:scale(.625);transform-origin:top left;
+  position:relative;
+}
+.iframe-container iframe{
+  width:100%;height:100%;border:none;
+  pointer-events:none;display:block;
+}
+.preview-actions{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 100%);
+  padding:32px 28px 24px;
+  display:flex;gap:12px;
+  opacity:0;transition:opacity .3s;
+}
+.project-card:hover .preview-actions{opacity:1}
+.preview-btn{
+  padding:10px 20px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:500;border-radius:2px;transition:all .2s;display:inline-flex;align-items:center;gap:8px;
+}
+.preview-btn.primary{background:var(--gold);color:#fff}
+.preview-btn.primary:hover{background:var(--gold-dk)}
+.preview-btn.ghost{border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.8)}
+.preview-btn.ghost:hover{border-color:#fff;color:#fff}
+
+/* CARD INFO */
+.card-info{padding:28px 32px}
+.card-meta{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.card-tag{
+  font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:4px 10px;border:1px solid var(--line);border-radius:20px;color:var(--warm);
+}
+.card-tag.gold{border-color:var(--gold);color:var(--gold);background:var(--gold-pale)}
+.card-paket{
+  font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);
+}
+.card-name{font-size:1.3rem;font-weight:500;margin-bottom:10px;letter-spacing:-.01em}
+.card-desc{font-size:.88rem;color:var(--warm);line-height:1.7;margin-bottom:20px}
+.card-features{display:flex;gap:8px;flex-wrap:wrap}
+.card-feature{
+  font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--bg2);padding:5px 10px;border-radius:3px;color:var(--warm);
+}
+
+/* MODAL */
+.modal-overlay{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(0,0,0,.85);backdrop-filter:blur(8px);
+  opacity:0;pointer-events:none;transition:opacity .3s;
+  display:flex;align-items:center;justify-content:center;padding:32px;
+}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{
+  width:100%;max-width:1200px;height:80vh;
+  background:#fff;border-radius:var(--r);overflow:hidden;
+  display:flex;flex-direction:column;
+  transform:scale(.95);transition:transform .3s cubic-bezier(.16,1,.3,1);
+}
+.modal-overlay.open .modal{transform:scale(1)}
+.modal-bar{
+  background:#f5f5f5;padding:12px 20px;
+  display:flex;align-items:center;gap:10px;border-bottom:1px solid #eee;
+}
+.modal-close{
+  margin-left:auto;width:32px;height:32px;border-radius:50%;
+  background:#e0e0e0;border:none;cursor:pointer;font-size:1rem;
+  display:flex;align-items:center;justify-content:center;transition:background .2s;
+}
+.modal-close:hover{background:#c8c8c8}
+.modal-url{font-size:.75rem;color:#888;flex:1}
+.modal iframe{flex:1;border:none;width:100%;height:100%}
+
+/* PROCESS / CTA */
+.bottom-cta{
+  background:var(--dark);padding:100px 48px;text-align:center;
+}
+.cta-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.5rem);font-weight:300;color:#fff;margin-bottom:20px;line-height:1.1}
+.cta-h em{font-style:italic;color:var(--gold-lt)}
+.cta-sub{color:rgba(255,255,255,.4);font-size:.95rem;max-width:480px;margin:0 auto 40px;line-height:1.75}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:var(--gold);color:#fff;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;border-radius:2px;transition:all .25s}
+.btn-primary:hover{background:var(--gold-dk);transform:translateY(-2px);box-shadow:0 12px 30px rgba(184,135,58,.35)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;border-radius:2px;transition:all .25s;margin-left:16px}
+.btn-ghost:hover{border-color:rgba(255,255,255,.5);color:#fff}
+
+/* FOOTER */
+footer{background:var(--dark2);color:rgba(255,255,255,.35);padding:48px;text-align:center;font-size:.78rem}
+footer a{color:rgba(255,255,255,.4);transition:color .2s}
+footer a:hover{color:var(--gold-lt)}
+
+@media(max-width:900px){
+  nav{padding:0 24px}
+  .nav-links,.nav-cta{display:none}
+  .nav-ham{display:flex}
+  .page-hero{padding:120px 24px 60px}
+  .filter-bar{padding:24px}
+  .projects-section{padding:48px 24px}
+  .projects-grid{grid-template-columns:1fr}
+  .project-card.featured{grid-column:auto}
+  .preview-wrap,.project-card.featured .preview-wrap{height:260px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-v">Valoris</span>
+    <span class="nav-logo-sub">Webdesign &amp; SEO · Zwickau</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="leistungen.html">Leistungen</a></li>
+    <li><a href="referenzen.html" class="active">Referenzen</a></li>
+    <li><a href="preise.html">Preise</a></li>
+    <li><a href="index.html#ablauf">Ablauf</a></li>
+    <li><a href="ueber-uns.html">Über uns</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+  <a href="https://wa.me/4915254190819" class="nav-cta">Kostenlose Beratung</a>
+  <div class="nav-ham" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="leistungen.html" onclick="toggleMenu()">Leistungen</a>
+  <a href="referenzen.html" onclick="toggleMenu()">Referenzen</a>
+  <a href="preise.html" onclick="toggleMenu()">Preise</a>
+  <a href="kontakt.html" onclick="toggleMenu()">Kontakt</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-eyebrow">Unsere Arbeit</div>
+    <h1 class="page-h">Echte Projekte —<br><em>live erleben.</em></h1>
+    <p class="page-sub">Keine Screenshots, keine Mockups. Klicken Sie auf eine Referenz und erleben Sie die fertige Website direkt — so wie Ihre Kunden sie sehen werden.</p>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-label">Filtern:</span>
+  <button class="filter-btn active" data-filter="all">Alle</button>
+  <button class="filter-btn" data-filter="handwerk">Handwerk</button>
+  <button class="filter-btn" data-filter="gastronomie">Gastronomie</button>
+  <button class="filter-btn" data-filter="automotive">Automotive</button>
+  <button class="filter-btn" data-filter="premium">Premium</button>
+</div>
+
+<!-- PROJECTS -->
+<div class="projects-section">
+  <div class="projects-grid">
+
+    <!-- SCHOLZ MALER - FEATURED -->
+    <div class="project-card featured reveal" data-category="handwerk premium">
+      <div class="preview-wrap">
+        <div class="preview-device">
+          <div class="browser-mock">
+            <div class="browser-bar">
+              <div class="b-dot"></div><div class="b-dot"></div><div class="b-dot"></div>
+              <div class="b-url">bochmann-dienstleistungen.github.io/scholz-maler-premium/</div>
+            </div>
+            <div class="iframe-container">
+              <iframe src="https://bochmann-dienstleistungen.github.io/scholz-maler-premium/" loading="lazy" title="Scholz Maler Premium"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="preview-actions">
+          <a href="https://bochmann-dienstleistungen.github.io/scholz-maler-premium/" target="_blank" class="preview-btn primary">Live ansehen ↗</a>
+          <button class="preview-btn ghost" onclick="openModal('https://bochmann-dienstleistungen.github.io/scholz-maler-premium/', 'Scholz Maler Premium')">Vollbild</button>
+        </div>
+      </div>
+      <div class="card-info">
+        <div class="card-meta">
+          <span class="card-tag gold">Handwerk</span>
+          <span class="card-tag gold">Premium</span>
+          <span class="card-paket">PREMIUM Paket · 2.990 €</span>
+        </div>
+        <div class="card-name">Malerwerkstätte Scholz — Crimmitschau</div>
+        <p class="card-desc">Malermeister Sören Scholz wollte einen Auftritt der seiner Qualität entspricht. Das Ergebnis: Video-Hero, Before/After Slider, animierte Leistungsseiten und vollständige SEO-Optimierung für die Region Zwickau/Crimmitschau.</p>
+        <div class="card-features">
+          <span class="card-feature">Video Hero</span>
+          <span class="card-feature">Before/After</span>
+          <span class="card-feature">5 Unterseiten</span>
+          <span class="card-feature">Google SEO</span>
+          <span class="card-feature">Scroll Reveal</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GASTHAUS 1470 -->
+    <div class="project-card reveal delay-1" data-category="gastronomie">
+      <div class="preview-wrap">
+        <div class="preview-device">
+          <div class="browser-mock">
+            <div class="browser-bar">
+              <div class="b-dot"></div><div class="b-dot"></div><div class="b-dot"></div>
+              <div class="b-url">gasthaus1470-demo</div>
+            </div>
+            <div class="iframe-container">
+              <iframe src="https://bochmann-dienstleistungen.github.io/gasthaus1470-demo/" loading="lazy" title="Gasthaus 1470"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="preview-actions">
+          <a href="https://bochmann-dienstleistungen.github.io/gasthaus1470-demo/" target="_blank" class="preview-btn primary">Live ansehen ↗</a>
+          <button class="preview-btn ghost" onclick="openModal('https://bochmann-dienstleistungen.github.io/gasthaus1470-demo/','Gasthaus 1470 Zwickau')">Vollbild</button>
+        </div>
+      </div>
+      <div class="card-info">
+        <div class="card-meta">
+          <span class="card-tag gold">Gastronomie</span>
+          <span class="card-paket">STANDARD Paket</span>
+        </div>
+        <div class="card-name">Gasthaus 1470 — Zwickau</div>
+        <p class="card-desc">Armenische Küche &amp; Gin Bar mit über 30 Sorten. Speisekarte als Unterseite, Reservierungsfunktion, atmosphärische Bildwelten und Bewertungsintegration.</p>
+        <div class="card-features">
+          <span class="card-feature">Speisekarte</span>
+          <span class="card-feature">Reservierung</span>
+          <span class="card-feature">Google Reviews</span>
+          <span class="card-feature">Atmosphäre</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LACK DESIGN -->
+    <div class="project-card reveal delay-2" data-category="automotive">
+      <div class="preview-wrap">
+        <div class="preview-device">
+          <div class="browser-mock">
+            <div class="browser-bar">
+              <div class="b-dot"></div><div class="b-dot"></div><div class="b-dot"></div>
+              <div class="b-url">Lack-Design-Zwickau</div>
+            </div>
+            <div class="iframe-container">
+              <iframe src="https://bochmann-dienstleistungen.github.io/Lack-Design-Zwickau/" loading="lazy" title="Lack Design Zwickau"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="preview-actions">
+          <a href="https://bochmann-dienstleistungen.github.io/Lack-Design-Zwickau/" target="_blank" class="preview-btn primary">Live ansehen ↗</a>
+          <button class="preview-btn ghost" onclick="openModal('https://bochmann-dienstleistungen.github.io/Lack-Design-Zwickau/','Lack Design Zwickau')">Vollbild</button>
+        </div>
+      </div>
+      <div class="card-info">
+        <div class="card-meta">
+          <span class="card-tag gold">Automotive</span>
+          <span class="card-paket">STANDARD Paket</span>
+        </div>
+        <div class="card-name">Lack Design Zwickau</div>
+        <p class="card-desc">KFZ-Lackiererei mit starker Bild-Sprache. Portfolio der abgeschlossenen Projekte, Leistungsseiten und professionelle Google Reviews Integration.</p>
+        <div class="card-features">
+          <span class="card-feature">Portfolio</span>
+          <span class="card-feature">Leistungsseiten</span>
+          <span class="card-feature">Google Maps</span>
+          <span class="card-feature">WhatsApp CTA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEILER -->
+    <div class="project-card reveal delay-3" data-category="handwerk">
+      <div class="preview-wrap">
+        <div class="preview-device">
+          <div class="browser-mock">
+            <div class="browser-bar">
+              <div class="b-dot"></div><div class="b-dot"></div><div class="b-dot"></div>
+              <div class="b-url">bochmann-dienstleistungen.github.io/Seiler/</div>
+            </div>
+            <div class="iframe-container">
+              <iframe src="https://bochmann-dienstleistungen.github.io/Seiler/" loading="lazy" title="Malerwerkstätte Seiler"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="preview-actions">
+          <a href="https://bochmann-dienstleistungen.github.io/Seiler/" target="_blank" class="preview-btn primary">Live ansehen ↗</a>
+          <button class="preview-btn ghost" onclick="openModal('https://bochmann-dienstleistungen.github.io/Seiler/','Malerwerkstätte Seiler')">Vollbild</button>
+        </div>
+      </div>
+      <div class="card-info">
+        <div class="card-meta">
+          <span class="card-tag gold">Handwerk</span>
+          <span class="card-paket">STANDARD Paket</span>
+        </div>
+        <div class="card-name">Malerwerkstätte Seiler — Dußlingen</div>
+        <p class="card-desc">Malermeister Seiler aus Dußlingen und Mössingen. Klarer, professioneller Auftritt mit Anfrage-System, Leistungsübersicht und mobiler Optimierung.</p>
+        <div class="card-features">
+          <span class="card-feature">Clean Design</span>
+          <span class="card-feature">Anfrage-System</span>
+          <span class="card-feature">Mobile First</span>
+          <span class="card-feature">Schnell</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal">
+    <div class="modal-bar">
+      <div class="b-dot" style="background:#ff5f56"></div>
+      <div class="b-dot" style="background:#febc2e"></div>
+      <div class="b-dot" style="background:#27c940"></div>
+      <span class="modal-url" id="modalUrl"></span>
+      <a id="modalExtLink" href="#" target="_blank" style="font-size:.7rem;color:var(--gold);margin-right:12px;letter-spacing:.1em;text-transform:uppercase">↗ Öffnen</a>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <iframe id="modalIframe" src="" title="Projekt Vorschau"></iframe>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="bottom-cta">
+  <div class="section-tag reveal" style="display:inline-flex;justify-content:center;font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px;align-items:center;gap:12px"><span style="display:block;width:28px;height:1px;background:var(--gold)"></span>Ihr Projekt</div>
+  <h2 class="cta-h reveal delay-1">Ihre Website soll hier<br><em>als nächstes stehen.</em></h2>
+  <p class="cta-sub reveal delay-2">Demo kostenlos und unverbindlich — wir bauen Ihre Website vor dem ersten Gespräch fertig.</p>
+  <div class="reveal delay-3">
+    <a href="https://wa.me/4915254190819" class="btn-primary">💬 Jetzt Demo anfragen</a>
+    <a href="preise.html" class="btn-ghost">Preise ansehen</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Bochmann Dienstleistungen · VALORIS Webdesign &amp; SEO · Zwickau &nbsp;|&nbsp; <a href="impressum.html">Impressum</a> &nbsp;|&nbsp; <a href="datenschutz.html">Datenschutz</a></p>
+</footer>
+
+<script>
+// Nav
+function toggleMenu(){ document.getElementById('navMobile').classList.toggle('open') }
+
+// Reveal
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible') })
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Filter
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.project-card').forEach(card=>{
+      const cat = card.dataset.category || '';
+      card.style.display = (filter==='all' || cat.includes(filter)) ? '' : 'none';
+    });
+  });
+});
+
+// Modal
+function openModal(url, title){
+  const overlay = document.getElementById('modalOverlay');
+  document.getElementById('modalIframe').src = url;
+  document.getElementById('modalUrl').textContent = url;
+  document.getElementById('modalExtLink').href = url;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.getElementById('modalIframe').src = '';
+  document.body.style.overflow = '';
+}
+function closeModalOutside(e){
+  if(e.target === document.getElementById('modalOverlay')) closeModal();
+}
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal() });
+</script>
+</body>
+</html>

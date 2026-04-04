@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kontakt – VALORIS Webdesign Zwickau</title>
+<meta name="description" content="Jetzt Kontakt aufnehmen — VALORIS Webdesign & SEO, Zwickau. Kostenlose Website-Analyse für Ihr Unternehmen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf9f7;--bg2:#f0ebe2;--dark:#0d0d0b;--dark2:#141410;--ink:#171714;--warm:#5c5c54;--muted:#8f8f86;--gold:#b8873a;--gold-lt:#ddb15a;--gold-dk:#7a5820;--gold-pale:rgba(184,135,58,.1);--line:rgba(23,23,23,.1);--line-d:rgba(255,255,255,.08);--r:6px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(250,249,247,.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--line)}
+.nav-logo{display:flex;flex-direction:column;line-height:1;gap:3px}
+.nav-logo-v{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
+.nav-logo-sub{font-size:.42rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--warm);font-weight:400;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-cta{display:inline-flex;padding:10px 22px;border:1px solid var(--gold);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--gold);transition:all .25s;border-radius:2px}
+.nav-cta:hover{background:var(--gold);color:#fff}
+.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-ham span{display:block;width:24px;height:1.5px;background:var(--ink)}
+.nav-mobile{display:none;position:fixed;inset:0;z-index:490;background:var(--bg);padding:100px 40px 40px;flex-direction:column;gap:32px}
+.nav-mobile.open{display:flex}
+.nav-mobile a{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;border-bottom:1px solid var(--line);padding-bottom:20px}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}.delay-4{transition-delay:.4s}
+
+/* CONTACT HERO */
+.contact-hero{
+  min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:120px 48px 80px;
+  background:var(--dark);
+  position:relative;overflow:hidden;
+}
+.contact-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(184,135,58,.12),transparent 70%);
+  pointer-events:none;
+}
+.contact-hero-inner{position:relative;z-index:1;max-width:760px}
+.eyebrow{font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:12px}
+.eyebrow::before,.eyebrow::after{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.contact-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5vw,4.2rem);font-weight:300;line-height:1.05;color:#fff;margin-bottom:24px}
+.contact-hero h1 em{font-style:italic;color:var(--gold-lt)}
+.contact-hero p{color:rgba(255,255,255,.5);font-size:.98rem;line-height:1.85;max-width:520px;margin:0 auto}
+
+/* MAIN GRID */
+.contact-main{padding:100px 48px;max-width:1200px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:start}
+
+/* FORM */
+.form-section{}
+.section-tag{font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.section-tag::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.form-h{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;line-height:1.1;margin-bottom:12px}
+.form-h em{font-style:italic;color:var(--gold)}
+.form-sub{color:var(--warm);font-size:.9rem;line-height:1.8;margin-bottom:48px}
+
+form{display:flex;flex-direction:column;gap:20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-group label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--warm);font-weight:500}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  background:transparent;border:1px solid var(--line);border-radius:var(--r);
+  padding:14px 16px;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:300;
+  color:var(--ink);outline:none;transition:border-color .2s,background .2s;
+  -webkit-appearance:none;
+}
+.form-group select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238f8f86' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{border-color:var(--gold);background:var(--gold-pale)}
+.form-group textarea{resize:vertical;min-height:140px;line-height:1.7}
+.form-group input::placeholder,
+.form-group textarea::placeholder{color:var(--muted)}
+
+.form-check{display:flex;align-items:flex-start;gap:12px;margin-top:4px}
+.form-check input[type=checkbox]{width:18px;height:18px;border:1px solid var(--line);border-radius:3px;background:transparent;cursor:pointer;flex-shrink:0;margin-top:2px;accent-color:var(--gold)}
+.form-check label{font-size:.82rem;color:var(--warm);line-height:1.6;cursor:pointer}
+.form-check a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+
+.btn-submit{
+  align-self:flex-start;padding:16px 40px;
+  background:var(--gold);color:#fff;border:none;border-radius:2px;
+  font-family:'Inter',sans-serif;font-size:.78rem;letter-spacing:.18em;
+  text-transform:uppercase;font-weight:500;cursor:pointer;
+  transition:background .25s,transform .2s;
+}
+.btn-submit:hover{background:var(--gold-dk);transform:translateY(-1px)}
+
+/* SUCCESS MESSAGE */
+#form-success{display:none;padding:32px;background:var(--gold-pale);border:1px solid rgba(184,135,58,.3);border-radius:var(--r);text-align:center;margin-top:16px}
+#form-success h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;margin-bottom:8px;color:var(--gold-dk)}
+#form-success p{color:var(--warm);font-size:.9rem}
+
+/* SIDEBAR */
+.contact-sidebar{display:flex;flex-direction:column;gap:32px;position:sticky;top:100px}
+
+.contact-card{
+  background:var(--dark);border-radius:var(--r);padding:40px 36px;
+  border:1px solid var(--line-d);
+}
+.card-tag{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px}
+.card-h{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:#fff;line-height:1.2;margin-bottom:24px}
+.card-h em{font-style:italic;color:var(--gold-lt)}
+.contact-items{display:flex;flex-direction:column;gap:20px}
+.contact-item{display:flex;align-items:flex-start;gap:16px}
+.contact-icon{
+  width:40px;height:40px;border-radius:50%;background:var(--gold-pale);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  border:1px solid rgba(184,135,58,.2);
+}
+.contact-icon svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.contact-item-text{}
+.contact-item-label{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);font-weight:500;margin-bottom:4px}
+.contact-item-val{color:rgba(255,255,255,.8);font-size:.9rem}
+.contact-item-val a{color:var(--gold-lt);transition:color .2s}
+.contact-item-val a:hover{color:var(--gold)}
+
+.wa-btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin-top:28px;padding:14px 24px;
+  background:#25D366;color:#fff;border-radius:2px;
+  font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;
+  transition:background .2s,transform .2s;
+}
+.wa-btn:hover{background:#1ebe5d;transform:translateY(-1px)}
+.wa-btn svg{width:18px;height:18px;fill:#fff}
+
+.info-card{
+  background:var(--bg2);border-radius:var(--r);padding:32px 30px;
+  border:1px solid var(--line);
+}
+.info-card-h{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--ink);margin-bottom:16px}
+.info-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.info-list li{font-size:.85rem;color:var(--warm);display:flex;align-items:center;gap:10px}
+.info-list li::before{content:'→';color:var(--gold);flex-shrink:0}
+
+/* MAP SECTION */
+.map-section{padding:0 48px 100px;max-width:1200px;margin:0 auto}
+.map-wrap{
+  border-radius:var(--r);overflow:hidden;
+  border:1px solid var(--line);
+  height:380px;position:relative;
+}
+.map-wrap iframe{width:100%;height:100%;border:none;filter:saturate(.85) contrast(1.05)}
+.map-label{
+  position:absolute;top:20px;left:20px;z-index:2;
+  background:var(--dark);color:#fff;
+  padding:10px 16px;border-radius:2px;
+  font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+  border-left:2px solid var(--gold);
+}
+
+/* PROCESS STRIP */
+.process-strip{
+  background:var(--dark);padding:80px 48px;
+  border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d);
+}
+.process-strip-inner{max-width:1100px;margin:0 auto}
+.process-strip-tag{font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px;text-align:center;display:flex;align-items:center;justify-content:center;gap:12px}
+.process-strip-tag::before,.process-strip-tag::after{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.process-strip-h{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:#fff;text-align:center;margin-bottom:56px;line-height:1.2}
+.process-strip-h em{font-style:italic;color:var(--gold-lt)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-d)}
+.step{
+  background:var(--dark2);padding:40px 32px;
+  position:relative;
+}
+.step-num{
+  font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;
+  color:rgba(184,135,58,.15);line-height:1;margin-bottom:20px;
+}
+.step-name{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px}
+.step-desc{font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.7}
+
+/* FOOTER */
+footer{background:var(--dark);padding:60px 48px 40px;border-top:1px solid var(--line-d)}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--line-d)}
+.footer-logo-v{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#fff;margin-bottom:6px}
+.footer-logo-sub{font-size:.42rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px}
+.footer-desc{color:rgba(255,255,255,.3);font-size:.82rem;line-height:1.8}
+.footer-col-h{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25);font-weight:500;margin-bottom:20px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{color:rgba(255,255,255,.5);font-size:.85rem;transition:color .2s}
+.footer-links a:hover{color:var(--gold-lt)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px}
+.footer-copy{color:rgba(255,255,255,.2);font-size:.78rem}
+.footer-legal{display:flex;gap:24px}
+.footer-legal a{color:rgba(255,255,255,.25);font-size:.75rem;transition:color .2s}
+.footer-legal a:hover{color:var(--gold)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .contact-grid{grid-template-columns:1fr;gap:60px}
+  .contact-sidebar{position:static}
+  .steps{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  nav{padding:0 24px}
+  .nav-links,.nav-cta{display:none}
+  .nav-ham{display:flex}
+  .contact-hero{padding:100px 24px 64px}
+  .contact-main,.map-section{padding:60px 24px}
+  .map-section{padding-bottom:60px}
+  .form-row{grid-template-columns:1fr}
+  .process-strip{padding:64px 24px}
+  .steps{grid-template-columns:1fr}
+  footer{padding:48px 24px 32px}
+  .footer-top{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;gap:16px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-v">Valoris</span>
+    <span class="nav-logo-sub">Webdesign &amp; SEO</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="leistungen.html">Leistungen</a></li>
+    <li><a href="referenzen.html">Referenzen</a></li>
+    <li><a href="preise.html">Preise</a></li>
+    <li><a href="ueber-uns.html">Über uns</a></li>
+    <li><a href="kontakt.html" class="active">Kontakt</a></li>
+  </ul>
+  <a href="kontakt.html" class="nav-cta">Kostenlos anfragen</a>
+  <div class="nav-ham" onclick="document.querySelector('.nav-mobile').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="leistungen.html">Leistungen</a>
+  <a href="referenzen.html">Referenzen</a>
+  <a href="preise.html">Preise</a>
+  <a href="ueber-uns.html">Über uns</a>
+  <a href="kontakt.html">Kontakt</a>
+  <a href="kontakt.html" class="nav-cta" style="margin-top:8px;text-align:center;font-size:.78rem;letter-spacing:.15em;padding:14px 24px;border:1px solid var(--gold);color:var(--gold);border-radius:2px">Kostenlos anfragen</a>
+</div>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="contact-hero-inner">
+    <div class="eyebrow reveal">Kontakt aufnehmen</div>
+    <h1 class="reveal delay-1">Ihr nächster Schritt zu<br><em>mehr Kunden online</em></h1>
+    <p class="reveal delay-2">Kostenlose Website-Analyse — kein Verkaufsgespräch, kein Druck. Ich zeige Ihnen konkret, was bei Ihrer Online-Präsenz fehlt.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTACT AREA -->
+<div class="contact-main">
+  <div class="contact-grid">
+
+    <!-- FORM -->
+    <div class="form-section">
+      <div class="section-tag reveal">Anfrage senden</div>
+      <h2 class="form-h reveal delay-1">Schreiben Sie mir —<br><em>ich antworte gleich</em></h2>
+      <p class="form-sub reveal delay-2">Füllen Sie das Formular aus und ich melde mich innerhalb von 24 Stunden. Für dringende Anfragen: WhatsApp ist schneller.</p>
+
+      <form action="https://formspree.io/f/mlgpooqw" method="POST" id="kontakt-form" class="reveal delay-3">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
+          </div>
+          <div class="form-group">
+            <label for="firma">Firma / Betrieb</label>
+            <input type="text" id="firma" name="firma" placeholder="Musterbetrieb GmbH">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-Mail *</label>
+            <input type="email" id="email" name="email" placeholder="info@meinbetrieb.de" required>
+          </div>
+          <div class="form-group">
+            <label for="telefon">Telefon</label>
+            <input type="tel" id="telefon" name="telefon" placeholder="0152 00000000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="website">Aktuelle Website (falls vorhanden)</label>
+          <input type="url" id="website" name="website" placeholder="https://www.meinewebsite.de">
+        </div>
+        <div class="form-group">
+          <label for="paket">Interesse an</label>
+          <select id="paket" name="paket">
+            <option value="">— Bitte wählen —</option>
+            <option value="Kostenlose Analyse">Kostenlose Website-Analyse</option>
+            <option value="BASIS (990€)">BASIS-Paket – 990 €</option>
+            <option value="STANDARD (1.990€)">STANDARD-Paket – 1.990 € (empfohlen)</option>
+            <option value="PREMIUM (2.990€)">PREMIUM-Paket – 2.990 €</option>
+            <option value="ULTRA (9.990€)">ULTRA-Paket – 9.990 €</option>
+            <option value="Betreuung">Laufende Website-Betreuung</option>
+            <option value="Allgemein">Allgemeine Frage</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nachricht">Nachricht *</label>
+          <textarea id="nachricht" name="nachricht" placeholder="Beschreiben Sie kurz Ihr Unternehmen und was Sie sich von einer neuen Website wünschen …" required></textarea>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="datenschutz" name="datenschutz" required>
+          <label for="datenschutz">Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage einverstanden. *</label>
+        </div>
+        <button type="submit" class="btn-submit">Anfrage senden →</button>
+      </form>
+
+      <div id="form-success">
+        <h3>Nachricht erhalten!</h3>
+        <p>Ich melde mich innerhalb von 24 Stunden bei Ihnen. Bis gleich — Frederic</p>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="contact-sidebar">
+
+      <div class="contact-card reveal">
+        <div class="card-tag">Direktkontakt</div>
+        <h3 class="card-h">Lieber <em>persönlich</em> sprechen?</h3>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6.37 6.37l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">Telefon</div>
+              <div class="contact-item-val"><a href="tel:+4915254190819">0152 54190819</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">E-Mail</div>
+              <div class="contact-item-val"><a href="mailto:frederic@valoris-auftragsstruktur.de">frederic@valoris-auftragsstruktur.de</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">Adresse</div>
+              <div class="contact-item-val">Karl-Kippenhahn-Str. 17<br>08058 Zwickau, Deutschland</div>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/4915254190819?text=Hallo%20Frederic%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20neue%20Website%20f%C3%BCr%20meinen%20Betrieb." target="_blank" class="wa-btn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Jetzt auf WhatsApp
+        </a>
+      </div>
+
+      <div class="info-card reveal delay-1">
+        <h4 class="info-card-h">So läuft es ab</h4>
+        <ul class="info-list">
+          <li>Anfrage absenden</li>
+          <li>Antwort innerhalb 24 Stunden</li>
+          <li>Kostenlose Website-Analyse</li>
+          <li>Unverbindliches Angebot</li>
+          <li>Umsetzung in 5–14 Tagen</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- MAP -->
+<div class="map-section">
+  <div class="map-wrap reveal">
+    <div class="map-label">08058 Zwickau, Sachsen</div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2517.8!2d12.4967!3d50.7272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a74d8571a9e2ad%3A0x5e66b82a9e0b6cbc!2sKarl-Kippenhahn-Stra%C3%9Fe%2017%2C%2008058%20Zwickau!5e0!3m2!1sde!2sde!4v1680000000000!5m2!1sde!2sde"
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
+<!-- PROCESS STRIP -->
+<section class="process-strip">
+  <div class="process-strip-inner">
+    <div class="process-strip-tag reveal">Der Ablauf</div>
+    <h2 class="process-strip-h reveal delay-1">Von der Anfrage zur <em>fertigen Website</em></h2>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-name">Analyse</div>
+        <div class="step-desc">Ich schaue mir Ihren Betrieb, Wettbewerber und Zielgruppe an — kostenlos und ohne Verpflichtung.</div>
+      </div>
+      <div class="step reveal delay-1">
+        <div class="step-num">02</div>
+        <div class="step-name">Konzept</div>
+        <div class="step-desc">Sie erhalten ein individuelles Angebot mit Paketempfehlung und klarem Leistungsumfang.</div>
+      </div>
+      <div class="step reveal delay-2">
+        <div class="step-num">03</div>
+        <div class="step-name">Umsetzung</div>
+        <div class="step-desc">Ich baue Ihre Website in 5–14 Tagen. Sie sehen alles live und geben Feedback in Echtzeit.</div>
+      </div>
+      <div class="step reveal delay-3">
+        <div class="step-num">04</div>
+        <div class="step-name">Live &amp; Wachstum</div>
+        <div class="step-desc">Go-Live, Google-Einrichtung, Übergabe — und optional weiter mit monatlicher Betreuung.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-v">Valoris</div>
+        <div class="footer-logo-sub">Webdesign &amp; SEO · Zwickau</div>
+        <p class="footer-desc">Professionelle Websites für lokale Unternehmen in Sachsen. Faire Preise, schnelle Umsetzung, echte Ergebnisse.</p>
+      </div>
+      <div>
+        <div class="footer-col-h">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="leistungen.html">Leistungen</a></li>
+          <li><a href="referenzen.html">Referenzen</a></li>
+          <li><a href="preise.html">Preise</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-h">Kontakt</div>
+        <ul class="footer-links">
+          <li><a href="tel:+4915254190819">0152 54190819</a></li>
+          <li><a href="mailto:frederic@valoris-auftragsstruktur.de">frederic@valoris-auftragsstruktur.de</a></li>
+          <li><a href="https://wa.me/4915254190819" target="_blank">WhatsApp</a></li>
+          <li style="color:rgba(255,255,255,.3);font-size:.82rem;margin-top:8px">Karl-Kippenhahn-Str. 17<br>08058 Zwickau</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Bochmann Dienstleistungen · VALORIS Webdesign &amp; SEO · §19 UStG</span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.12});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>io.observe(el));
+
+// Formspree AJAX submit
+const form = document.getElementById('kontakt-form');
+const success = document.getElementById('form-success');
+if(form){
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = 'Wird gesendet …';
+    btn.disabled = true;
+    try{
+      const res = await fetch(form.action,{
+        method:'POST',
+        body:new FormData(form),
+        headers:{Accept:'application/json'}
+      });
+      if(res.ok){
+        form.style.display='none';
+        success.style.display='block';
+      } else {
+        btn.textContent = 'Fehler — bitte erneut versuchen';
+        btn.disabled = false;
+      }
+    } catch(err){
+      btn.textContent = 'Fehler — bitte erneut versuchen';
+      btn.disabled = false;
+    }
+  });
+}
+
+// Mobile nav close on link click
+document.querySelectorAll('.nav-mobile a').forEach(a=>{
+  a.addEventListener('click',()=>document.querySelector('.nav-mobile').classList.remove('open'));
+});
+</script>
+
+</body>
+</html>
