@@ -44,26 +44,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .pricing-section{padding:100px 48px}
 .section-tag{font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:12px}
 .section-tag::before,.section-tag::after{content:'';display:block;width:28px;height:1px;background:var(--gold)}
-.section-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.1;text-align:center;margin-bottom:64px}
+.section-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.1;text-align:center;margin-bottom:16px}
 .section-h em{font-style:italic;color:var(--gold)}
+.section-sub{text-align:center;color:var(--muted);font-size:.88rem;margin-bottom:64px}
 
-.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);max-width:1200px;margin:0 auto}
-.price-col{padding:48px 32px;border-right:1px solid var(--line);position:relative;transition:all .3s}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);max-width:960px;margin:0 auto}
+.price-col{padding:48px 36px;border-right:1px solid var(--line);position:relative;transition:all .3s;display:flex;flex-direction:column}
 .price-col:last-child{border-right:none}
 .price-col:hover{background:var(--bg2)}
 .price-col.featured{background:var(--dark);color:#fff}
 .price-col.featured:hover{background:var(--dark)}
 .price-badge{position:absolute;top:-1px;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-lt))}
 .price-featured-label{position:absolute;top:16px;right:16px;background:var(--gold);color:#fff;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;padding:4px 10px;border-radius:20px;font-weight:600}
-.price-tier{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;font-weight:500}
+.price-tier{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:500}
 .price-col.featured .price-tier{color:rgba(255,255,255,.35)}
+.price-tagline{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--warm);margin-bottom:20px}
+.price-col.featured .price-tagline{color:rgba(255,255,255,.45)}
 .price-amount{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:300;line-height:1;margin-bottom:6px;color:var(--ink)}
 .price-col.featured .price-amount{color:var(--gold-lt)}
 .price-once{font-size:.72rem;color:var(--muted);margin-bottom:32px}
 .price-col.featured .price-once{color:rgba(255,255,255,.3)}
 .price-divider{height:1px;background:var(--line);margin-bottom:28px}
 .price-col.featured .price-divider{background:var(--line-d)}
-.price-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:40px}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:40px;flex:1}
 .price-list li{font-size:.83rem;color:var(--warm);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
 .price-col.featured .price-list li{color:rgba(255,255,255,.6)}
 .price-list li::before{content:'✓';color:var(--gold);font-size:.72rem;margin-top:2px;flex-shrink:0}
@@ -74,6 +77,32 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .price-cta:hover{border-color:var(--gold);color:var(--gold)}
 .price-col.featured .price-cta{background:var(--gold);border-color:var(--gold);color:#fff}
 .price-col.featured .price-cta:hover{background:var(--gold-dk)}
+
+/* INDIVIDUAL PROJECTS BLOCK */
+.individual-section{padding:0 48px 100px}
+.individual-block{
+  max-width:960px;margin:0 auto;
+  background:var(--dark);border-radius:var(--r);
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  overflow:hidden;border:1px solid var(--line-d);
+}
+.individual-left{padding:60px 56px;border-right:1px solid var(--line-d)}
+.individual-right{padding:60px 56px;display:flex;flex-direction:column;justify-content:center}
+.ind-eyebrow{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px}
+.ind-h{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;color:#fff;line-height:1.1;margin-bottom:20px}
+.ind-h em{font-style:italic;color:var(--gold-lt)}
+.ind-p{color:rgba(255,255,255,.4);font-size:.9rem;line-height:1.85}
+.ind-features{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
+.ind-features li{display:flex;align-items:flex-start;gap:14px;color:rgba(255,255,255,.6);font-size:.87rem;line-height:1.5}
+.ind-features li::before{content:'→';color:var(--gold);flex-shrink:0;margin-top:1px}
+.ind-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 32px;background:var(--gold);color:#fff;border-radius:2px;
+  font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;
+  transition:all .25s;align-self:flex-start;
+}
+.ind-cta:hover{background:var(--gold-dk);transform:translateY(-2px);box-shadow:0 12px 30px rgba(184,135,58,.35)}
+.ind-note{color:rgba(255,255,255,.25);font-size:.78rem;margin-top:16px;line-height:1.6}
 
 /* COMPARISON TABLE */
 .compare-section{padding:80px 48px;background:var(--bg2)}
@@ -108,9 +137,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .btn-primary:hover{background:var(--gold-dk);transform:translateY(-2px);box-shadow:0 12px 30px rgba(184,135,58,.35)}
 footer{background:var(--dark2);color:rgba(255,255,255,.35);padding:40px 48px;text-align:center;font-size:.78rem}
 footer a{color:rgba(255,255,255,.4);transition:color .2s}footer a:hover{color:var(--gold-lt)}
-@media(max-width:1000px){.pricing-grid{grid-template-columns:repeat(2,1fr)}.price-col{border-bottom:1px solid var(--line)}}
-@media(max-width:900px){nav{padding:0 24px}.nav-links,.nav-cta{display:none}.nav-ham{display:flex}.page-hero{padding:120px 24px 60px}.pricing-section,.compare-section,.faq-section{padding:60px 24px}.compare-table{font-size:.75rem}.compare-table th,.compare-table td{padding:10px 12px}}
-@media(max-width:640px){.pricing-grid{grid-template-columns:1fr}}
+@media(max-width:900px){nav{padding:0 24px}.nav-links,.nav-cta{display:none}.nav-ham{display:flex}.page-hero{padding:120px 24px 60px}.pricing-section,.faq-section{padding:60px 24px}.individual-section{padding:0 24px 60px}.individual-block{grid-template-columns:1fr}.individual-left{border-right:none;border-bottom:1px solid var(--line-d);padding:48px 36px}.individual-right{padding:48px 36px}}
+@media(max-width:640px){.pricing-grid{grid-template-columns:1fr}.price-col{border-right:none;border-bottom:1px solid var(--line)}}
 </style>
 </head>
 <body>
@@ -135,18 +163,20 @@ footer a{color:rgba(255,255,255,.4);transition:color .2s}footer a:hover{color:va
   <div class="page-hero-content">
     <div class="page-eyebrow">Transparente Preise</div>
     <h1 class="page-h">Festpreise.<br><em>Keine Überraschungen.</em></h1>
-    <p class="page-sub">Was wir vereinbaren, das zahlen Sie. §19 UStG — keine Mehrwertsteuer. Keine Vertragslaufzeit bei Einmalpaketen.</p>
+    <p class="page-sub">Festpreise für lokale Betriebe — und individuelle Projekte für alle, die mehr wollen. §19 UStG, keine Mehrwertsteuer.</p>
   </div>
 </div>
 
 <div class="pricing-section">
-  <div class="section-tag reveal">Pakete</div>
-  <h2 class="section-h reveal delay-1">Das richtige Paket für<br><em>jeden Betrieb</em></h2>
+  <div class="section-tag reveal">Für lokale Betriebe</div>
+  <h2 class="section-h reveal delay-1">Drei Pakete —<br><em>ein klares Ziel</em></h2>
+  <p class="section-sub reveal delay-2">Mehr Kunden, mehr Sichtbarkeit, mehr Wachstum.</p>
   <div class="pricing-grid">
     <div class="price-col reveal delay-1">
-      <div class="price-tier">Basis</div>
+      <div class="price-tier">Starter</div>
+      <div class="price-tagline">Endlich online</div>
       <div class="price-amount">990 €</div>
-      <div class="price-once">einmalig</div>
+      <div class="price-once">einmalig · keine Vertragslaufzeit</div>
       <div class="price-divider"></div>
       <ul class="price-list">
         <li>1-seitige Website</li>
@@ -154,23 +184,24 @@ footer a{color:rgba(255,255,255,.4);transition:color .2s}footer a:hover{color:va
         <li>WhatsApp-Button</li>
         <li>Google Maps Embed</li>
         <li>Kontaktformular</li>
-        <li>Basis-SEO (Title, Meta, H1)</li>
+        <li>Basis-SEO</li>
         <li>Impressum &amp; Datenschutz</li>
         <li class="minus">Unterseiten</li>
-        <li class="minus">Portfolio</li>
-        <li class="minus">Google Profil</li>
+        <li class="minus">Portfolio / Speisekarte</li>
+        <li class="minus">Google Business Profil</li>
       </ul>
-      <a href="https://wa.me/4915254190819" class="price-cta">Anfragen</a>
+      <a href="kontakt.html" class="price-cta">Jetzt anfragen</a>
     </div>
     <div class="price-col featured reveal delay-2">
       <div class="price-badge"></div>
       <div class="price-featured-label">Beliebteste Wahl</div>
-      <div class="price-tier">Standard</div>
+      <div class="price-tier">Wachstum</div>
+      <div class="price-tagline">Kunden gewinnen</div>
       <div class="price-amount">1.990 €</div>
-      <div class="price-once">einmalig</div>
+      <div class="price-once">einmalig · keine Vertragslaufzeit</div>
       <div class="price-divider"></div>
       <ul class="price-list">
-        <li>Alles aus Basis</li>
+        <li>Alles aus Starter</li>
         <li>Bis zu 5 Unterseiten</li>
         <li>Portfolio / Speisekarte</li>
         <li>Buchungs-/Anfragefunktion</li>
@@ -181,15 +212,16 @@ footer a{color:rgba(255,255,255,.4);transition:color .2s}footer a:hover{color:va
         <li class="minus">Video-Hero</li>
         <li class="minus">Google Ads Vorbereitung</li>
       </ul>
-      <a href="https://wa.me/4915254190819" class="price-cta">Anfragen</a>
+      <a href="kontakt.html" class="price-cta">Jetzt anfragen</a>
     </div>
     <div class="price-col reveal delay-3">
       <div class="price-tier">Premium</div>
+      <div class="price-tagline">Marktführer werden</div>
       <div class="price-amount">2.990 €</div>
-      <div class="price-once">einmalig</div>
+      <div class="price-once">einmalig · keine Vertragslaufzeit</div>
       <div class="price-divider"></div>
       <ul class="price-list">
-        <li>Alles aus Standard</li>
+        <li>Alles aus Wachstum</li>
         <li>Video-/Bild-Header</li>
         <li>Individuelle Struktur</li>
         <li>Stärkerer Google-Fokus</li>
@@ -200,29 +232,33 @@ footer a{color:rgba(255,255,255,.4);transition:color .2s}footer a:hover{color:va
         <li class="minus">Google Ads Management</li>
         <li class="minus">Fotoshooting</li>
       </ul>
-      <a href="https://wa.me/4915254190819" class="price-cta">Anfragen</a>
-    </div>
-    <div class="price-col reveal delay-4">
-      <div class="price-tier">Ultra</div>
-      <div class="price-amount">9.990 €</div>
-      <div class="price-once">einmalig · Marktführer</div>
-      <div class="price-divider"></div>
-      <ul class="price-list">
-        <li>Alles aus Premium</li>
-        <li>Framer-Build · 10+ Seiten</li>
-        <li>3D-Elemente &amp; Vollanimationen</li>
-        <li>Google Ads Setup + 3 Monate</li>
-        <li>Fotoshooting-Koordination</li>
-        <li>Monatliches SEO-Reporting</li>
-        <li>Priority Support</li>
-        <li>Custom Loader Animation</li>
-        <li>Druckfähige Visitenkarte</li>
-        <li>Standort-Unterseiten</li>
-      </ul>
-      <a href="https://wa.me/4915254190819" class="price-cta">Anfragen</a>
+      <a href="kontakt.html" class="price-cta">Jetzt anfragen</a>
     </div>
   </div>
-  <p style="text-align:center;margin-top:28px;font-size:.78rem;color:var(--muted)">Alle Preise sind Endpreise · §19 Abs. 1 UStG · Keine Mehrwertsteuer · Keine Vertragslaufzeit bei Einmalpaketen</p>
+  <p style="text-align:center;margin-top:28px;font-size:.78rem;color:var(--muted)">Alle Preise sind Endpreise · §19 Abs. 1 UStG · Keine Mehrwertsteuer · Keine Vertragslaufzeit</p>
+</div>
+
+<!-- INDIVIDUAL PROJECTS -->
+<div class="individual-section">
+  <div class="individual-block reveal">
+    <div class="individual-left">
+      <div class="ind-eyebrow">Individuelle Projekte</div>
+      <h2 class="ind-h">Größere Vision?<br><em>Wir reden.</em></h2>
+      <p class="ind-p">Für Unternehmen mit klarem Wachstumsanspruch — Framer-Builds, mehrere Standorte, Google Ads, Fotoshooting, 10+ Seiten. Kein Standardpaket, sondern ein Projekt das zu Ihren Zielen passt.</p>
+    </div>
+    <div class="individual-right">
+      <ul class="ind-features">
+        <li>Framer-Build mit vollanimierten Sections</li>
+        <li>10+ Seiten, individuelle Struktur</li>
+        <li>Google Ads Setup &amp; Kampagnenbetreuung</li>
+        <li>Professionelles Fotoshooting</li>
+        <li>Mehrere Standorte / Franchise</li>
+        <li>Monatliches SEO-Reporting</li>
+      </ul>
+      <a href="kontakt.html" class="ind-cta">Projekt besprechen →</a>
+      <p class="ind-note">Kein Standardpreis — Ihr Projekt, Ihr Budget.<br>Erstes Gespräch kostenlos und unverbindlich.</p>
+    </div>
+  </div>
 </div>
 
 <!-- FAQ -->
