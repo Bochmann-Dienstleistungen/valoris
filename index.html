@@ -945,5 +945,12 @@ document.querySelectorAll('.btn-primary,.nav-cta').forEach(btn=>{
 });
 </script>
 <script src="cookie-consent.js" defer></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.getRegistrations().then(function(regs){
+    regs.forEach(function(r){ r.unregister(); });
+  });
+}
+</script>
 </body>
 </html>
