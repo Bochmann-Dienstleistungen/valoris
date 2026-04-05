@@ -2,9 +2,10 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<meta name="theme-color" content="#0d0d0b">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Preise – VALORIS Webdesign Zwickau</title>
-<meta name="description" content="Transparente Festpreise für Webdesign in Zwickau. Basis ab 990 €, Standard 1.990 €, Premium 2.990 €, Ultra 9.990 €. §19 UStG, keine MwSt.">
+<meta name="description" content="Transparente Festpreise für Webdesign in Zwickau. Starter 990 €, Wachstum 1.990 €, Premium 2.990 €. §19 UStG, keine MwSt., keine Vertragslaufzeit.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -239,7 +240,7 @@ footer a{color:rgba(255,255,255,.4);transition:color .2s}footer a:hover{color:va
 </div>
 
 <!-- INDIVIDUAL PROJECTS -->
-<div class="individual-section">
+<div class="individual-section" id="individual">
   <div class="individual-block reveal">
     <div class="individual-left">
       <div class="ind-eyebrow">Individuelle Projekte</div>
@@ -305,5 +306,6 @@ function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
+<script src="cookie-consent.js" defer></script>
 </body>
 </html>
