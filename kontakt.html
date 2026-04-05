@@ -322,7 +322,7 @@ footer{background:var(--dark);padding:60px 48px 40px;border-top:1px solid var(--
         </div>
         <div class="form-check">
           <input type="checkbox" id="datenschutz" name="datenschutz" required>
-          <label for="datenschutz">Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage einverstanden. *</label>
+          <label for="datenschutz">Ich habe die <a href="#" onclick="openLegalDrawer('datenschutz');return false">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage einverstanden. *</label>
         </div>
         <button type="submit" class="btn-submit">Anfrage senden →</button>
       </form>
@@ -462,8 +462,8 @@ footer{background:var(--dark);padding:60px 48px 40px;border-top:1px solid var(--
     <div class="footer-bottom">
       <span class="footer-copy">© 2026 Bochmann Dienstleistungen · VALORIS Webdesign &amp; SEO · §19 UStG</span>
       <div class="footer-legal">
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
+        <a href="#" onclick="openLegalDrawer('impressum');return false">Impressum</a>
+        <a href="#" onclick="openLegalDrawer('datenschutz');return false">Datenschutz</a>
       </div>
     </div>
   </div>
@@ -511,6 +511,7 @@ document.querySelectorAll('.nav-mobile a').forEach(a=>{
 });
 </script>
 
+<script src="legal-drawer.js" defer></script>
 <script src="cookie-consent.js" defer></script>
 </body>
 </html>

@@ -312,12 +312,13 @@ footer a:hover{color:var(--gold-lt)}
     <a href="preise.html" class="btn-ghost-d">Preise ansehen</a>
   </div>
 </div>
-<footer><p>© 2026 Bochmann Dienstleistungen · VALORIS Webdesign &amp; SEO · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p></footer>
+<footer><p>© 2026 Bochmann Dienstleistungen · VALORIS Webdesign &amp; SEO · <a href="#" onclick="openLegalDrawer('impressum');return false">Impressum</a> · <a href="#" onclick="openLegalDrawer('datenschutz');return false">Datenschutz</a></p></footer>
 <script>
 function toggleMenu(){document.getElementById('nm').classList.toggle('open')}
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>obs.observe(el));
 </script>
+<script src="legal-drawer.js" defer></script>
 <script src="cookie-consent.js" defer></script>
 </body>
 </html>

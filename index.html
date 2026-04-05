@@ -848,8 +848,8 @@ footer{background:var(--dark2);color:rgba(255,255,255,.4);padding:72px 48px 40px
     <div class="footer-col">
       <h4>Rechtliches</h4>
       <ul>
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="#" onclick="openLegalDrawer('impressum');return false">Impressum</a></li>
+        <li><a href="#" onclick="openLegalDrawer('datenschutz');return false">Datenschutz</a></li>
         <li><a href="kontakt.html">Anfrage</a></li>
       </ul>
     </div>
@@ -944,6 +944,7 @@ document.querySelectorAll('.btn-primary,.nav-cta').forEach(btn=>{
   });
 });
 </script>
+<script src="legal-drawer.js" defer></script>
 <script src="cookie-consent.js" defer></script>
 <script>
 if('serviceWorker' in navigator){

@@ -272,11 +272,12 @@ footer a{color:rgba(255,255,255,.4);transition:color .2s}footer a:hover{color:va
   <p class="cta-sub reveal delay-1">Wir zeigen Ihnen wie Ihre neue Website aussieht, bevor Sie irgendetwas entscheiden müssen.</p>
   <div class="reveal delay-2"><a href="https://wa.me/4915254190819" class="btn-primary">💬 Demo anfragen</a></div>
 </div>
-<footer><p>© 2026 Bochmann Dienstleistungen · VALORIS Webdesign &amp; SEO · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p></footer>
+<footer><p>© 2026 Bochmann Dienstleistungen · VALORIS Webdesign &amp; SEO · <a href="#" onclick="openLegalDrawer('impressum');return false">Impressum</a> · <a href="#" onclick="openLegalDrawer('datenschutz');return false">Datenschutz</a></p></footer>
 <script>
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>obs.observe(el));
 </script>
+<script src="legal-drawer.js" defer></script>
 <script src="cookie-consent.js" defer></script>
 </body>
 </html>
