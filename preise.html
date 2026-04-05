@@ -79,6 +79,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .price-col.featured .price-cta{background:var(--gold);border-color:var(--gold);color:#fff}
 .price-col.featured .price-cta:hover{background:var(--gold-dk)}
 
+/* ADD-ONS */
+.addons-section{padding:0 48px 80px;max-width:1200px;margin:0 auto}
+.addons-h{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:300;line-height:1.1;margin-bottom:12px}
+.addons-h em{font-style:italic;color:var(--gold)}
+.addons-sub{color:var(--warm);font-size:.88rem;margin-bottom:40px}
+.addons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.addon-card{border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;background:var(--bg);transition:all .25s;position:relative}
+.addon-card:hover{border-color:var(--gold);background:var(--bg2);transform:translateY(-2px)}
+.addon-icon{font-size:1.4rem;margin-bottom:14px;display:block}
+.addon-name{font-size:.82rem;font-weight:500;color:var(--ink);margin-bottom:6px;letter-spacing:.02em}
+.addon-desc{font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:16px}
+.addon-price{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--gold-dk)}
+.addon-price span{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);font-weight:300}
+@media(max-width:900px){.addons-section{padding:0 24px 60px}.addons-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.addons-grid{grid-template-columns:1fr}}
+
 /* INDIVIDUAL PROJECTS BLOCK */
 .individual-section{padding:0 48px 100px}
 .individual-block{
@@ -238,6 +254,63 @@ footer a{color:rgba(255,255,255,.4);transition:color .2s}footer a:hover{color:va
   </div>
   <p style="text-align:center;margin-top:28px;font-size:.78rem;color:var(--muted)">Alle Preise sind Endpreise · §19 Abs. 1 UStG · Keine Mehrwertsteuer · Keine Vertragslaufzeit</p>
   <p style="text-align:center;margin-top:10px;font-size:.75rem;color:var(--muted);opacity:.7">E-Mail-Support = Fragen &amp; kleinere Textänderungen per E-Mail. Kein Full-Service oder unbegrenzte Redesigns.</p>
+</div>
+
+<!-- ADD-ONS -->
+<div class="addons-section">
+  <div class="section-tag reveal" style="justify-content:flex-start">Extras &amp; Add-ons</div>
+  <h2 class="addons-h reveal delay-1">Mehr herausholen —<br><em>was wirklich gebraucht wird</em></h2>
+  <p class="addons-sub reveal delay-2">Zu jedem Paket buchbar. Nur zahlen, was Sie wirklich brauchen.</p>
+  <div class="addons-grid">
+    <div class="addon-card reveal delay-1">
+      <span class="addon-icon">✏️</span>
+      <div class="addon-name">Logo-Design</div>
+      <div class="addon-desc">Professionelles Logo passend zur Website — Vektordatei zur weiteren Nutzung inklusive.</div>
+      <div class="addon-price">249 € <span>einmalig</span></div>
+    </div>
+    <div class="addon-card reveal delay-2">
+      <span class="addon-icon">💬</span>
+      <div class="addon-name">WhatsApp Business Einrichtung</div>
+      <div class="addon-desc">Verifiziertes WA Business Konto, Willkommensnachricht, Quick-Replies &amp; Öffnungszeiten eingerichtet.</div>
+      <div class="addon-price">149 € <span>einmalig</span></div>
+    </div>
+    <div class="addon-card reveal delay-3">
+      <span class="addon-icon">🤖</span>
+      <div class="addon-name">KI-Chatbot</div>
+      <div class="addon-desc">Chatbot beantwortet häufige Fragen automatisch. Einrichtung &amp; Anpassung inklusive. SaaS-Kosten je nach Anbieter separat.</div>
+      <div class="addon-price">299 € <span>Einrichtung</span></div>
+    </div>
+    <div class="addon-card reveal delay-4">
+      <span class="addon-icon">📅</span>
+      <div class="addon-name">Online-Terminbuchung</div>
+      <div class="addon-desc">Calendly o.Ä. eingerichtet &amp; in die Website eingebunden — Kunden buchen direkt ohne Telefonat.</div>
+      <div class="addon-price">149 € <span>einmalig</span></div>
+    </div>
+    <div class="addon-card reveal delay-1">
+      <span class="addon-icon">📸</span>
+      <div class="addon-name">Professionelle Fotos</div>
+      <div class="addon-desc">Koordination &amp; Einbindung professioneller Fotos Ihres Betriebs — Fotograf wird vermittelt.</div>
+      <div class="addon-price">299 € <span>einmalig</span></div>
+    </div>
+    <div class="addon-card reveal delay-2">
+      <span class="addon-icon">🌍</span>
+      <div class="addon-name">Mehrsprachigkeit (Englisch)</div>
+      <div class="addon-desc">Vollständige englische Version Ihrer Website — professionell übersetzt und eingebunden.</div>
+      <div class="addon-price">349 € <span>einmalig</span></div>
+    </div>
+    <div class="addon-card reveal delay-3">
+      <span class="addon-icon">📣</span>
+      <div class="addon-name">Google Ads Kampagne</div>
+      <div class="addon-desc">Kampagnen-Setup inkl. Keyword-Recherche &amp; erstem Anzeigentext. Ads-Budget nicht inbegriffen.</div>
+      <div class="addon-price">399 € <span>einmalig</span></div>
+    </div>
+    <div class="addon-card reveal delay-4">
+      <span class="addon-icon">📱</span>
+      <div class="addon-name">Instagram Feed eingebunden</div>
+      <div class="addon-desc">Ihr aktueller Instagram-Feed live auf der Website — automatisch aktuell, kein manuelles Pflegen.</div>
+      <div class="addon-price">99 € <span>einmalig</span></div>
+    </div>
+  </div>
 </div>
 
 <!-- INDIVIDUAL PROJECTS -->
