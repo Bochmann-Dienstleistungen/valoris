@@ -196,6 +196,11 @@ nav{
 .modal iframe{flex:1;border:none;width:100%;height:100%}
 
 /* PROCESS / CTA */
+.reviews-section{background:var(--bg2);padding:100px 48px;text-align:center;border-top:1px solid var(--line)}
+.reviews-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.5rem);font-weight:300;color:var(--ink);margin-bottom:20px;line-height:1.1}
+.reviews-h em{font-style:italic;color:var(--gold)}
+.reviews-sub{color:var(--warm);font-size:.95rem;max-width:480px;margin:0 auto 48px;line-height:1.75}
+.trustlocal-mount{max-width:1100px;margin:0 auto}
 .bottom-cta{
   background:var(--dark);padding:100px 48px;text-align:center;
 }
@@ -436,6 +441,16 @@ footer a:hover{color:var(--gold-lt)}
   </div>
 </div>
 
+<!-- BEWERTUNGEN / TRUSTLOCAL -->
+<section class="reviews-section">
+  <div class="section-tag reveal" style="display:inline-flex;justify-content:center;font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px;align-items:center;gap:12px"><span style="display:block;width:28px;height:1px;background:var(--gold)"></span>Echte Bewertungen</div>
+  <h2 class="reviews-h reveal delay-1">Was Kunden über<br><em>VALORIS sagen.</em></h2>
+  <p class="reviews-sub reveal delay-2">Verifizierte Kundenstimmen — gesammelt &amp; geprüft über Trustlocal.</p>
+  <div class="trustlocal-mount reveal delay-3">
+    <div class="trustlocal-widget" data-id="Cj2E3a9wHRqlRmJOc604-nT-m5HSEkdXa4SLRfPkTV1Zjw" data-language-code="de" data-country-code="DE" data-badge="hidden" data-quote="default" data-size="large" data-type="portrait" data-border="shadow" data-theme="light" data-background="default" data-google="hidden"></div>
+  </div>
+</section>
+
 <!-- CTA -->
 <div class="bottom-cta">
   <div class="section-tag reveal" style="display:inline-flex;justify-content:center;font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px;align-items:center;gap:12px"><span style="display:block;width:28px;height:1px;background:var(--gold)"></span>Ihr Projekt</div>
@@ -495,5 +510,7 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal() });
 </script>
 <script src="legal-drawer.js" defer></script>
 <script src="cookie-consent.js" defer></script>
+<!-- Trustlocal Bewertungs-Widget -->
+<script async src="https://static.trustlocal.de/widget/widget_v2.js"></script>
 </body>
 </html>
