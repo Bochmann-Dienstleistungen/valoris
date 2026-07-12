@@ -6,9 +6,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Über uns – VALORIS Webdesign Zwickau</title>
 <meta name="description" content="Frederic Bochmann — Gründer von VALORIS Webdesign & SEO, Zwickau. Bochmann Dienstleistungen. Websites für lokale Unternehmen in Sachsen.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+<link href="https://fonts.bunny.net/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#faf9f7;--bg2:#f0ebe2;--dark:#0d0d0b;--dark2:#141410;--ink:#171714;--warm:#5c5c54;--muted:#8f8f86;--gold:#b8873a;--gold-lt:#ddb15a;--gold-dk:#7a5820;--gold-pale:rgba(184,135,58,.1);--line:rgba(23,23,23,.1);--line-d:rgba(255,255,255,.08);--r:6px}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -49,7 +48,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .about-hero-visual{
   position:relative;overflow:hidden;
 }
-.about-hero-visual img{width:100%;height:100%;object-fit:cover;filter:brightness(.85) saturate(.9)}
+.about-hero-visual img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;filter:brightness(.92)}
+.about-hero-caption{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:56px 32px 26px;
+  display:flex;flex-direction:column;gap:2px;
+  background:linear-gradient(to top,rgba(10,10,12,.82),transparent);
+}
+.about-hero-caption strong{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:#fff;letter-spacing:.01em}
+.about-hero-caption span{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt)}
 .about-hero-visual::before{
   content:'';position:absolute;inset:0;
   background:linear-gradient(135deg,rgba(184,135,58,.12),transparent 50%);
@@ -162,7 +169,8 @@ footer a{color:rgba(255,255,255,.4);transition:color .2s}footer a:hover{color:va
     </div>
   </div>
   <div class="about-hero-visual">
-    <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="VALORIS Team" loading="eager">
+    <img src="assets/frederic-bochmann.jpg" alt="Frederic Bochmann, Inhaber von VALORIS Webdesign &amp; SEO" loading="eager" width="620" height="780">
+    <div class="about-hero-caption"><strong>Frederic Bochmann</strong><span>Inhaber · VALORIS</span></div>
   </div>
 </div>
 
