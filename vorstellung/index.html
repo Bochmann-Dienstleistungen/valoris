@@ -12,171 +12,232 @@
 
 :root{
   --paper:#F2EEE6;
-  --paper-deep:#E7E1D4;
+  --paper-deep:#E8E2D5;
+  --paper-band:#1E1D1A;
   --ink:#1B1A17;
   --ink-soft:#4F4B42;
   --ink-faint:#847E71;
   --rule:#CFC7B6;
   --rule-soft:#DED7C7;
   --accent:#7A2E22;
-  --measure:63ch;
+  --accent-soft:#A85A48;
+  --measure:62ch;
   --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
 }
 
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
   margin:0;background:var(--paper);color:var(--ink);
   font-family:'Spectral',Georgia,'Times New Roman',serif;
-  font-size:19px;line-height:1.72;font-weight:400;
+  font-size:19px;line-height:1.7;font-weight:400;
   -webkit-font-smoothing:antialiased;
 }
-
-/* Feines Papierkorn — ein SVG-Noise, kein Bild-Asset */
 body::before{
   content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
   mix-blend-mode:multiply;
 }
 
-.sheet{position:relative;z-index:1;max-width:940px;margin:0 auto;padding:0 34px 90px}
+.sheet{position:relative;z-index:1;max-width:1010px;margin:0 auto;padding:0 34px 90px}
+.mono{font-family:var(--mono)}
 
 /* ---------- BRIEFKOPF ---------- */
-.letterhead{padding:46px 0 0}
+.letterhead{padding:44px 0 0}
 .lh-row{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
 .lh-mark{font-size:20px;letter-spacing:.30em;font-weight:500;text-transform:uppercase}
 .lh-mark span{color:var(--accent)}
 .meta{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint)}
 .meta b{font-weight:500;color:var(--ink-soft)}
-.rule{border:0;border-top:1px solid var(--rule);margin:16px 0 0}
-.rule.thin{border-top:1px solid var(--rule-soft)}
+.rule{border:0;border-top:1px solid var(--rule);margin:15px 0 0}
 .rule.double{border-top:3px double var(--rule);margin:0}
-
-.addressee{margin:26px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--ink-soft)}
+.addressee{margin:24px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--ink-soft)}
 .addressee[hidden]{display:none}
 .addressee b{color:var(--accent);font-weight:500}
 
 /* ---------- ANSCHREIBEN ---------- */
-.letter{padding:54px 0 0}
+.letter{padding:50px 0 0}
 .letter p,.salut{max-width:var(--measure)}
-.salut{margin:0 0 26px;color:var(--ink-soft)}
-h1{
-  font-size:clamp(30px,4.4vw,46px);line-height:1.24;font-weight:500;
-  margin:0 0 30px;letter-spacing:-.005em;max-width:none;
-}
+.salut{margin:0 0 24px;color:var(--ink-soft)}
+h1{font-size:clamp(30px,4.4vw,46px);line-height:1.22;font-weight:500;margin:0 0 28px;letter-spacing:-.005em}
 h1 em{font-style:italic;font-weight:300;color:var(--accent)}
-.letter p{margin:0 0 20px}
+.letter p{margin:0 0 18px}
 .lead{font-size:21px}
 
-.aside{
-  margin:40px 0;padding:0 0 0 22px;border-left:2px solid var(--accent);
-  font-style:italic;font-size:20px;line-height:1.6;color:var(--ink-soft);max-width:54ch;
+/* ---------- AUF EINEN BLICK ---------- */
+.glance{
+  margin:44px 0 0;background:var(--paper-deep);border:1px solid var(--rule);
+  padding:30px 32px 26px;
 }
+.glance-h{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 20px}
+.glance-grid{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:760px){.glance-grid{grid-template-columns:1fr 1fr;gap:0 44px}}
+.gi{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--rule)}
+.gi:nth-child(1),.gi:nth-child(2){border-top:0;padding-top:0}
+@media(max-width:759px){.gi:nth-child(2){border-top:1px solid var(--rule);padding-top:12px}}
+.gi-k{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-faint);min-width:76px;padding-top:7px}
+.gi-v{margin:0;font-size:18px;line-height:1.55}
+.gi-v b{font-weight:500}
+
+/* ---------- INHALT ---------- */
+.toc{margin:40px 0 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:8px 0}
+.toc a{
+  display:flex;gap:16px;align-items:baseline;padding:10px 2px;text-decoration:none;color:var(--ink);
+  border-bottom:1px solid var(--rule-soft);transition:color .18s ease,padding-left .18s ease;
+}
+.toc a:last-child{border-bottom:0}
+.toc a:hover{color:var(--accent);padding-left:8px}
+.toc-n{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent);min-width:34px}
+.toc-t{font-size:18px}
+.toc-d{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-faint);text-align:right}
 
 /* ---------- ABSCHNITTE ---------- */
-section{padding:56px 0 0}
-.sec-head{display:flex;gap:20px;align-items:baseline;margin:0 0 8px}
-.numeral{
-  font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.16em;
-  color:var(--accent);white-space:nowrap;padding-top:6px;min-width:78px;
-}
-h2{font-size:clamp(23px,2.9vw,30px);line-height:1.3;font-weight:500;margin:0;letter-spacing:-.005em}
-.sec-body{max-width:var(--measure);margin-left:0}
-@media(min-width:880px){.sec-body{margin-left:98px}}
-.sec-body p{margin:0 0 20px}
-.sec-body p:last-child{margin-bottom:0}
+section{padding:66px 0 0;scroll-margin-top:20px}
+.sec-head{border-top:2px solid var(--ink);padding-top:14px;margin:0 0 26px;
+  display:flex;gap:20px;align-items:baseline;flex-wrap:wrap}
+.numeral{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;color:var(--accent)}
+h2{font-size:clamp(24px,3vw,32px);line-height:1.26;font-weight:500;margin:0;letter-spacing:-.008em}
 
-/* Befunde: Punkte im Fließtext-Rhythmus, keine Karten */
-.findings{margin:26px 0 0;padding:0;list-style:none;max-width:var(--measure)}
-.findings li{padding:20px 0;border-top:1px solid var(--rule-soft)}
-.findings li:last-child{border-bottom:1px solid var(--rule-soft)}
+/* Zweispaltiges Dokumentraster: Randspalte + Textspalte */
+.cols{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:900px){.cols{grid-template-columns:172px minmax(0,1fr);gap:0 40px}}
+.margin-note{
+  font-family:var(--mono);font-size:11px;line-height:1.75;letter-spacing:.02em;
+  color:var(--ink-faint);text-transform:none;padding-top:5px;
+}
+.margin-note b{display:block;color:var(--accent);font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;font-size:10px;margin-bottom:6px}
+@media(max-width:899px){
+  .margin-note{border-left:2px solid var(--rule);padding:2px 0 2px 14px;margin:0 0 22px}
+}
+.col-text{max-width:var(--measure)}
+.col-text>p{margin:0 0 18px}
+.col-text>p:last-child{margin-bottom:0}
+
+/* Befunde */
+.findings{margin:8px 0 0;padding:0;list-style:none}
+.findings li{padding:18px 0;border-top:1px solid var(--rule-soft)}
+.findings li:first-child{border-top:0;padding-top:0}
 .findings h3{font-size:20px;font-weight:500;margin:0 0 5px;line-height:1.4}
 .findings p{margin:0;color:var(--ink-soft);font-size:18px}
 
-/* Ablauf: fortlaufender Text mit Randziffern, keine 4 Kacheln */
-.steps{margin:24px 0 0;padding:0;list-style:none;counter-reset:s;max-width:var(--measure)}
+/* Ablauf */
+.steps{margin:6px 0 0;padding:0;list-style:none;counter-reset:s}
 .steps li{position:relative;padding:0 0 22px 46px;counter-increment:s}
-.steps li::before{
-  content:counter(s,decimal-leading-zero);position:absolute;left:0;top:5px;
-  font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--ink-faint);
-}
-.steps li::after{
-  content:'';position:absolute;left:9px;top:26px;bottom:0;width:1px;background:var(--rule-soft);
-}
+.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:4px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--accent)}
+.steps li::after{content:'';position:absolute;left:9px;top:25px;bottom:0;width:1px;background:var(--rule-soft)}
 .steps li:last-child::after{display:none}
 .steps b{font-weight:500}
 .steps span{display:block;color:var(--ink-soft);font-size:18px}
 
-/* Zwei Ziele: schlichte Gegenüberstellung */
-.twin{display:grid;grid-template-columns:1fr;gap:0;margin:26px 0 0;max-width:var(--measure)}
-@media(min-width:820px){.twin{grid-template-columns:1fr 1fr;gap:0 40px}}
-.twin>div{padding:22px 0;border-top:1px solid var(--rule-soft)}
+/* Zwei Ziele */
+.twin{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:820px){.twin{grid-template-columns:1fr 1fr;gap:0 36px}}
+.twin>div{padding:20px 0;border-top:1px solid var(--rule-soft)}
+.twin>div:first-child{border-top:0;padding-top:0}
+@media(min-width:820px){.twin>div{border-top:0;padding-top:0}}
 .twin h3{font-size:19px;font-weight:500;margin:0 0 6px}
 .twin p{margin:0;color:var(--ink-soft);font-size:18px}
+.twin ul{margin:12px 0 0;padding:0;list-style:none}
+.twin li{padding:6px 0 6px 18px;position:relative;font-size:17px;color:var(--ink-soft)}
+.twin li::before{content:'–';position:absolute;left:0;color:var(--accent)}
 
-/* ---------- WERKVERZEICHNIS ---------- */
-.werk{margin:26px 0 0;max-width:var(--measure)}
-.werk-item{display:flex;gap:18px;align-items:baseline;padding:15px 0;border-top:1px solid var(--rule-soft)}
-.werk-item:last-child{border-bottom:1px solid var(--rule-soft)}
-.werk-kind{
-  font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--ink-faint);min-width:106px;padding-top:6px;
-}
+/* Leistungsliste — konkret, nicht blumig */
+.deliver{margin:6px 0 0;padding:0;list-style:none}
+.deliver li{display:flex;gap:16px;padding:13px 0;border-top:1px solid var(--rule-soft);align-items:baseline}
+.deliver li:first-child{border-top:0;padding-top:0}
+.deliver .d-t{font-weight:500;min-width:210px}
+.deliver .d-d{color:var(--ink-soft);font-size:17.5px;margin:0}
+
+/* Einwände — dunkles Band, der Bruch im Dokument */
+.band{background:var(--paper-band);color:#EAE5DA;margin:70px 0 0;padding:60px 34px 62px}
+.band .sheet-in{max-width:1010px;margin:0 auto;padding:0}
+.band .sec-head{border-top-color:#4A463D}
+.band h2{color:#F3EFE5}
+.band .numeral{color:var(--accent-soft)}
+.band .margin-note{color:#9A9385}
+.band .margin-note b{color:var(--accent-soft)}
+.obj{margin:0;padding:0;list-style:none}
+.obj li{padding:24px 0;border-top:1px solid #3A362E}
+.obj li:first-child{border-top:0;padding-top:0}
+.obj h3{font-size:21px;font-weight:400;font-style:italic;margin:0 0 10px;color:#F3EFE5}
+.obj p{margin:0;color:#B9B2A3;font-size:18px;line-height:1.62;max-width:var(--measure)}
+.obj p b{color:#EAE5DA;font-weight:500}
+
+/* Werkverzeichnis */
+.werk{margin:6px 0 0}
+.werk-item{display:flex;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--rule-soft)}
+.werk-item:first-child{border-top:0;padding-top:0}
+.werk-kind{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-faint);min-width:104px;padding-top:6px}
 .werk-kind.kunde{color:var(--accent)}
 .werk-t{font-size:19px;font-weight:500;margin:0}
 .werk-d{margin:2px 0 0;color:var(--ink-soft);font-size:17px}
 
-figure{margin:40px 0 0;max-width:var(--measure)}
+.plates{display:grid;grid-template-columns:1fr;gap:26px;margin:34px 0 0}
+@media(min-width:760px){.plates{grid-template-columns:1fr 1fr;gap:26px}}
+figure{margin:0}
 figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);background:var(--paper-deep)}
-figcaption{
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ink-faint);margin-top:9px;
-}
+figcaption{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-faint);margin-top:8px}
 
-/* ---------- SCHLUSS / UNTERSCHRIFT ---------- */
-.close{padding:64px 0 0;max-width:var(--measure)}
-.sign{margin:34px 0 0}
-.sign-name{
-  font-size:32px;font-style:italic;font-weight:300;color:var(--accent);
-  transform:rotate(-1.6deg);transform-origin:left center;display:inline-block;
-}
+/* Ablauf des Erstgesprächs */
+.plan{margin:6px 0 0;padding:0;list-style:none;counter-reset:p}
+.plan li{position:relative;padding:14px 0 14px 52px;border-top:1px solid var(--rule-soft);counter-increment:p}
+.plan li:first-child{border-top:0}
+.plan li::before{content:counter(p);position:absolute;left:0;top:16px;width:26px;height:26px;
+  border:1px solid var(--accent);border-radius:50%;color:var(--accent);
+  font-family:var(--mono);font-size:11px;display:flex;align-items:center;justify-content:center}
+.plan b{font-weight:500}
+.plan span{display:block;color:var(--ink-soft);font-size:17.5px}
+
+/* ---------- SCHLUSS ---------- */
+.close{padding:70px 0 0;max-width:var(--measure)}
+.close .rule{margin-bottom:32px}
+.sign{margin:32px 0 0}
+.sign-name{font-size:32px;font-style:italic;font-weight:300;color:var(--accent);
+  transform:rotate(-1.6deg);transform-origin:left center;display:inline-block}
 .sign-role{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
   color:var(--ink-faint);margin-top:12px}
-
-.contact{margin:38px 0 0;padding:24px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-  display:flex;gap:14px 34px;flex-wrap:wrap;align-items:center}
+.contact{margin:36px 0 0;padding:22px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  display:flex;gap:14px 34px;flex-wrap:wrap}
 .contact a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;
-  transition:color .2s ease,border-color .2s ease}
+  transition:color .2s ease}
 .contact a:hover{color:var(--accent)}
 .contact .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--ink-faint);display:block;margin-bottom:3px;border:0}
-
-.foot{margin:44px 0 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--ink-faint);display:flex;justify-content:space-between;
-  gap:16px;flex-wrap:wrap}
+  color:var(--ink-faint);display:block;margin-bottom:3px}
+.foot{margin:42px 0 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-faint);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .foot a{color:var(--ink-faint);text-decoration:none;border-bottom:1px solid var(--rule)}
 .foot a:hover{color:var(--accent)}
 
-/* ---------- BEWEGUNG ----------
-   Bewusst keine Scroll-Reveals: ein Dokument blendet sich nicht ein.
-   Die Zurückhaltung ist hier die Gestaltung — und nichts kann unsichtbar hängenbleiben. */
-
 @media(max-width:640px){
   body{font-size:18px}
-  h1 br{display:none}
   .sheet{padding:0 22px 70px}
-  .sec-head{gap:12px;flex-direction:column}
-  .numeral{padding-top:0;min-width:0}
+  h1 br{display:none}
+  .glance{padding:24px 22px 20px}
+  .gi{flex-direction:column;gap:5px}
+  .gi-k{min-width:0;padding-top:0}
+  .band{margin:56px 0 0;padding:48px 22px 50px}
+  .deliver li{flex-direction:column;gap:2px}
+  .deliver .d-t{min-width:0}
 }
 
 @media print{
-  body{background:#fff;font-size:11.5pt}
+  body{background:#fff;font-size:11pt;color:#000}
   body::before{display:none}
   .sheet{max-width:none;padding:0}
-  section,.letter,.close{animation:none;opacity:1;transform:none}
-  .contact a{border:0}
-  figure{break-inside:avoid}
+  .band{background:#fff;color:#000;margin:34px 0 0;padding:0}
+  .band h2,.obj h3{color:#000}
+  .obj p{color:#333}.obj li{border-top:1px solid #ccc}
+  .toc{display:none}
   section{break-inside:avoid-page}
+  figure{break-inside:avoid}
+  .contact a{border:0}
 }
 </style>
 
@@ -192,7 +253,7 @@ figcaption{
       <div class="meta">Vorstellung · <b>Sichtbarkeit für Betriebe in Westsachsen</b></div>
       <div class="meta">Stand <b id="stand">2026</b></div>
     </div>
-    <hr class="rule double" style="margin-top:16px">
+    <hr class="rule double" style="margin-top:15px">
     <p class="addressee" id="fuer" hidden></p>
   </header>
 
@@ -208,161 +269,299 @@ figcaption{
       Meine Arbeit fängt nicht bei einer Website an, sondern bei der Frage, warum ein Betrieb,
       der gute Arbeit macht, trotzdem übersehen wird.</p>
 
-    <p class="aside">Fast immer ist der Betrieb nicht das Problem.
-      Nur sieht ihn niemand, der ihn noch nicht kennt.</p>
+    <div class="glance">
+      <p class="glance-h">Auf einen Blick</p>
+      <div class="glance-grid">
+        <div class="gi">
+          <div class="gi-k">Was</div>
+          <p class="gi-v">Sichtbarkeit für Ihren Betrieb — <b>bei neuen Kunden und bei neuen
+            Mitarbeitern.</b> Social Media, Google-Profil, Anzeigen, Website.</p>
+        </div>
+        <div class="gi">
+          <div class="gi-k">Für wen</div>
+          <p class="gi-v">Inhabergeführte Betriebe in <b>Westsachsen und Ostthüringen.</b>
+            Keine Ketten, keine Franchise.</p>
+        </div>
+        <div class="gi">
+          <div class="gi-k">Wer</div>
+          <p class="gi-v">Ich, plus ein <b>fest angestellter Videograf</b>, der bei Ihnen vor Ort
+            dreht. Ein Ansprechpartner, keine Ticketnummer.</p>
+        </div>
+        <div class="gi">
+          <div class="gi-k">Start</div>
+          <p class="gi-v"><b>15 Minuten am Telefon.</b> Danach wissen Sie, ob sich für Ihren
+            Betrieb überhaupt etwas lohnt. Kostet nichts.</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="toc">
+      <a href="#i"><span class="toc-n">I</span><span class="toc-t">Woran es in der Praxis liegt</span><span class="toc-d">Drei Befunde</span></a>
+      <a href="#ii"><span class="toc-n">II</span><span class="toc-t">Wie ich vorgehe</span><span class="toc-d">Vier Schritte</span></a>
+      <a href="#iii"><span class="toc-n">III</span><span class="toc-t">Zwei Ziele, ein Weg</span><span class="toc-d">Kunden · Mitarbeiter</span></a>
+      <a href="#iv"><span class="toc-n">IV</span><span class="toc-t">Was Sie konkret bekommen</span><span class="toc-d">Leistungen</span></a>
+      <a href="#v"><span class="toc-n">V</span><span class="toc-t">Was ich gebaut habe</span><span class="toc-d">Werkverzeichnis</span></a>
+      <a href="#vi"><span class="toc-n">VI</span><span class="toc-t">Drei Einwände, die ich oft höre</span><span class="toc-d">Klartext</span></a>
+      <a href="#vii"><span class="toc-n">VII</span><span class="toc-t">Wie ein Erstgespräch abläuft</span><span class="toc-d">Nächster Schritt</span></a>
+    </nav>
   </div>
 
-  <section>
-    <div class="sec-head">
-      <div class="numeral">I</div>
-      <h2>Woran es in der Praxis liegt</h2>
-    </div>
-    <div class="sec-body">
-      <ul class="findings">
-        <li>
-          <h3>Der Betrieb ist gut. Nur weiß es niemand.</h3>
-          <p>Handwerk, Qualität und Ruf stimmen — aber wer nicht gezielt danach sucht,
-             bekommt den Betrieb nie zu sehen. Der Auftrag geht an den, der sichtbarer ist.</p>
-        </li>
-        <li>
-          <h3>Die Bewerbungen bleiben aus.</h3>
-          <p>Wer heute eine Arbeitsstelle sucht, schaut zuerst online nach — und findet
-             oft nichts, was Lust macht, sich zu bewerben. Die Stelle bleibt offen.</p>
-        </li>
-        <li>
-          <h3>Der Auftritt passt nicht zur Arbeit.</h3>
-          <p>Der Betrieb liefert seit Jahrzehnten erstklassig, der Auftritt sieht aber aus
-             wie 2012. Das kostet Vertrauen, bevor das erste Gespräch überhaupt stattfindet.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <div class="sec-head">
-      <div class="numeral">II</div>
-      <h2>Wie ich vorgehe</h2>
-    </div>
-    <div class="sec-body">
-      <p>Die meisten fangen hinten an: neue Website, und dann passiert nichts. Sichtbarkeit ist
-        aber eine Kette, und die Website ist ihr letztes Glied. Sie fängt auf, was vorher
-        entstanden ist — sie erzeugt es nicht.</p>
-      <ol class="steps">
-        <li><b>Gesehen werden.</b>
-          <span>Instagram und Facebook mit echtem Material aus Ihrem Betrieb, gedreht von
-            unserem Videografen. Nicht zusammengeklickt, nicht aus der Bildagentur.</span></li>
-        <li><b>Vertrauen aufbauen.</b>
-          <span>Einblicke in die Arbeit, Gesichter statt Logos, echte Bewertungen.
-            Menschen beauftragen Menschen.</span></li>
-        <li><b>Gefunden werden.</b>
-          <span>Google-Profil, lokale Suche, auf Wunsch Anzeigen. Wer in Ihrer Gegend sucht,
-            landet bei Ihnen und nicht beim Nächstbesten.</span></li>
-        <li><b>Anfragen einsammeln.</b>
-          <span>Erst jetzt die Website — als der Ort, an dem aus Interesse eine konkrete
-            Anfrage wird.</span></li>
-      </ol>
-      <p style="margin-top:6px">Sie müssen das nicht auf einmal machen. Die meisten fangen mit
-        dem ersten Schritt an und schauen, was passiert.</p>
+  <section id="i">
+    <div class="sec-head"><div class="numeral">I</div><h2>Woran es in der Praxis liegt</h2></div>
+    <div class="cols">
+      <div class="margin-note">
+        <b>Befund</b>
+        Aus Telefonaten und Vor-Ort-Terminen mit Betrieben zwischen Zwickau, Greiz und Altenburg.
+      </div>
+      <div class="col-text">
+        <ul class="findings">
+          <li>
+            <h3>Der Betrieb ist gut. Nur weiß es niemand.</h3>
+            <p>Handwerk, Qualität und Ruf stimmen — aber wer nicht gezielt danach sucht,
+               bekommt den Betrieb nie zu sehen. Der Auftrag geht an den, der sichtbarer ist.</p>
+          </li>
+          <li>
+            <h3>Die Bewerbungen bleiben aus.</h3>
+            <p>Wer heute eine Arbeitsstelle sucht, schaut zuerst online nach — und findet
+               oft nichts, was Lust macht, sich zu bewerben. Die Stelle bleibt offen.</p>
+          </li>
+          <li>
+            <h3>Der Auftritt passt nicht zur Arbeit.</h3>
+            <p>Der Betrieb liefert seit Jahrzehnten erstklassig, der Auftritt sieht aber aus
+               wie 2012 — oder lädt auf dem Handy nicht. Das kostet Vertrauen, bevor das erste
+               Gespräch überhaupt stattfindet.</p>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section>
-    <div class="sec-head">
-      <div class="numeral">III</div>
-      <h2>Zwei Ziele, ein Weg</h2>
+  <section id="ii">
+    <div class="sec-head"><div class="numeral">II</div><h2>Wie ich vorgehe</h2></div>
+    <div class="cols">
+      <div class="margin-note">
+        <b>Kernsatz</b>
+        Sichtbarkeit ist eine Kette. Die Website ist ihr letztes Glied — sie fängt auf,
+        was vorher entstanden ist. Sie erzeugt es nicht.
+      </div>
+      <div class="col-text">
+        <p>Die meisten fangen hinten an: neue Website, und dann passiert nichts. Deshalb drehe
+          ich die Reihenfolge um.</p>
+        <ol class="steps">
+          <li><b>Gesehen werden.</b>
+            <span>Instagram und Facebook mit echtem Material aus Ihrem Betrieb, gedreht von
+              unserem Videografen. Nicht zusammengeklickt, nicht aus der Bildagentur.</span></li>
+          <li><b>Vertrauen aufbauen.</b>
+            <span>Einblicke in die Arbeit, Gesichter statt Logos, echte Bewertungen.
+              Menschen beauftragen Menschen.</span></li>
+          <li><b>Gefunden werden.</b>
+            <span>Google-Profil, lokale Suche, auf Wunsch Anzeigen. Wer in Ihrer Gegend sucht,
+              landet bei Ihnen und nicht beim Nächstbesten.</span></li>
+          <li><b>Anfragen einsammeln.</b>
+            <span>Erst jetzt die Website — als der Ort, an dem aus Interesse eine konkrete
+              Anfrage wird.</span></li>
+        </ol>
+        <p>Sie müssen das nicht auf einmal machen. Die meisten fangen mit einem Schritt an
+          und schauen, was passiert.</p>
+      </div>
     </div>
-    <div class="sec-body">
-      <p>Meistens ist eines von beiden gerade das dringendere. Sagen Sie mir, welches —
-        danach richtet sich alles Weitere.</p>
-      <div class="twin">
-        <div>
-          <h3>Neue Kunden</h3>
-          <p>Damit nicht nur die anrufen, die Sie ohnehin schon kennen: regelmäßig sichtbar
-             im Einzugsgebiet, ein Google-Profil, das Anrufe bringt, Bewertungen, die tragen.</p>
-        </div>
-        <div>
-          <h3>Neue Mitarbeiter</h3>
-          <p>Weil die Stellenanzeige längst nicht mehr reicht: der Betrieb als Arbeitgeber
-             sichtbar, Einblicke ins Team, Bewerbung ohne Hürden direkt vom Handy.</p>
+  </section>
+
+  <section id="iii">
+    <div class="sec-head"><div class="numeral">III</div><h2>Zwei Ziele, ein Weg</h2></div>
+    <div class="cols">
+      <div class="margin-note">
+        <b>Ihre Wahl</b>
+        Meistens ist eines von beiden gerade das dringendere. Sagen Sie mir, welches —
+        danach richtet sich alles Weitere.
+      </div>
+      <div class="col-text">
+        <div class="twin">
+          <div>
+            <h3>Neue Kunden</h3>
+            <p>Damit nicht nur die anrufen, die Sie ohnehin schon kennen.</p>
+            <ul>
+              <li>Regelmäßig sichtbar im Einzugsgebiet</li>
+              <li>Google-Profil, das Anrufe bringt</li>
+              <li>Bewertungen, die Vertrauen schaffen</li>
+              <li>Ein klarer Weg zur Anfrage</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Neue Mitarbeiter</h3>
+            <p>Weil die Stellenanzeige längst nicht mehr reicht.</p>
+            <ul>
+              <li>Der Betrieb als Arbeitgeber sichtbar</li>
+              <li>Einblicke ins Team und den Alltag</li>
+              <li>Gezielt in der Region ausgespielt</li>
+              <li>Bewerbung ohne Hürden, direkt vom Handy</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="sec-head">
-      <div class="numeral">IV</div>
-      <h2>Was ich gebaut habe</h2>
-    </div>
-    <div class="sec-body">
-      <p>Ein Auszug. Zwei davon sind laufende Kundenprojekte, zwei sind Konzeptstudien —
-        Musterprojekte, an denen ich zeige, was in einer Branche möglich ist. Ich kennzeichne
-        das, weil der Unterschied wichtig ist.</p>
-
-      <div class="werk">
-        <div class="werk-item">
-          <div class="werk-kind kunde">Kunde</div>
-          <div>
-            <p class="werk-t">Fleischerei · Zwickau</p>
-            <p class="werk-d">Auftritt für einen Meisterbetrieb mit Europameister-Titel,
-              inklusive laufender Betreuung.</p>
-          </div>
-        </div>
-        <div class="werk-item">
-          <div class="werk-kind kunde">Kunde</div>
-          <div>
-            <p class="werk-t">Alltagsservice · Callenberg</p>
-            <p class="werk-d">Senioren- und Haushaltsdienst, seit 2026 unter eigener Domain online.</p>
-          </div>
-        </div>
-        <div class="werk-item">
-          <div class="werk-kind">Konzeptstudie</div>
-          <div>
-            <p class="werk-t">Hausverwaltung · Westsachsen</p>
-            <p class="werk-d">Mit eigenem Bereich für Eigentümer und Mieter — Anfragen laufen
-              strukturiert ein statt über drei Kanäle.</p>
-          </div>
-        </div>
-        <div class="werk-item">
-          <div class="werk-kind">Konzeptstudie</div>
-          <div>
-            <p class="werk-t">Osteopathie &amp; Coaching</p>
-            <p class="werk-d">Ruhiger Auftritt mit klarer Terminstrecke.</p>
-          </div>
-        </div>
+  <section id="iv">
+    <div class="sec-head"><div class="numeral">IV</div><h2>Was Sie konkret bekommen</h2></div>
+    <div class="cols">
+      <div class="margin-note">
+        <b>Standard</b>
+        Das steckt in jedem Auftritt, den ich baue — unabhängig vom Umfang. Nicht als
+        Zusatzleistung, sondern weil alles andere unsauber wäre.
       </div>
-
-      <figure>
-        <img src="img/ref-fleischi.jpg" alt="Startseite des Auftritts für eine Fleischerei aus Zwickau" loading="lazy">
-        <figcaption>Abb. 1 — Fleischerei, Zwickau · Startseite</figcaption>
-      </figure>
-
-      <figure>
-        <img src="img/ref-minolo.jpg" alt="Startseite des Auftritts für einen Alltags- und Seniorenservice" loading="lazy">
-        <figcaption>Abb. 2 — Alltagsservice, Callenberg · Startseite</figcaption>
-      </figure>
+      <div class="col-text">
+        <ul class="deliver">
+          <li><span class="d-t">Auf dem Handy zuerst</span>
+            <p class="d-d">Gebaut wird für das Gerät, auf dem Ihre Kunden tatsächlich schauen —
+              nicht für den Bürobildschirm.</p></li>
+          <li><span class="d-t">Unter zwei Sekunden</span>
+            <p class="d-d">Ladezeit ist kein Detail. Wer wartet, ist weg, bevor er Ihren
+              Betrieb gesehen hat.</p></li>
+          <li><span class="d-t">Rechtlich sauber</span>
+            <p class="d-d">Impressum und Datenschutz nach DSGVO, Schriften lokal eingebunden,
+              Karten erst nach Zustimmung. Keine offenen Flanken für Abmahnungen.</p></li>
+          <li><span class="d-t">Direkt erreichbar</span>
+            <p class="d-d">Anruf, WhatsApp und Formular auf jeder Seite. Der kürzeste Weg vom
+              Interesse zum Telefonat.</p></li>
+          <li><span class="d-t">Bei Google eingetragen</span>
+            <p class="d-d">Öffnungszeiten, Leistungen und Standort so hinterlegt, dass die
+              lokale Suche Sie findet.</p></li>
+          <li><span class="d-t">Echtes Material</span>
+            <p class="d-d">Fotos und Videos aus Ihrem Betrieb. Keine KI-Bilder, keine
+              Bildagentur-Handwerker mit Modelgesicht.</p></li>
+          <li><span class="d-t">Keine Bindung</span>
+            <p class="d-d">Bei den einmaligen Paketen gibt es keine Vertragslaufzeit. Die
+              laufende Betreuung ist optional, nicht Voraussetzung.</p></li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section>
-    <div class="sec-head">
-      <div class="numeral">V</div>
-      <h2>Wer dahintersteckt</h2>
+  <section id="v">
+    <div class="sec-head"><div class="numeral">V</div><h2>Was ich gebaut habe</h2></div>
+    <div class="cols">
+      <div class="margin-note">
+        <b>Zur Einordnung</b>
+        Zwei laufende Kundenprojekte, zwei Konzeptstudien — Musterprojekte, an denen ich zeige,
+        was in einer Branche möglich ist. Ich kennzeichne das, weil der Unterschied wichtig ist.
+      </div>
+      <div class="col-text">
+        <div class="werk">
+          <div class="werk-item">
+            <div class="werk-kind kunde">Kunde</div>
+            <div>
+              <p class="werk-t">Fleischerei · Zwickau</p>
+              <p class="werk-d">Auftritt für einen Meisterbetrieb mit Europameister-Titel,
+                inklusive laufender Betreuung.</p>
+            </div>
+          </div>
+          <div class="werk-item">
+            <div class="werk-kind kunde">Kunde</div>
+            <div>
+              <p class="werk-t">Alltagsservice · Callenberg</p>
+              <p class="werk-d">Senioren- und Haushaltsdienst, seit 2026 unter eigener Domain online.</p>
+            </div>
+          </div>
+          <div class="werk-item">
+            <div class="werk-kind">Konzeptstudie</div>
+            <div>
+              <p class="werk-t">Hausverwaltung · Westsachsen</p>
+              <p class="werk-d">Mit eigenem Bereich für Eigentümer und Mieter — Anfragen laufen
+                strukturiert ein statt über drei Kanäle.</p>
+            </div>
+          </div>
+          <div class="werk-item">
+            <div class="werk-kind">Konzeptstudie</div>
+            <div>
+              <p class="werk-t">Osteopathie &amp; Coaching</p>
+              <p class="werk-d">Ruhiger Auftritt mit klarer Terminstrecke.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="plates">
+          <figure>
+            <img src="img/ref-fleischi.jpg" alt="Startseite des Auftritts für eine Fleischerei aus Zwickau" loading="lazy">
+            <figcaption>Abb. 1 — Fleischerei, Zwickau</figcaption>
+          </figure>
+          <figure>
+            <img src="img/ref-minolo.jpg" alt="Startseite des Auftritts für einen Alltags- und Seniorenservice" loading="lazy">
+            <figcaption>Abb. 2 — Alltagsservice, Callenberg</figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
-    <div class="sec-body">
-      <p>Kein Callcenter und keine Ticketnummer. Ich mache Strategie, Google und die Website;
-        dazu kommt ein fest angestellter Videograf, der den Content bei Ihnen vor Ort dreht —
-        Ihr Betrieb, Ihre Leute, Ihre Arbeit.</p>
-      <p>Sie haben einen Ansprechpartner. Und wenn etwas nicht funktioniert, sage ich Ihnen das,
-        statt es Ihnen zu verkaufen.</p>
+  </section>
+</div>
+
+<div class="band">
+  <div class="sheet-in">
+    <section id="vi" style="padding-top:0">
+      <div class="sec-head"><div class="numeral">VI</div><h2>Drei Einwände, die ich oft höre</h2></div>
+      <div class="cols">
+        <div class="margin-note">
+          <b>Klartext</b>
+          Diese drei Sätze kommen fast in jedem Telefonat. Alle drei sind berechtigt —
+          deshalb stehen sie hier und nicht im Kleingedruckten.
+        </div>
+        <div class="col-text">
+          <ul class="obj">
+            <li>
+              <h3>„Bei uns läuft alles gut."</h3>
+              <p>Dann ist Werbung nicht dringend — und das ist das beste Zeichen, das man von
+                einem Betrieb hören kann. Die Frage ist nicht, ob heute das Telefon klingelt.
+                <b>Die Frage ist, wer in fünf Jahren anruft und wer dann die Arbeit macht.</b>
+                Wer erst anfängt, wenn es ruhig wird, fängt zwei Jahre zu spät an.</p>
+            </li>
+            <li>
+              <h3>„Wir haben dafür keine Zeit."</h3>
+              <p>Die brauchen Sie auch nicht. Ihr Aufwand ist ein Gespräch und ein halber
+                Drehtag im Betrieb. <b>Texte, Fotos, Technik und Pflege kommen von mir</b> —
+                Sie geben frei, mehr nicht. Genau dafür holt man sich jemanden.</p>
+            </li>
+            <li>
+              <h3>„Wir haben schon jemanden."</h3>
+              <p>Gut. Dann ist das hier kein Wechselgespräch. <b>Wenn Sie wollen, schaue ich
+                mir Ihren Auftritt trotzdem einmal an</b> und sage Ihnen, ob technisch alles
+                sauber ist — Ladezeit, Handy, Rechtstexte. Kostet nichts, und Sie können das
+                Ergebnis Ihrem Dienstleister vorlegen.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="sheet">
+  <section id="vii">
+    <div class="sec-head"><div class="numeral">VII</div><h2>Wie ein Erstgespräch abläuft</h2></div>
+    <div class="cols">
+      <div class="margin-note">
+        <b>Kein Vertrieb</b>
+        Kein Termin beim Verkäufer, kein Angebot im Anhang. Wenn sich nichts lohnt,
+        hören Sie das von mir.
+      </div>
+      <div class="col-text">
+        <ol class="plan">
+          <li><b>Sie rufen an oder schreiben kurz.</b>
+            <span>0152 54190819 — oder per WhatsApp, was Ihnen lieber ist.</span></li>
+          <li><b>Wir sprechen 15 Minuten.</b>
+            <span>Was der Betrieb macht, was gerade drückt: Kunden oder Mitarbeiter.</span></li>
+          <li><b>Ich schaue mir an, wo Sie online stehen.</b>
+            <span>Auftritt, Google-Profil, Ladezeit, Handy-Ansicht. Danach sagen Sie
+              mir, ob Sie ein Angebot möchten.</span></li>
+        </ol>
+      </div>
     </div>
   </section>
 
   <div class="close">
     <hr class="rule">
-    <p style="margin-top:34px">Wenn Sie mögen, schaue ich mir an, wo Ihr Betrieb online gerade
-      steht, und sage Ihnen ehrlich, ob sich überhaupt etwas lohnt. Das kostet nichts und
-      verpflichtet zu nichts — und wenn sich nichts lohnt, hören Sie das auch von mir.</p>
+    <p>Wenn Sie mögen, fange ich mit Schritt drei an, bevor Sie irgendetwas entscheiden müssen.
+      Das kostet nichts und verpflichtet zu nichts — und wenn Ihr Auftritt in Ordnung ist,
+      sage ich Ihnen genau das.</p>
 
     <p>Mit freundlichen Grüßen aus Zwickau</p>
 
@@ -372,18 +571,9 @@ figcaption{
     </div>
 
     <div class="contact">
-      <div>
-        <span class="lbl">Telefon</span>
-        <a href="tel:+4915254190819">0152 54190819</a>
-      </div>
-      <div>
-        <span class="lbl">E-Mail</span>
-        <a href="mailto:frederic@valoris-auftragsstruktur.de">frederic@valoris-auftragsstruktur.de</a>
-      </div>
-      <div>
-        <span class="lbl">WhatsApp</span>
-        <a href="https://wa.me/4915254190819">Kurz schreiben</a>
-      </div>
+      <div><span class="lbl">Telefon</span><a href="tel:+4915254190819">0152 54190819</a></div>
+      <div><span class="lbl">E-Mail</span><a href="mailto:frederic@valoris-auftragsstruktur.de">frederic@valoris-auftragsstruktur.de</a></div>
+      <div><span class="lbl">WhatsApp</span><a href="https://wa.me/4915254190819">Kurz schreiben</a></div>
     </div>
 
     <div class="foot">
@@ -394,11 +584,9 @@ figcaption{
       </div>
     </div>
   </div>
-
 </div>
 
 <script>
-/* Empfänger im Briefkopf: ?f=Firmenname */
 (function () {
   var f = new URLSearchParams(location.search).get('f');
   if (!f) return;
@@ -410,7 +598,6 @@ figcaption{
   el.hidden = false;
 })();
 
-/* Jahresangaben immer aktuell */
 (function () {
   var j = new Date().getFullYear();
   document.getElementById('jahr').textContent = j;
