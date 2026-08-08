@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>VALORIS — Werbeagentur für Betriebe in Westsachsen</title>
+<meta name="description" content="Wir machen Betriebe sichtbar — für neue Kunden und für neue Mitarbeiter. Social Media, Google-Profil, Website. Aus Zwickau.">
+<meta property="og:title" content="VALORIS — Werbeagentur für Betriebe in Westsachsen">
+<meta property="og:description" content="Sichtbar werden — für Kunden und für Bewerber.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>◆</text></svg>">
+<style>
+@import url('https://fonts.bunny.net/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root{
+  --bg:#12100e; --bg2:#1a1714; --bg3:#221e1a;
+  --text:#f2efe9; --muted:rgba(242,239,233,0.56); --faint:rgba(242,239,233,0.34);
+  --gold:#c9a227; --gold2:#e3c463; --bronze:#8a7550;
+  --cream:#f6f2eb; --on-cream:#1a1714;
+  --line:rgba(201,162,39,0.16); --line2:rgba(242,239,233,0.09);
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;
+  font-size:16px;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:22px;font-weight:500}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--gold);flex:none}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;line-height:1.12;
+  letter-spacing:-0.01em}
+h2{font-size:clamp(30px,4.4vw,54px);margin-bottom:22px}
+h2 em,h1 em{font-style:italic;color:var(--gold)}
+.lead{font-size:clamp(16px,1.5vw,18px);color:var(--muted);max-width:62ch}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:20px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(18,16,14,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line2);transition:padding .3s var(--ease)}
+.brand{font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:0.16em;font-weight:500}
+.brand span{color:var(--gold)}
+.nav-cta{padding:11px 22px;border:1px solid var(--line);font-size:11px;
+  letter-spacing:0.14em;text-transform:uppercase;transition:background .3s var(--ease)}
+.nav-cta:hover{background:rgba(201,162,39,.1)}
+
+/* ---------- HERO ---------- */
+.hero{min-height:92vh;display:flex;align-items:center;padding:150px 0 90px;position:relative}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(70% 55% at 82% 12%,rgba(201,162,39,.11),transparent 62%)}
+.hero-inner{position:relative;z-index:2;max-width:900px}
+.fuer{display:inline-block;margin-bottom:20px;padding:7px 16px;border:1px solid var(--line);
+  font-size:12px;letter-spacing:0.1em;color:var(--gold);background:rgba(201,162,39,.05)}
+h1{font-size:clamp(38px,6.6vw,86px);margin-bottom:28px}
+.hero-sub{font-size:clamp(16px,1.7vw,20px);color:var(--muted);max-width:56ch;margin-bottom:38px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:16px 34px;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;
+  font-weight:600;transition:transform .3s var(--ease),background .3s var(--ease)}
+.btn-p{background:var(--gold);color:#12100e}
+.btn-p:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-p:active{transform:translateY(0);background:var(--bronze)}
+.btn-s{border:1px solid var(--line);color:var(--text)}
+.btn-s:hover{background:rgba(201,162,39,.09)}
+
+/* ---------- PROBLEM ---------- */
+.problem{background:var(--bg2);padding:110px 0;border-top:1px solid var(--line2)}
+.p-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.p-card{border-left:2px solid var(--gold);padding:4px 0 4px 26px;margin-bottom:34px}
+.p-card h3{font-size:23px;margin-bottom:9px}
+.p-card p{color:var(--muted);font-size:15px}
+.p-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.6vw,32px);
+  font-style:italic;line-height:1.45;color:var(--text);border-top:1px solid var(--line2);
+  padding-top:30px;margin-top:6px}
+.p-quote span{color:var(--gold)}
+
+/* ---------- KETTE ---------- */
+.kette{padding:115px 0}
+.k-head{max-width:640px;margin-bottom:64px}
+.k-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line2)}
+.k-step{padding:38px 28px;border-right:1px solid var(--line2);position:relative;
+  transition:background .35s var(--ease)}
+.k-step:last-child{border-right:none}
+.k-step:hover{background:var(--bg2)}
+.k-num{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--gold);
+  opacity:.42;line-height:1;margin-bottom:16px}
+.k-step h3{font-size:20px;margin-bottom:10px}
+.k-step p{font-size:14px;color:var(--muted);line-height:1.65}
+.k-last{background:linear-gradient(160deg,rgba(201,162,39,.09),transparent)}
+.k-last .k-num{opacity:.85}
+.k-note{margin-top:26px;font-size:14px;color:var(--faint);text-align:center;font-style:italic}
+
+/* ---------- ZIELE ---------- */
+.ziele{background:var(--cream);color:var(--on-cream);padding:110px 0}
+.ziele .eyebrow{color:var(--bronze)}
+.ziele .eyebrow::before{background:var(--bronze)}
+.ziele h2{color:var(--on-cream)}
+.ziele h2 em{color:var(--bronze)}
+.z-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:52px}
+.z-card{background:#fff;padding:44px 38px;border:1px solid rgba(26,23,20,.09)}
+.z-tag{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--bronze);font-weight:600;margin-bottom:16px}
+.z-card h3{font-size:27px;margin-bottom:14px;color:var(--on-cream)}
+.z-card p{font-size:15px;color:rgba(26,23,20,.72);margin-bottom:20px}
+.z-list{list-style:none;font-size:14px;color:rgba(26,23,20,.66)}
+.z-list li{padding-left:22px;position:relative;margin-bottom:9px}
+.z-list li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;
+  border:1px solid var(--bronze);transform:rotate(45deg)}
+
+/* ---------- REFERENZEN ---------- */
+.refs{padding:115px 0}
+.r-grid{display:grid;grid-template-columns:repeat(2,1fr);
+  gap:22px;margin-top:54px}
+@media(max-width:720px){.r-grid{grid-template-columns:1fr}}
+.r-card{border:1px solid var(--line2);overflow:hidden;transition:border-color .35s var(--ease)}
+.r-card:hover{border-color:var(--line)}
+.r-img{aspect-ratio:16/10;overflow:hidden;background:var(--bg3)}
+.r-img img{width:100%;height:100%;object-fit:cover;object-position:top;
+  transition:transform .7s var(--ease)}
+.r-card:hover .r-img img{transform:scale(1.04)}
+.r-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--faint);font-style:italic}
+.r-body{padding:24px 26px}
+.r-body h3{font-size:20px;margin-bottom:5px}
+.r-meta{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:11px}
+.r-body p{font-size:14px;color:var(--muted)}
+
+/* ---------- WER ---------- */
+.wer{background:var(--bg2);padding:110px 0;border-top:1px solid var(--line2)}
+.w-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:70px;align-items:center}
+.w-text p{color:var(--muted);margin-bottom:16px}
+.w-text strong{color:var(--text);font-weight:500}
+.w-facts{border:1px solid var(--line2)}
+.w-fact{padding:22px 26px;border-bottom:1px solid var(--line2);display:flex;
+  justify-content:space-between;align-items:baseline;gap:18px}
+.w-fact:last-child{border-bottom:none}
+.w-fact dt{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint)}
+.w-fact dd{font-size:15px;text-align:right}
+
+/* ---------- CTA ---------- */
+.cta{padding:120px 0;text-align:center;position:relative}
+.cta::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 60% at 50% 40%,rgba(201,162,39,.1),transparent 65%)}
+.cta-inner{position:relative;z-index:2;max-width:680px;margin:0 auto}
+.cta h2{margin-bottom:18px}
+.cta .lead{margin:0 auto 36px}
+.cta .btns{justify-content:center}
+.cta-fine{margin-top:26px;font-size:13px;color:var(--faint)}
+
+footer{border-top:1px solid var(--line2);padding:40px 0;font-size:13px;color:var(--faint)}
+.f-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.f-inner a:hover{color:var(--gold)}
+
+.rv{opacity:0;transform:translateY(26px)}
+
+@media (max-width:900px){
+  .p-grid,.w-grid,.z-grid{grid-template-columns:1fr;gap:44px}
+  .k-steps{grid-template-columns:1fr 1fr}
+  .k-step{border-bottom:1px solid var(--line2)}
+  .k-step:nth-child(2){border-right:none}
+}
+@media (max-width:600px){
+  .wrap{padding:0 20px}
+  .nav{padding:16px 20px}
+  .k-steps{grid-template-columns:1fr}
+  .k-step{border-right:none}
+  .hero{min-height:auto;padding:130px 0 70px}
+  .btn{flex:1 1 100%;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1!important;transform:none!important}
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand">VALORIS<span>.</span></div>
+  <a href="#gespraech" class="nav-cta">Gespräch vereinbaren</a>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="fuer" id="fuer" hidden></div>
+    <div class="eyebrow">Werbeagentur · Zwickau</div>
+    <h1>Die besten Betriebe der Region<br>sind selten die,<br><em>die man findet.</em></h1>
+    <p class="hero-sub">
+      Wir machen Betriebe sichtbar — für neue Kunden und für neue Mitarbeiter.
+      Nicht mit einer Website allein, sondern mit allem, was davor passieren muss.
+    </p>
+    <div class="btns">
+      <a href="#gespraech" class="btn btn-p">Unverbindlich sprechen</a>
+      <a href="#kette" class="btn btn-s">Wie wir arbeiten</a>
+    </div>
+  </div>
+</header>
+
+<section class="problem">
+  <div class="wrap p-grid">
+    <div>
+      <div class="eyebrow rv">Woran es meistens liegt</div>
+      <div class="p-card rv">
+        <h3>Der Betrieb ist gut. Nur weiß es niemand.</h3>
+        <p>Handwerk, Qualität und Ruf stimmen — aber wer nicht danach sucht,
+           bekommt den Betrieb nie zu sehen. Aufträge gehen an den, der sichtbarer ist.</p>
+      </div>
+      <div class="p-card rv">
+        <h3>Bewerbungen bleiben aus.</h3>
+        <p>Wer heute einen Arbeitsplatz sucht, schaut zuerst online nach —
+           und findet nichts, was Lust macht, sich zu bewerben. Die Stelle bleibt offen.</p>
+      </div>
+      <div class="p-card rv">
+        <h3>Der Auftritt passt nicht zur Arbeit.</h3>
+        <p>Der Betrieb liefert seit Jahrzehnten erstklassig, der Auftritt sieht aber aus
+           wie 2012. Das kostet Vertrauen, bevor das erste Gespräch stattfindet.</p>
+      </div>
+    </div>
+    <div>
+      <p class="p-quote rv">
+        Fast immer ist der Betrieb nicht das Problem.
+        <span>Nur sieht ihn niemand, der ihn noch nicht kennt.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="kette" id="kette">
+  <div class="wrap">
+    <div class="k-head">
+      <div class="eyebrow rv">So gehen wir vor</div>
+      <h2 class="rv">Sichtbarkeit ist eine Kette.<br><em>Die Website ist das letzte Glied.</em></h2>
+      <p class="lead rv">
+        Die meisten fangen hinten an — neue Website, und dann passiert nichts.
+        Wir drehen es um: erst gesehen werden, dann Vertrauen aufbauen,
+        dann Anfragen einsammeln. Die Website fängt sie auf.
+      </p>
+    </div>
+    <div class="k-steps">
+      <div class="k-step rv">
+        <div class="k-num">01</div>
+        <h3>Gesehen werden</h3>
+        <p>Instagram und Facebook mit echtem Content aus Ihrem Betrieb — gedreht von
+           unserem Videografen, nicht zusammengeklickt.</p>
+      </div>
+      <div class="k-step rv">
+        <div class="k-num">02</div>
+        <h3>Vertrauen aufbauen</h3>
+        <p>Einblicke in die Arbeit, Gesichter statt Logos, echte Bewertungen.
+           Menschen beauftragen Menschen.</p>
+      </div>
+      <div class="k-step rv">
+        <div class="k-num">03</div>
+        <h3>Gefunden werden</h3>
+        <p>Google-Profil, lokale Suche, auf Wunsch Anzeigen. Wer in Ihrer Gegend
+           sucht, landet bei Ihnen.</p>
+      </div>
+      <div class="k-step k-last rv">
+        <div class="k-num">04</div>
+        <h3>Anfragen einsammeln</h3>
+        <p>Erst jetzt die Website — als Ort, an dem aus Interesse eine
+           konkrete Anfrage wird. Nicht vorher.</p>
+      </div>
+    </div>
+    <p class="k-note rv">Sie müssen nicht alles auf einmal machen. Die meisten starten mit Schritt 1.</p>
+  </div>
+</section>
+
+<section class="ziele">
+  <div class="wrap">
+    <div class="eyebrow rv">Zwei Ziele</div>
+    <h2 class="rv">Kunden gewinnen. Oder <em>Mitarbeiter.</em></h2>
+    <p class="lead rv" style="color:rgba(26,23,20,.7)">
+      Meistens ist eines davon gerade das dringendere. Wir richten alles darauf aus.
+    </p>
+    <div class="z-grid">
+      <div class="z-card rv">
+        <div class="z-tag">Neukundengewinnung</div>
+        <h3>Mehr Anfragen, weniger Zufall</h3>
+        <p>Damit nicht nur die anrufen, die Sie ohnehin schon kennen.</p>
+        <ul class="z-list">
+          <li>Regelmäßiger Content statt Funkstille</li>
+          <li>Sichtbarkeit in Ihrem Einzugsgebiet</li>
+          <li>Google-Profil, das Anrufe bringt</li>
+          <li>Bewertungen, die Vertrauen schaffen</li>
+        </ul>
+      </div>
+      <div class="z-card rv">
+        <div class="z-tag">Mitarbeitergewinnung</div>
+        <h3>Bewerber, die von selbst kommen</h3>
+        <p>Weil die Stellenanzeige längst nicht mehr reicht.</p>
+        <ul class="z-list">
+          <li>Der Betrieb als Arbeitgeber sichtbar</li>
+          <li>Einblicke ins Team und den Alltag</li>
+          <li>Gezielt in der Region ausgespielt</li>
+          <li>Bewerbung ohne Hürden, direkt vom Handy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="refs">
+  <div class="wrap">
+    <div class="eyebrow rv">Aus der Region</div>
+    <h2 class="rv">Auszug aus <em>unseren Arbeiten.</em></h2>
+    <div class="r-grid">
+      <div class="r-card rv">
+        <div class="r-img"><img src="img/ref-fleischi.jpg" alt="Auftritt für eine Fleischerei aus Zwickau" loading="lazy" onerror="this.parentElement.innerHTML='&lt;div class=&quot;r-ph&quot;&gt;Fleischerei&lt;/div&gt;'"></div>
+        <div class="r-body">
+          <div class="r-meta">Kunde</div>
+          <h3>Fleischerei · Zwickau</h3>
+          <p>Auftritt für einen Meisterbetrieb mit Europameister-Titel — inklusive laufender Betreuung.</p>
+        </div>
+      </div>
+      <div class="r-card rv">
+        <div class="r-img"><img src="img/ref-minolo.jpg" alt="Auftritt für einen Alltags- und Seniorenservice" loading="lazy" onerror="this.parentElement.innerHTML='&lt;div class=&quot;r-ph&quot;&gt;Alltagsservice&lt;/div&gt;'"></div>
+        <div class="r-body">
+          <div class="r-meta">Kunde</div>
+          <h3>Alltagsservice · Callenberg</h3>
+          <p>Auftritt für einen Senioren- und Haushaltsdienst — seit 2026 unter eigener Domain online.</p>
+        </div>
+      </div>
+      <div class="r-card rv">
+        <div class="r-img"><img src="img/ref-pleisstal.jpg" alt="Auftritt für eine Hausverwaltung" loading="lazy" onerror="this.parentElement.innerHTML='&lt;div class=&quot;r-ph&quot;&gt;Hausverwaltung&lt;/div&gt;'"></div>
+        <div class="r-body">
+          <div class="r-meta">Konzeptstudie</div>
+          <h3>Hausverwaltung · Westsachsen</h3>
+          <p>Konzeptstudie mit eigenem Bereich für Eigentümer und Mieter — Anfragen laufen strukturiert ein.</p>
+        </div>
+      </div>
+      <div class="r-card rv">
+        <div class="r-img"><img src="img/ref-praxis.jpg" alt="Auftritt für eine Praxis für Osteopathie" loading="lazy" onerror="this.parentElement.innerHTML='&lt;div class=&quot;r-ph&quot;&gt;Praxis&lt;/div&gt;'"></div>
+        <div class="r-body">
+          <div class="r-meta">Konzeptstudie</div>
+          <h3>Osteopathie &amp; Coaching</h3>
+          <p>Konzeptstudie für eine Praxis — ruhiger Auftritt mit klarer Terminstrecke.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wer">
+  <div class="wrap w-grid">
+    <div class="w-text">
+      <div class="eyebrow rv">Wer dahintersteckt</div>
+      <h2 class="rv">Kein Callcenter.<br><em>Zwei Leute aus der Gegend.</em></h2>
+      <p class="rv"><strong>Frederic Bochmann</strong> — Strategie, Google, Website. Aus Zwickau,
+        arbeitet mit Betrieben aus der Region.</p>
+      <p class="rv">Dazu ein <strong>fest angestellter Videograf</strong>, der den Content vor Ort dreht.
+        Kein Handyvideo, keine Bildagentur — Ihr Betrieb, Ihre Leute, Ihre Arbeit.</p>
+      <p class="rv">Sie haben einen Ansprechpartner, keine Ticketnummer. Und wenn etwas
+        nicht funktioniert, sagen wir das, statt es Ihnen zu verkaufen.</p>
+    </div>
+    <dl class="w-facts rv">
+      <div class="w-fact"><dt>Sitz</dt><dd>Zwickau</dd></div>
+      <div class="w-fact"><dt>Arbeitsgebiet</dt><dd>Westsachsen &amp; Ostthüringen</dd></div>
+      <div class="w-fact"><dt>Leistungen</dt><dd>Social Media · Google-Profil<br>Anzeigen · Website</dd></div>
+      <div class="w-fact"><dt>Content</dt><dd>Eigener Videograf, vor Ort</dd></div>
+      <div class="w-fact"><dt>Erstgespräch</dt><dd>kostenlos, unverbindlich</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="cta" id="gespraech">
+  <div class="wrap cta-inner">
+    <div class="eyebrow rv" style="justify-content:center">Der nächste Schritt</div>
+    <h2 class="rv">Einmal in Ruhe <em>draufschauen.</em></h2>
+    <p class="lead rv">
+      Kein Termin beim Vertrieb, kein Angebot im Anhang. Ein Gespräch darüber,
+      wo Ihr Betrieb online gerade steht — und ob sich überhaupt etwas lohnt.
+      Wenn nicht, sagen wir Ihnen das auch.
+    </p>
+    <div class="btns rv">
+      <a href="tel:+4915254190819" class="btn btn-p">0152 54190819</a>
+      <a href="mailto:frederic@valoris-auftragsstruktur.de" class="btn btn-s">E-Mail schreiben</a>
+    </div>
+    <p class="cta-fine rv">Oder per WhatsApp — was Ihnen lieber ist.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap f-inner">
+    <div>© <span id="jahr"></span> VALORIS Webdesign &amp; SEO · Bochmann Dienstleistungen · Zwickau</div>
+    <div>
+      <a href="https://www.valoris-auftragsstruktur.de/impressum" target="_blank" rel="noopener">Impressum</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.valoris-auftragsstruktur.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+document.getElementById('jahr').textContent = new Date().getFullYear();
+
+/* Persönliche Anrede über ?f=Firmenname — ohne Parameter bleibt die Zeile aus. */
+(function () {
+  var f = new URLSearchParams(location.search).get('f');
+  if (!f) return;
+  f = f.replace(/[<>&"']/g, '').slice(0, 60).trim();
+  if (!f) return;
+  var el = document.getElementById('fuer');
+  el.textContent = 'Zusammengestellt für ' + f;
+  el.hidden = false;
+})();
+
+/* Reveals — mit Sicherheitsnetz: ohne GSAP oder bei reduzierter Bewegung
+   wird alles sofort sichtbar, es darf nie etwas unsichtbar hängenbleiben. */
+(function () {
+  var els = document.querySelectorAll('.rv');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!window.gsap || !window.ScrollTrigger || reduce) {
+    els.forEach(function (el) { el.style.opacity = 1; el.style.transform = 'none'; });
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+  els.forEach(function (el) {
+    gsap.to(el, {
+      opacity: 1, y: 0, duration: .85, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+    });
+  });
+
+  // Falls ScrollTrigger nicht auslöst (z.B. sehr kurze Seite): nach 3s aufdecken.
+  setTimeout(function () {
+    els.forEach(function (el) {
+      if (parseFloat(getComputedStyle(el).opacity) < 0.05) {
+        el.style.opacity = 1; el.style.transform = 'none';
+      }
+    });
+  }, 3000);
+
+  gsap.from('.hero h1', { opacity: 0, y: 34, duration: 1.1, ease: 'power3.out', delay: .12 });
+  gsap.from('.hero-sub', { opacity: 0, y: 24, duration: .9, ease: 'power3.out', delay: .3 });
+  gsap.from('.hero .btns', { opacity: 0, y: 20, duration: .8, ease: 'power3.out', delay: .45 });
+})();
+</script>
+</body>
+</html>
