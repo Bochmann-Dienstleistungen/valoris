@@ -13,7 +13,7 @@
 :root{
   --paper:#F2EEE6;
   --paper-deep:#E8E2D5;
-  --paper-band:#1E1D1A;
+  --paper-band:#152232;
   --ink:#1B1A17;
   --ink-soft:#4F4B42;
   --ink-faint:#847E71;
@@ -21,6 +21,11 @@
   --rule-soft:#DED7C7;
   --accent:#7A2E22;
   --accent-soft:#A85A48;
+  --navy:#1C3A57;
+  --navy-soft:#43617E;
+  --foil-1:#8C6B33;
+  --foil-2:#D9B978;
+  --foil-3:#A98544;
   --measure:62ch;
   --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
 }
@@ -39,14 +44,27 @@ body::before{
   mix-blend-mode:multiply;
 }
 
+.topband{height:7px;background:linear-gradient(90deg,var(--navy) 0 62%,var(--accent) 62% 88%,var(--foil-2) 88% 100%);
+  position:relative;z-index:2}
 .sheet{position:relative;z-index:1;max-width:1010px;margin:0 auto;padding:0 34px 90px}
 .mono{font-family:var(--mono)}
 
 /* ---------- BRIEFKOPF ---------- */
 .letterhead{padding:44px 0 0}
 .lh-row{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
-.lh-mark{font-size:20px;letter-spacing:.30em;font-weight:500;text-transform:uppercase}
-.lh-mark span{color:var(--accent)}
+.lh-mark{
+  font-size:22px;letter-spacing:.30em;font-weight:600;text-transform:uppercase;
+  position:relative;display:inline-block;
+  background:linear-gradient(100deg,var(--foil-1) 0%,var(--foil-3) 26%,#F0DDAE 42%,var(--foil-2) 52%,
+    var(--foil-3) 64%,var(--foil-1) 100%);
+  background-size:220% 100%;background-position:100% 0;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+@media (prefers-reduced-motion: no-preference){
+  .lh-mark{animation:foil 2.4s cubic-bezier(.4,0,.2,1) .35s 1 both}
+  @keyframes foil{from{background-position:0 0}to{background-position:100% 0}}
+}
+.lh-mark span{-webkit-text-fill-color:var(--accent);color:var(--accent)}
 .meta{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint)}
 .meta b{font-weight:500;color:var(--ink-soft)}
 .rule{border:0;border-top:1px solid var(--rule);margin:15px 0 0}
@@ -67,7 +85,8 @@ h1 em{font-style:italic;font-weight:300;color:var(--accent)}
 /* ---------- AUF EINEN BLICK ---------- */
 .glance{
   margin:44px 0 0;background:var(--paper-deep);border:1px solid var(--rule);
-  padding:30px 32px 26px;
+  border-left:4px solid var(--navy);padding:30px 32px 26px;
+  box-shadow:0 1px 0 rgba(255,255,255,.7) inset, 0 10px 26px -22px rgba(28,58,87,.5);
 }
 .glance-h{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
   color:var(--accent);margin:0 0 20px}
@@ -77,9 +96,9 @@ h1 em{font-style:italic;font-weight:300;color:var(--accent)}
 .gi:nth-child(1),.gi:nth-child(2){border-top:0;padding-top:0}
 @media(max-width:759px){.gi:nth-child(2){border-top:1px solid var(--rule);padding-top:12px}}
 .gi-k{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--ink-faint);min-width:76px;padding-top:7px}
+  color:var(--navy-soft);min-width:76px;padding-top:7px}
 .gi-v{margin:0;font-size:18px;line-height:1.55}
-.gi-v b{font-weight:500}
+.gi-v b{font-weight:500;color:var(--navy)}
 
 /* ---------- INHALT ---------- */
 .toc{margin:40px 0 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:8px 0}
@@ -96,9 +115,9 @@ h1 em{font-style:italic;font-weight:300;color:var(--accent)}
 
 /* ---------- ABSCHNITTE ---------- */
 section{padding:66px 0 0;scroll-margin-top:20px}
-.sec-head{border-top:2px solid var(--ink);padding-top:14px;margin:0 0 26px;
+.sec-head{border-top:2px solid var(--navy);padding-top:14px;margin:0 0 26px;
   display:flex;gap:20px;align-items:baseline;flex-wrap:wrap}
-.numeral{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;color:var(--accent)}
+.numeral{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;color:var(--navy)}
 h2{font-size:clamp(24px,3vw,32px);line-height:1.26;font-weight:500;margin:0;letter-spacing:-.008em}
 
 /* Zweispaltiges Dokumentraster: Randspalte + Textspalte */
@@ -121,7 +140,7 @@ h2{font-size:clamp(24px,3vw,32px);line-height:1.26;font-weight:500;margin:0;lett
 .findings{margin:8px 0 0;padding:0;list-style:none}
 .findings li{padding:18px 0;border-top:1px solid var(--rule-soft)}
 .findings li:first-child{border-top:0;padding-top:0}
-.findings h3{font-size:20px;font-weight:500;margin:0 0 5px;line-height:1.4}
+.findings h3{font-size:20px;font-weight:500;margin:0 0 5px;line-height:1.4;color:var(--navy)}
 .findings p{margin:0;color:var(--ink-soft);font-size:18px}
 
 /* Ablauf */
@@ -131,7 +150,7 @@ h2{font-size:clamp(24px,3vw,32px);line-height:1.26;font-weight:500;margin:0;lett
   font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--accent)}
 .steps li::after{content:'';position:absolute;left:9px;top:25px;bottom:0;width:1px;background:var(--rule-soft)}
 .steps li:last-child::after{display:none}
-.steps b{font-weight:500}
+.steps b{font-weight:500;color:var(--navy)}
 .steps span{display:block;color:var(--ink-soft);font-size:18px}
 
 /* Zwei Ziele */
@@ -140,7 +159,7 @@ h2{font-size:clamp(24px,3vw,32px);line-height:1.26;font-weight:500;margin:0;lett
 .twin>div{padding:20px 0;border-top:1px solid var(--rule-soft)}
 .twin>div:first-child{border-top:0;padding-top:0}
 @media(min-width:820px){.twin>div{border-top:0;padding-top:0}}
-.twin h3{font-size:19px;font-weight:500;margin:0 0 6px}
+.twin h3{font-size:19px;font-weight:500;margin:0 0 6px;color:var(--navy)}
 .twin p{margin:0;color:var(--ink-soft);font-size:18px}
 .twin ul{margin:12px 0 0;padding:0;list-style:none}
 .twin li{padding:6px 0 6px 18px;position:relative;font-size:17px;color:var(--ink-soft)}
@@ -150,23 +169,23 @@ h2{font-size:clamp(24px,3vw,32px);line-height:1.26;font-weight:500;margin:0;lett
 .deliver{margin:6px 0 0;padding:0;list-style:none}
 .deliver li{display:flex;gap:16px;padding:13px 0;border-top:1px solid var(--rule-soft);align-items:baseline}
 .deliver li:first-child{border-top:0;padding-top:0}
-.deliver .d-t{font-weight:500;min-width:210px}
+.deliver .d-t{font-weight:500;min-width:210px;color:var(--navy)}
 .deliver .d-d{color:var(--ink-soft);font-size:17.5px;margin:0}
 
 /* Einwände — dunkles Band, der Bruch im Dokument */
-.band{background:var(--paper-band);color:#EAE5DA;margin:70px 0 0;padding:60px 34px 62px}
+.band{background:var(--paper-band);color:#E6EAEF;margin:70px 0 0;padding:60px 34px 62px}
 .band .sheet-in{max-width:1010px;margin:0 auto;padding:0}
-.band .sec-head{border-top-color:#4A463D}
-.band h2{color:#F3EFE5}
-.band .numeral{color:var(--accent-soft)}
-.band .margin-note{color:#9A9385}
-.band .margin-note b{color:var(--accent-soft)}
+.band .sec-head{border-top-color:#39587A}
+.band h2{color:#F4F1EA}
+.band .numeral{color:var(--foil-2)}
+.band .margin-note{color:#93A3B4}
+.band .margin-note b{color:var(--foil-2)}
 .obj{margin:0;padding:0;list-style:none}
-.obj li{padding:24px 0;border-top:1px solid #3A362E}
+.obj li{padding:24px 0;border-top:1px solid #2A3E55}
 .obj li:first-child{border-top:0;padding-top:0}
-.obj h3{font-size:21px;font-weight:400;font-style:italic;margin:0 0 10px;color:#F3EFE5}
-.obj p{margin:0;color:#B9B2A3;font-size:18px;line-height:1.62;max-width:var(--measure)}
-.obj p b{color:#EAE5DA;font-weight:500}
+.obj h3{font-size:21px;font-weight:400;font-style:italic;margin:0 0 10px;color:var(--foil-2)}
+.obj p{margin:0;color:#B4BEC9;font-size:18px;line-height:1.62;max-width:var(--measure)}
+.obj p b{color:#F2EDE2;font-weight:500}
 
 /* Werkverzeichnis */
 .werk{margin:6px 0 0}
@@ -175,13 +194,14 @@ h2{font-size:clamp(24px,3vw,32px);line-height:1.26;font-weight:500;margin:0;lett
 .werk-kind{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
   color:var(--ink-faint);min-width:104px;padding-top:6px}
 .werk-kind.kunde{color:var(--accent)}
-.werk-t{font-size:19px;font-weight:500;margin:0}
+.werk-t{font-size:19px;font-weight:500;margin:0;color:var(--navy)}
 .werk-d{margin:2px 0 0;color:var(--ink-soft);font-size:17px}
 
 .plates{display:grid;grid-template-columns:1fr;gap:26px;margin:34px 0 0}
 @media(min-width:760px){.plates{grid-template-columns:1fr 1fr;gap:26px}}
 figure{margin:0}
-figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);background:var(--paper-deep)}
+figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);background:var(--paper-deep);
+  box-shadow:0 14px 30px -20px rgba(27,26,23,.55), 0 2px 6px -3px rgba(27,26,23,.22)}
 figcaption{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
   color:var(--ink-faint);margin-top:8px}
 
@@ -192,17 +212,23 @@ figcaption{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-trans
 .plan li::before{content:counter(p);position:absolute;left:0;top:16px;width:26px;height:26px;
   border:1px solid var(--accent);border-radius:50%;color:var(--accent);
   font-family:var(--mono);font-size:11px;display:flex;align-items:center;justify-content:center}
-.plan b{font-weight:500}
+.plan b{font-weight:500;color:var(--navy)}
 .plan span{display:block;color:var(--ink-soft);font-size:17.5px}
 
 /* ---------- SCHLUSS ---------- */
 .close{padding:70px 0 0;max-width:var(--measure)}
 .close .rule{margin-bottom:32px}
-.sign{margin:32px 0 0}
-.sign-name{font-size:32px;font-style:italic;font-weight:300;color:var(--accent);
-  transform:rotate(-1.6deg);transform-origin:left center;display:inline-block}
+.sign{margin:34px 0 0;display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.seal{flex:0 0 auto;width:96px;height:96px}
+.seal circle,.seal path{fill:none}
+.sign-block{min-width:0}
+.sign-name{
+  font-size:30px;font-weight:500;line-height:1.2;letter-spacing:.005em;color:var(--navy);
+  margin:0;
+}
+.sign-rule{width:186px;height:1px;background:var(--rule);margin:12px 0 11px}
 .sign-role{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--ink-faint);margin-top:12px}
+  color:var(--ink-faint);margin:0;line-height:1.7}
 .contact{margin:36px 0 0;padding:22px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
   display:flex;gap:14px 34px;flex-wrap:wrap}
 .contact a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;
@@ -229,6 +255,10 @@ figcaption{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-trans
 
 @media print{
   body{background:#fff;font-size:11pt;color:#000}
+  .topband{display:none}
+  .lh-mark{-webkit-text-fill-color:#1C3A57;color:#1C3A57;background:none;animation:none}
+  figure img{box-shadow:none}
+  .glance{box-shadow:none}
   body::before{display:none}
   .sheet{max-width:none;padding:0}
   .band{background:#fff;color:#000;margin:34px 0 0;padding:0}
@@ -240,6 +270,8 @@ figcaption{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-trans
   .contact a{border:0}
 }
 </style>
+
+<div class="topband"></div>
 
 <div class="sheet">
 
@@ -566,8 +598,30 @@ figcaption{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-trans
     <p>Mit freundlichen Grüßen aus Zwickau</p>
 
     <div class="sign">
-      <div class="sign-name">Frederic Bochmann</div>
-      <div class="sign-role">VALORIS Webdesign &amp; SEO · Bochmann Dienstleistungen</div>
+      <svg class="seal" viewBox="0 0 100 100" role="img" aria-label="Siegel: VALORIS Zwickau, gegründet in Westsachsen">
+        <defs>
+          <path id="ring" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"></path>
+          <linearGradient id="foil" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#8C6B33"></stop>
+            <stop offset="45%" stop-color="#E2C88E"></stop>
+            <stop offset="100%" stop-color="#A98544"></stop>
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="46.5" stroke="url(#foil)" stroke-width="1.4"></circle>
+        <circle cx="50" cy="50" r="41" stroke="#7A2E22" stroke-width=".7" opacity=".55"></circle>
+        <text font-family="'JetBrains Mono',monospace" font-size="8.2" letter-spacing="2.1" fill="#7A2E22">
+          <textPath href="#ring" startOffset="4%">VALORIS · ZWICKAU · WESTSACHSEN ·</textPath>
+        </text>
+        <text x="50" y="48" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="21"
+              font-weight="600" fill="#1C3A57">FB</text>
+        <text x="50" y="62" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.4"
+              letter-spacing="1.4" fill="#847E71">INHABER</text>
+      </svg>
+      <div class="sign-block">
+        <p class="sign-name">Frederic Bochmann</p>
+        <div class="sign-rule"></div>
+        <p class="sign-role">VALORIS Webdesign &amp; SEO<br>Bochmann Dienstleistungen · Zwickau</p>
+      </div>
     </div>
 
     <div class="contact">
