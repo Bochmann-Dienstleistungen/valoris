@@ -3,623 +3,364 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>VALORIS – Social Media &amp; Werbung für Betriebe in Zwickau</title>
-<meta name="description" content="Social-Media-Betreuung, Reels, Recruiting und Werbung für Betriebe in Zwickau und Sachsen. Echte Gesichter statt Stockfotos — Website und Google als Fundament. Kostenloser Online-Check.">
-<meta property="og:title" content="VALORIS – Social Media &amp; Werbung aus Zwickau">
-<meta property="og:description" content="Zu wenig Kunden. Keine Bewerber. Wir drehen das um. Reels, Recruiting, Ads und Website für Betriebe aus der Region.">
+<title>VALORIS – Social Media für Betriebe in Zwickau</title>
+<meta name="description" content="Ich mach dich sichtbar: Social Media, Reels, Recruiting und Werbung für Betriebe in Zwickau und Umgebung. Frederic Bochmann plant, dreht und schneidet. Kostenloser Online-Check.">
+<meta property="og:title" content="VALORIS – Ich mach dich sichtbar.">
+<meta property="og:description" content="Social Media, Reels, Recruiting und Werbung für Betriebe aus Zwickau und Umgebung.">
 <meta property="og:image" content="https://www.valoris-auftragsstruktur.de/assets/social/frederic-hero.jpg">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#faf9f7">
+<meta name="theme-color" content="#f5f6fa">
 <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
-<link rel="preload" as="image" href="assets/social/frederic-hero.jpg" fetchpriority="high">
-<link href="https://fonts.bunny.net/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/v2/frederic-cut.webp" fetchpriority="high">
+<link href="https://fonts.bunny.net/css?family=instrument-serif:400,400i|inter:400,500,600,700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"VALORIS","alternateName":"VALORIS Social Media & Werbung","url":"https://www.valoris-auftragsstruktur.de/","image":"https://www.valoris-auftragsstruktur.de/assets/social/frederic-hero.jpg","telephone":"+4915254190819","email":"frederic@valoris-auftragsstruktur.de","founder":{"@type":"Person","name":"Frederic Bochmann"},"address":{"@type":"PostalAddress","streetAddress":"Karl-Kippenhahn-Straße 17","postalCode":"08058","addressLocality":"Zwickau","addressCountry":"DE"},"areaServed":["Zwickau","Werdau","Crimmitschau","Glauchau","Meerane","Sachsen"],"sameAs":["https://www.instagram.com/valoris_auftragsstruktur/","https://www.facebook.com/people/Valoris-Auftragsstruktur/61564795752910/"],"knowsAbout":["Social Media Marketing","Instagram Reels","Social Recruiting","Meta Ads","Webdesign","Local SEO"]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"VALORIS","url":"https://www.valoris-auftragsstruktur.de/","image":"https://www.valoris-auftragsstruktur.de/assets/social/frederic-hero.jpg","telephone":"+4915254190819","email":"frederic@valoris-auftragsstruktur.de","founder":{"@type":"Person","name":"Frederic Bochmann"},"address":{"@type":"PostalAddress","streetAddress":"Karl-Kippenhahn-Straße 17","postalCode":"08058","addressLocality":"Zwickau","addressCountry":"DE"},"areaServed":["Zwickau","Werdau","Crimmitschau","Glauchau","Meerane","Sachsen"],"sameAs":["https://www.instagram.com/valoris_auftragsstruktur/","https://www.facebook.com/people/Valoris-Auftragsstruktur/61564795752910/"],"knowsAbout":["Social Media Marketing","Instagram Reels","Social Recruiting","Meta Ads","Webdesign"]}
 </script>
 <style>
 :root{
-  --bg:#faf9f7;
-  --bg2:#f0ebe2;
-  --bg3:#e6dfd3;
-  --dark:#0d0d0b;
-  --dark2:#141410;
-  --ink:#171714;
-  --warm:#5c5c54;
-  --muted:#8f8f86;
-  --gold:#b8873a;
-  --gold-lt:#ddb15a;
-  --gold-dk:#7a5820;
-  --gold-pale:rgba(184,135,58,.12);
-  --line:rgba(23,23,23,.1);
-  --line-d:rgba(255,255,255,.08);
-  --r:6px;
-  --ease:cubic-bezier(.16,1,.3,1);
+  --bg:#f5f6fa;
+  --card:#ffffff;
+  --ink:#14151a;
+  --soft:#5d616d;
+  --mute:#9195a1;
+  --line:rgba(20,21,26,.08);
+  --lav:#e7e6f8;
+  --lav2:#d9e2f6;
+  --mint:#dcefea;
+  --mint2:#cfe7e6;
+  --sky:#dfeaf7;
+  --accent:#2f6f66;
+  --r:28px;
+  --ease:cubic-bezier(.22,1,.36,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img,video{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+em.s{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:0}
 
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:500;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 48px;height:72px;
-  background:rgba(250,249,247,.92);
-  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--line);
-  transition:height .3s ease,box-shadow .3s ease;
-}
-nav.scrolled{height:60px;box-shadow:0 8px 32px rgba(0,0,0,.06)}
-.nav-logo{display:flex;flex-direction:column;line-height:1;gap:3px}
-.nav-logo-v{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink)}
-.nav-logo-sub{font-size:.42rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.nav-links{display:flex;gap:34px;list-style:none}
-.nav-links a{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--warm);font-weight:400;transition:color .2s;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
-.nav-links a:hover{color:var(--gold)}
-.nav-links a:hover::after{width:100%}
-.nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border:1px solid var(--gold);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;color:var(--gold);transition:background .25s,color .25s;border-radius:2px}
-.nav-cta:hover{background:var(--gold);color:#fff}
-.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
-.nav-ham span{display:block;width:24px;height:1.5px;background:var(--ink)}
-.nav-mobile{display:none;position:fixed;inset:0;z-index:490;background:var(--bg);padding:100px 40px 40px;flex-direction:column;gap:28px}
-.nav-mobile.open{display:flex}
-.nav-mobile a{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:300;letter-spacing:.05em;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:18px}
+/* Glas-Pille: das Signature-Element */
+.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;
+  background:rgba(255,255,255,.62);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);
+  border:1px solid rgba(255,255,255,.9);box-shadow:0 10px 30px -12px rgba(40,60,90,.25),inset 0 1px 0 rgba(255,255,255,.9);
+  font-size:.82rem;font-weight:600;color:var(--ink);white-space:nowrap}
+.pill svg{width:15px;height:15px;flex:none}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:#3cb48a;box-shadow:0 0 0 3px rgba(60,180,138,.18)}
 
-/* ── BUTTONS ── */
-.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;background:var(--gold);color:#fff;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;border-radius:2px;transition:background .25s,transform .2s var(--ease),box-shadow .25s}
-.btn-primary:hover{background:var(--gold-dk);box-shadow:0 12px 30px rgba(184,135,58,.3)}
-.btn-primary:active,.btn-ghost:active,.nav-cta:active{transform:scale(.97)}
-.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border:1px solid var(--line);color:var(--warm);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;font-weight:400;border-radius:2px;transition:border-color .25s,color .25s,transform .2s var(--ease)}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.btn-ghost svg,.btn-primary svg{width:16px;height:16px;flex:none}
+/* NAV */
+nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:500;width:min(1180px,calc(100% - 28px));
+  display:flex;align-items:center;justify-content:space-between;padding:10px 10px 10px 22px;border-radius:999px;
+  background:rgba(255,255,255,.7);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.9);box-shadow:0 8px 30px -14px rgba(20,30,60,.18)}
+.logo{font-weight:700;letter-spacing:.14em;font-size:.95rem}
+.nav-links{display:flex;gap:30px;list-style:none;font-size:.88rem;color:var(--soft);font-weight:500}
+.nav-links a{transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-size:.9rem;font-weight:600;transition:transform .2s var(--ease),background .2s,box-shadow .2s}
+.btn:active{transform:scale(.97)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#2a2c34;box-shadow:0 10px 24px -10px rgba(20,21,26,.5)}
+.btn-light{background:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.95)}
+.btn-light:hover{background:#fff}
+.nav .btn{padding:10px 18px;font-size:.84rem}
+.ham{display:none;width:40px;height:40px;border-radius:50%;align-items:center;justify-content:center}
+.ham span{display:block;width:18px;height:1.6px;background:var(--ink);box-shadow:0 6px 0 var(--ink),0 -6px 0 var(--ink)}
+.mnav{display:none;position:fixed;inset:0;z-index:490;background:var(--bg);padding:110px 28px 40px;flex-direction:column;gap:6px}
+.mnav.open{display:flex}
+.mnav a{font-size:1.8rem;font-weight:600;padding:12px 0;border-bottom:1px solid var(--line)}
 
-/* ── HERO ── */
-.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;padding:128px 48px 80px;max-width:1280px;margin:0 auto;position:relative}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:28px}
-.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
-.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.9rem,6.2vw,5.4rem);font-weight:300;line-height:1.0;letter-spacing:-.01em;margin-bottom:28px}
-.hero-h1 em{font-style:italic;color:var(--gold)}
-.hero-h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
-.hero-h1 .ln>span{display:block;transform:translateY(105%);transition:transform .9s var(--ease)}
-.hero-h1.visible .ln>span{transform:none}
-.hero-h1.visible .ln:nth-child(2)>span{transition-delay:.1s}
-.hero-h1.visible .ln:nth-child(3)>span{transition-delay:.2s}
-.hero-sub{font-size:1.04rem;color:var(--warm);line-height:1.8;max-width:540px;margin-bottom:40px}
-.hero-sub strong{color:var(--ink);font-weight:500}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-.hero-proof{display:flex;align-items:center;gap:14px;margin-top:44px;font-size:.8rem;color:var(--muted)}
-.hero-proof img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:2px solid var(--bg);box-shadow:0 0 0 1px var(--gold)}
-.hero-proof b{color:var(--ink);font-weight:500}
+/* LAYOUT */
+.wrap{width:min(1180px,calc(100% - 28px));margin:0 auto}
+section{padding:110px 0}
+.kicker{display:inline-flex;margin-bottom:18px}
+.h2{font-size:clamp(2rem,4.2vw,3.2rem);font-weight:600;line-height:1.08;letter-spacing:-.035em}
+.h2 em.s{font-size:1.08em}
+.lead{color:var(--soft);font-size:1.06rem;max-width:520px;margin-top:16px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap}
 
-/* Phone-Rahmen: Signature-Element */
-.phone{position:relative;aspect-ratio:9/16;border-radius:28px;background:#111;padding:8px;box-shadow:0 40px 80px -30px rgba(23,23,20,.45),0 0 0 1px rgba(0,0,0,.06)}
-.phone-screen{position:relative;width:100%;height:100%;border-radius:21px;overflow:hidden;background:#222}
-.phone-screen video,.phone-screen img{width:100%;height:100%;object-fit:cover}
-.hero-visual{position:relative;justify-self:center;width:min(360px,100%)}
-.hero-visual .phone{transform:rotate(2.5deg)}
-.hero-tag{position:absolute;z-index:3;background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:12px 16px;font-size:.74rem;line-height:1.35;box-shadow:0 18px 40px -18px rgba(0,0,0,.25)}
-.hero-tag small{display:block;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:3px}
-.hero-tag.t1{left:-56px;top:16%;transform:rotate(-3deg)}
-.hero-tag.t2{right:-40px;bottom:12%;transform:rotate(2deg)}
-.ig-handle{position:absolute;left:18px;bottom:18px;z-index:2;display:flex;align-items:center;gap:8px;color:#fff;font-size:.72rem;font-weight:500;text-shadow:0 1px 6px rgba(0,0,0,.5)}
-.ig-handle svg{width:16px;height:16px}
+/* HERO */
+.hero{padding:94px 0 0}
+.stage{position:relative;border-radius:var(--r);overflow:hidden;min-height:min(86vh,780px);
+  background:radial-gradient(120% 90% at 78% 30%,#eef0fb 0%,var(--lav) 45%,var(--lav2) 100%);
+  display:grid;grid-template-columns:1.05fr .95fr;align-items:end}
+.hero-text{align-self:center;padding:64px 0 64px 64px;position:relative;z-index:3}
+.hero h1{font-size:clamp(3rem,7.4vw,6.2rem);font-weight:600;line-height:.98;letter-spacing:-.05em}
+.hero h1 em.s{font-size:1.1em;letter-spacing:-.01em}
+.hero p{color:var(--soft);font-size:1.12rem;max-width:440px;margin:24px 0 34px}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+.hero-fig{position:relative;height:100%;display:flex;align-items:flex-end;justify-content:center}
+.hero-fig img{width:auto;height:min(80vh,720px);max-width:none;object-fit:contain;object-position:bottom;-webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent)}
+.float{position:absolute;z-index:4;animation:bob 6s ease-in-out infinite}
+.f1{left:52%;top:24%}
+.f2{right:4%;top:50%;animation-delay:-2s}
+.f3{left:50%;bottom:9%;animation-delay:-4s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
-/* ── STRIP ── */
-.strip{background:var(--dark);padding:26px 48px;display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap}
-.strip-item{display:flex;align-items:baseline;gap:10px;color:rgba(255,255,255,.5);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
-.strip-item strong{color:var(--gold-lt);font-size:1.25rem;font-family:'Cormorant Garamond',serif;font-weight:400;letter-spacing:0;text-transform:none}
+/* REELS */
+.reels-panel{background:linear-gradient(160deg,var(--mint) 0%,var(--mint2) 100%);border-radius:var(--r);padding:56px 48px}
+.reels{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:44px}
+.reel{display:block;width:100%;text-align:left}
+.reel-v{position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#cfdedb;box-shadow:0 18px 36px -20px rgba(20,60,60,.45);transition:transform .45s var(--ease)}
+.reel:hover .reel-v{transform:translateY(-5px)}
+.reel:active .reel-v{transform:scale(.98)}
+.reel-v video{width:100%;height:100%;object-fit:cover}
+.reel-v .pill{position:absolute;left:8px;bottom:8px;padding:6px 11px;font-size:.7rem}
+.reel-t{font-size:.84rem;font-weight:600;line-height:1.35;margin-top:12px}
+.reel-k{font-size:.74rem;color:var(--soft)}
 
-/* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s var(--ease)}
-.reveal.visible{opacity:1;transform:none}
-.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}
+/* LEISTUNGEN */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.card{background:var(--card);border-radius:22px;padding:28px 24px 30px;border:1px solid var(--line);transition:transform .4s var(--ease),box-shadow .4s}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(20,30,60,.35)}
+.card .ico{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.card .ico svg{width:22px;height:22px;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.08rem;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+.card p{font-size:.92rem;color:var(--soft);line-height:1.6}
+.base{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.base p{color:var(--soft);font-size:.95rem}
+.base b{color:var(--ink);font-weight:600}
+.base a{font-weight:600;font-size:.9rem;border-bottom:1.5px solid var(--ink);padding-bottom:1px}
 
-/* ── SECTIONS ── */
-section{padding:120px 48px}
-.wrap{max-width:1180px;margin:0 auto}
-.section-tag{font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px;display:flex;align-items:center;gap:12px}
-.section-tag::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
-.section-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:300;line-height:1.1;letter-spacing:-.01em}
-.section-h em{font-style:italic;color:var(--gold)}
-.section-sub{color:var(--warm);font-size:1rem;line-height:1.75;max-width:580px;margin-top:20px}
-.head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
-.dark{background:var(--dark);color:#fff}
-.dark .section-h{color:#fff}
-.dark .section-h em{color:var(--gold-lt)}
-.dark .section-sub{color:rgba(255,255,255,.55)}
-.dark .section-tag{color:var(--gold-lt)}
-.dark .section-tag::before{background:var(--gold-lt)}
+/* ÜBER MICH */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-stage{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/4.6;background:radial-gradient(110% 80% at 60% 20%,#f3f6fb 0%,var(--sky) 60%,#d3e2f3 100%);display:flex;align-items:flex-end;justify-content:center}
+.about-stage img{height:92%;width:auto;max-width:none;-webkit-mask-image:linear-gradient(#000 80%,transparent);mask-image:linear-gradient(#000 80%,transparent)}
+.about-stage .pill{position:absolute}
+.about-stage .a1{left:6%;top:12%}
+.about-stage .a2{right:6%;top:40%}
+.about h2{margin-bottom:18px}
+.about p{color:var(--soft);font-size:1.02rem;margin-bottom:14px;max-width:500px}
+.work{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px;max-width:500px}
+.work figure{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:var(--lav)}
+.work img{width:100%;height:100%;object-fit:cover}
+.work figcaption{position:absolute;left:8px;bottom:8px}
+.work figcaption .pill{padding:6px 11px;font-size:.7rem}
 
-/* ── REELS ── */
-.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 32px;margin-top:64px}
-.reel{display:block;text-align:left;width:100%}
-.reel .phone{border-radius:24px;padding:6px;transition:transform .5s var(--ease)}
-.reel .phone-screen{border-radius:19px}
-.reel:hover .phone{transform:translateY(-6px)}
-.reel:active .phone{transform:scale(.98)}
-.reel-play{position:absolute;right:14px;bottom:14px;z-index:2;width:44px;height:44px;border-radius:50%;background:rgba(250,249,247,.92);display:flex;align-items:center;justify-content:center;transition:transform .3s var(--ease)}
-.reel-play svg{width:16px;height:16px;margin-left:2px;fill:var(--ink)}
-.reel:hover .reel-play{transform:scale(1.08)}
-.reel-meta{margin-top:18px}
-.reel-kunde{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:6px}
-.reel-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;line-height:1.2;color:#fff}
-.reel-desc{font-size:.84rem;color:rgba(255,255,255,.5);margin-top:6px;line-height:1.6}
+/* CTA */
+.cta{border-radius:var(--r);background:radial-gradient(120% 120% at 20% 0%,#f1f0fc 0%,var(--lav) 50%,var(--mint) 100%);padding:80px 48px;text-align:center;position:relative;overflow:hidden}
+.cta .h2{max-width:720px;margin:0 auto}
+.cta .lead{margin:16px auto 0}
+.steps{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:34px 0 36px}
+.steps .pill{font-weight:500}
+.steps .pill b{font-weight:700}
+.cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 
-/* ── FEED ── */
-.feed{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:56px}
-.feed a{display:block;position:relative;overflow:hidden;border-radius:4px;aspect-ratio:4/5;background:var(--bg2)}
-.feed img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
-.feed a:hover img{transform:scale(1.04)}
-
-/* ── LEISTUNGEN ── */
-.services{display:grid;grid-template-columns:repeat(3,1fr);margin-top:64px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.service{padding:44px 36px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;transition:background .3s}
-.service:hover{background:var(--bg2)}
-.service-num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--gold);opacity:.35;font-weight:300;line-height:1;margin-bottom:22px}
-.service-title{font-size:.9rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
-.service-desc{font-size:.9rem;color:var(--warm);line-height:1.7}
-.service.base{background:var(--bg2)}
-.service.base .service-title::after{content:'Fundament';margin-left:10px;font-size:.56rem;letter-spacing:.18em;color:var(--gold);border:1px solid var(--gold);padding:2px 7px;border-radius:20px;vertical-align:2px}
-
-/* ── ÜBER MICH ── */
-.about{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:center}
-.about-photos{position:relative;height:620px}
-.about-photos figure{position:absolute;overflow:hidden;border-radius:var(--r);box-shadow:0 30px 60px -30px rgba(0,0,0,.35)}
-.about-photos img{width:100%;height:100%;object-fit:cover}
-.about-photos .p1{left:0;top:0;width:64%;height:78%}
-.about-photos .p1 img{object-position:50% 30%}
-.about-photos .p2{right:0;bottom:0;width:48%;height:54%;border:6px solid var(--bg)}
-.about-photos .p2 img{object-position:50% 25%}
-.about-photos figcaption{position:absolute;left:12px;bottom:10px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
-.about-quote{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;line-height:1.4;color:var(--ink);border-left:2px solid var(--gold);padding-left:22px;margin:32px 0}
-.about p{color:var(--warm);line-height:1.8;margin-bottom:16px}
-.about-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin:32px 0 36px;border:1px solid var(--line)}
-.about-facts div{background:var(--bg);padding:18px 16px}
-.about-facts strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--gold);line-height:1.1}
-.about-facts span{font-size:.74rem;color:var(--muted)}
-
-/* ── ABLAUF ── */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:72px;position:relative}
-.steps::before{content:'';position:absolute;top:28px;left:12%;right:12%;height:1px;background:var(--gold);opacity:.3}
-.step{padding:0 22px;text-align:center}
-.step-num{width:56px;height:56px;border-radius:50%;border:1px solid var(--gold);background:var(--bg);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold);position:relative;z-index:2}
-.step-title{font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
-.step-desc{font-size:.86rem;color:var(--warm);line-height:1.65}
-
-/* ── FUNDAMENT / WEBSITE ── */
-.base-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
-.price-list{list-style:none;border-top:1px solid var(--line-d)}
-.price-list li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid var(--line-d)}
-.price-list span{font-size:.9rem;color:rgba(255,255,255,.75)}
-.price-list small{display:block;font-size:.76rem;color:rgba(255,255,255,.4);margin-top:3px}
-.price-list strong{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--gold-lt);white-space:nowrap}
-.base-note{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:18px}
-.ref-mini{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
-.ref-mini a{display:block;border:1px solid var(--line-d);border-radius:var(--r);padding:20px 22px;transition:border-color .3s}
-.ref-mini a:hover{border-color:var(--gold)}
-.ref-mini small{display:block;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:6px}
-.ref-mini b{font-weight:500;font-size:.95rem}
-
-/* ── CTA ── */
-.cta{text-align:center;background:var(--bg2)}
-.cta-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.2rem);font-weight:300;line-height:1.08;margin-bottom:22px}
-.cta-h em{font-style:italic;color:var(--gold)}
-.cta-sub{color:var(--warm);font-size:1rem;max-width:520px;margin:0 auto 44px;line-height:1.75}
-.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-
-/* ── LIGHTBOX ── */
-.lb{position:fixed;inset:0;z-index:900;background:rgba(10,10,8,.92);display:none;align-items:center;justify-content:center;padding:24px}
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:900;background:rgba(15,16,22,.86);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:24px}
 .lb.open{display:flex}
-.lb video{max-height:88vh;max-width:min(100%,500px);border-radius:16px;background:#000}
-.lb-close{position:absolute;top:18px;right:22px;color:#fff;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;padding:10px}
+.lb video{max-height:88vh;max-width:min(100%,480px);border-radius:20px;background:#000}
+.lb-x{position:absolute;top:16px;right:16px}
 
-/* ── WHATSAPP FAB ── */
-.wa-fab{position:fixed;right:22px;bottom:22px;z-index:600;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.2);transition:transform .2s var(--ease)}
-.wa-fab:active{transform:scale(.94)}
-.wa-fab svg{width:28px;height:28px;fill:#fff}
+/* WHATSAPP */
+.wa{position:fixed;right:18px;bottom:18px;z-index:600;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.3);transition:transform .2s var(--ease)}
+.wa:active{transform:scale(.94)}
+.wa svg{width:27px;height:27px;fill:#fff}
 
-/* ── FOOTER ── */
-footer{background:var(--dark2);color:rgba(255,255,255,.4);padding:72px 48px 40px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
-.footer-brand .nav-logo-v{font-size:1.5rem;color:#fff}
-.footer-brand .nav-logo-sub{font-size:.45rem}
-.footer-brand p{font-size:.83rem;line-height:1.75;margin-top:16px;max-width:280px;color:rgba(255,255,255,.35)}
-.footer-col h4{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px;font-weight:500}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.footer-col ul a{font-size:.83rem;transition:color .2s}
-.footer-col ul a:hover{color:var(--gold-lt)}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:32px;border-top:1px solid var(--line-d);font-size:.72rem}
-.footer-bottom a:hover{color:var(--gold-lt)}
+/* FOOTER */
+footer{padding:60px 0 44px;font-size:.86rem;color:var(--soft)}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:30px}
+.foot nav,.foot .links{position:static;transform:none;width:auto;background:none;border:0;box-shadow:none;backdrop-filter:none;padding:0;display:flex;gap:22px;flex-wrap:wrap}
+.foot a:hover{color:var(--ink)}
 
-/* ── RESPONSIVE ── */
+/* REVEAL */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
 @media(max-width:1000px){
-  nav{padding:0 24px}
-  .nav-links,.nav-cta-wrap{display:none}
-  .nav-ham{display:flex}
-  section{padding:80px 24px}
-  .hero{grid-template-columns:1fr;gap:56px;padding:110px 24px 64px;min-height:auto}
-  .hero-visual{width:min(300px,78vw)}
-  .hero-tag.t1{left:-28px}
-  .hero-tag.t2{right:-20px}
-  .strip{padding:22px 24px;gap:22px 32px}
-  .reels{grid-template-columns:repeat(2,1fr);gap:36px 20px}
-  .feed{grid-template-columns:repeat(3,1fr)}
-  .services{grid-template-columns:1fr 1fr}
-  .about{grid-template-columns:1fr;gap:48px}
-  .about-photos{height:520px}
-  .steps{grid-template-columns:1fr 1fr;gap:44px 0}
-  .steps::before{display:none}
-  .base-grid{grid-template-columns:1fr;gap:48px}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
-  footer{padding:64px 24px 100px}
+  .nav-links,nav>.btn{display:none}
+  .ham{display:flex}
+  section{padding:80px 0}
+  .stage{grid-template-columns:1fr;min-height:auto}
+  .hero-text{padding:52px 26px 10px}
+  .hero-fig img{height:min(62vh,520px)}
+  .f1{left:4%;top:auto;bottom:46%}
+  .f2{right:4%;top:auto;bottom:26%}
+  .f3{left:6%;bottom:6%}
+  .reels-panel{padding:40px 20px}
+  .reels{grid-template-columns:repeat(3,1fr)}
+  .cards{grid-template-columns:1fr 1fr}
+  .about{grid-template-columns:1fr;gap:36px}
+  .cta{padding:60px 22px}
 }
-@media(max-width:600px){
-  .hero-h1{font-size:2.75rem}
-  .hero-tag{font-size:.68rem;padding:9px 12px}
-  .hero-tag.t1{left:-14px;top:8%}
-  .hero-tag.t2{right:-10px}
-  .reels{gap:28px 14px}
-  .reel-title{font-size:1.15rem}
-  .reel-desc{display:none}
-  .reel-play{width:36px;height:36px;right:10px;bottom:10px}
-  .services{grid-template-columns:1fr}
-  .about-photos{height:440px}
-  .about-facts{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr}
-  .ref-mini{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
+@media(max-width:560px){
+  .hero h1{font-size:3.1rem}
+  .reels{grid-template-columns:1fr 1fr;gap:12px}
+  .cards{grid-template-columns:1fr}
+  .pill{font-size:.76rem;padding:8px 13px}
 }
+/* Cookie-Banner im neuen Look */
+#vcb{background:rgba(255,255,255,.88)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:var(--soft)!important;border-top:1px solid var(--line)!important;left:14px!important;right:14px!important;bottom:14px!important;border-radius:20px;box-shadow:0 20px 50px -20px rgba(20,30,60,.35)}
+#vcb *{color:inherit}
+#vcb a{color:var(--ink)!important}
+#vcb-accept,#vcb-decline{border-radius:999px!important;letter-spacing:0!important;text-transform:none!important;font-size:.85rem!important;font-weight:600!important}
+#vcb-accept{background:var(--ink)!important;color:#fff!important}
+#vcb-decline{color:var(--ink)!important;border:1px solid var(--line)!important}
+
 @media(prefers-reduced-motion:reduce){
-  .reveal,.hero-h1 .ln>span{opacity:1!important;transform:none!important;transition:none!important}
+  .rv{opacity:1;transform:none;transition:none}
+  .float{animation:none}
   html{scroll-behavior:auto}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="mainNav">
-  <a href="index.html" class="nav-logo">
-    <span class="nav-logo-v">Valoris</span>
-    <span class="nav-logo-sub">Social Media &amp; Werbung · Zwickau</span>
-  </a>
+<nav class="nav" id="nav">
+  <a href="index.html" class="logo">VALORIS</a>
   <ul class="nav-links">
-    <li><a href="#arbeiten">Arbeiten</a></li>
+    <li><a href="#reels">Reels</a></li>
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#ueber-mich">Über mich</a></li>
     <li><a href="preise.html">Preise</a></li>
-    <li><a href="kontakt.html">Kontakt</a></li>
   </ul>
-  <div class="nav-cta-wrap">
-    <a href="check/" class="nav-cta">Kostenloser Check</a>
-  </div>
-  <button class="nav-ham" id="hamBtn" aria-label="Menü öffnen" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="check/" class="btn btn-dark">Kostenloser Check</a>
+  <button class="ham" aria-label="Menü" onclick="document.getElementById('mnav').classList.toggle('open')"><span></span></button>
 </nav>
-
-<div class="nav-mobile" id="navMobile">
-  <a href="#arbeiten" onclick="toggleMenu()">Arbeiten</a>
-  <a href="#leistungen" onclick="toggleMenu()">Leistungen</a>
-  <a href="#ueber-mich" onclick="toggleMenu()">Über mich</a>
-  <a href="preise.html" onclick="toggleMenu()">Preise</a>
-  <a href="kontakt.html" onclick="toggleMenu()">Kontakt</a>
-  <a href="check/" class="btn-primary" style="justify-content:center;margin-top:12px;font-family:Inter,sans-serif;font-size:.78rem;border:0;padding:16px">Kostenloser Online-Check</a>
+<div class="mnav" id="mnav" onclick="this.classList.remove('open')">
+  <a href="#reels">Reels</a><a href="#leistungen">Leistungen</a><a href="#ueber-mich">Über mich</a><a href="preise.html">Preise</a><a href="kontakt.html">Kontakt</a>
+  <a href="check/" class="btn btn-dark" style="margin-top:20px;justify-content:center;font-size:1rem;border:0">Kostenloser Check</a>
 </div>
 
 <!-- HERO -->
 <header class="hero">
-  <div>
-    <div class="hero-eyebrow reveal">Social Media &amp; Werbung · Zwickau</div>
-    <h1 class="hero-h1" id="heroH1">
-      <span class="ln"><span>Zu wenig Kunden.</span></span>
-      <span class="ln"><span>Keine Bewerber.</span></span>
-      <span class="ln"><span><em>Wir drehen das um.</em></span></span>
-    </h1>
-    <p class="hero-sub reveal delay-2">Ich bin Frederic. Ich zeige Betriebe aus der Region so, wie sie wirklich sind: <strong>mit echten Gesichtern, echten Reels und einem Plan dahinter</strong>. Damit dich Kunden und Bewerber finden, verstehen und dir vertrauen, bevor sie überhaupt anrufen.</p>
-    <div class="hero-btns reveal delay-3">
-      <a href="check/" class="btn-primary">Kostenloser Online-Check →</a>
-      <a href="#arbeiten" class="btn-ghost">Reels ansehen</a>
-    </div>
-    <div class="hero-proof reveal delay-3">
-      <img src="assets/social/frederic-lacht.jpg" alt="Frederic Bochmann" width="44" height="44">
-      <span><b>Frederic Bochmann</b> · dreht, schneidet und plant selbst.<br>Ein Ansprechpartner, kein Ticketsystem.</span>
-    </div>
-  </div>
-  <div class="hero-visual reveal delay-2">
-    <div class="hero-tag t1"><small>Neu im Feed</small>Reel · „Was zahlst du für Social Media?“</div>
-    <div class="phone">
-      <div class="phone-screen">
-        <video src="assets/social/frederic-hero-loop.mp4" poster="assets/social/frederic-hero.jpg" autoplay muted loop playsinline preload="auto" aria-label="Frederic Bochmann im Büro"></video>
-        <a class="ig-handle" href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-          @valoris_auftragsstruktur
-        </a>
+  <div class="wrap stage">
+    <div class="hero-text">
+      <h1 class="rv">Ich mach dich<br><em class="s">sichtbar.</em></h1>
+      <p class="rv">Social Media für Betriebe aus Zwickau und Umgebung. Ich plane, drehe und schneide. Du zeichnest nur ab.</p>
+      <div class="hero-btns rv">
+        <a href="check/" class="btn btn-dark">Kostenloser Check →</a>
+        <a href="#reels" class="btn btn-light">Reels ansehen</a>
       </div>
     </div>
-    <div class="hero-tag t2"><small>Kommentier</small>„CHECK“ und ich schau mir deinen Auftritt an</div>
+    <div class="hero-fig">
+      <img src="assets/v2/frederic-cut.webp" alt="Frederic Bochmann, VALORIS" width="1060" height="1400">
+    </div>
+    <span class="pill float f1"><svg viewBox="0 0 24 24" fill="#e5484d"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>Zwickau &amp; Umgebung</span>
+    <span class="pill float f2"><span class="dot"></span>Reel ist online</span>
+    <span class="pill float f3">💬 Kommentar: „CHECK“</span>
   </div>
 </header>
 
-<!-- STRIP -->
-<div class="strip">
-  <div class="strip-item"><strong>Reels</strong><span>gedreht &amp; geschnitten</span></div>
-  <div class="strip-item"><strong>Recruiting</strong><span>über Social Media</span></div>
-  <div class="strip-item"><strong>Ads</strong><span>Facebook &amp; Instagram</span></div>
-  <div class="strip-item"><strong>Website</strong><span>als Fundament</span></div>
-</div>
-
-<!-- ARBEITEN / REELS -->
-<section class="dark" id="arbeiten">
-  <div class="wrap">
-    <div class="head-row">
+<!-- REELS -->
+<section id="reels">
+  <div class="wrap reels-panel">
+    <div class="head">
       <div>
-        <div class="section-tag reveal">Arbeiten</div>
-        <h2 class="section-h reveal delay-1">Keine Stockfotos.<br><em>Echte Leute, echte Reels.</em></h2>
+        <span class="pill kicker rv">▶ Echte Reels</span>
+        <h2 class="h2 rv">Selbst gedreht.<br>Selbst <em class="s">geschnitten.</em></h2>
       </div>
-      <p class="section-sub reveal delay-2">Alles hier ist selbst gedreht und geschnitten: für den eigenen Kanal und für Kunden wie LM Services aus Werdau. Antippen für Ton.</p>
+      <p class="lead rv">Für den eigenen Kanal und für Kunden wie LM Services aus Werdau. Antippen für Ton.</p>
     </div>
     <div class="reels">
-      <button class="reel reveal" data-full="assets/social/zwickau-check.mp4">
-        <div class="phone"><div class="phone-screen">
-          <video data-src="assets/social/zwickau-check-loop.mp4" poster="assets/social/zwickau-check.jpg" muted loop playsinline preload="none"></video>
-          <span class="reel-play"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span>
-        </div></div>
-        <div class="reel-meta"><div class="reel-kunde">Serie · Zwickau-Check</div><div class="reel-title">So würde ich LM Services auf Instagram aufbauen</div><p class="reel-desc">Profil-Analyse vor Ort, Collab-Post mit dem Inhaber.</p></div>
-      </button>
-      <button class="reel reveal delay-1" data-full="assets/social/lm-imagefilm.mp4">
-        <div class="phone"><div class="phone-screen">
-          <video data-src="assets/social/lm-imagefilm-loop.mp4" poster="assets/social/lm-imagefilm.jpg" muted loop playsinline preload="none"></video>
-          <span class="reel-play"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span>
-        </div></div>
-        <div class="reel-meta"><div class="reel-kunde">Kunde · LM Services</div><div class="reel-title">Imagefilm: Fuhrpark, Halle, Team</div><p class="reel-desc">Ein Drehtag, Drohne inklusive. Unternehmensvorstellung für Instagram.</p></div>
-      </button>
-      <button class="reel reveal delay-2" data-full="assets/social/lm-telefonat.mp4">
-        <div class="phone"><div class="phone-screen">
-          <video data-src="assets/social/lm-telefonat-loop.mp4" poster="assets/social/lm-telefonat.jpg" muted loop playsinline preload="none"></video>
-          <span class="reel-play"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span>
-        </div></div>
-        <div class="reel-meta"><div class="reel-kunde">Kunde · LM Services · Recruiting</div><div class="reel-title">„Wenn der Kunde anruft, während du mähst“</div><p class="reel-desc">Humor statt Hochglanz und am Ende die Frage: Wer kommt ins Team?</p></div>
-      </button>
-      <button class="reel reveal" data-full="assets/social/was-zahlst-du.mp4">
-        <div class="phone"><div class="phone-screen">
-          <video data-src="assets/social/was-zahlst-du-loop.mp4" poster="assets/social/was-zahlst-du.jpg" muted loop playsinline preload="none"></video>
-          <span class="reel-play"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span>
-        </div></div>
-        <div class="reel-meta"><div class="reel-kunde">Eigener Kanal · VALORIS</div><div class="reel-title">Was zahlst du im Monat für Social Media?</div><p class="reel-desc">Trend-Format, eine Einstellung, ehrlicher Gesichtsausdruck.</p></div>
-      </button>
-      <button class="reel reveal delay-1" data-full="assets/social/lm-buero.mp4">
-        <div class="phone"><div class="phone-screen">
-          <video data-src="assets/social/lm-buero-loop.mp4" poster="assets/social/lm-buero.jpg" muted loop playsinline preload="none"></video>
-          <span class="reel-play"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span>
-        </div></div>
-        <div class="reel-meta"><div class="reel-kunde">Kunde · LM Services · Recruiting</div><div class="reel-title">„Wenn wir das Büro mal wieder selbst machen …“</div><p class="reel-desc">Mitarbeitergewinnung mit Selbstironie, CTA „JOB“ per DM.</p></div>
-      </button>
-      <button class="reel reveal delay-2" data-full="assets/social/chill.mp4">
-        <div class="phone"><div class="phone-screen">
-          <video data-src="assets/social/chill-loop.mp4" poster="assets/social/chill.jpg" muted loop playsinline preload="none"></video>
-          <span class="reel-play"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span>
-        </div></div>
-        <div class="reel-meta"><div class="reel-kunde">Eigener Kanal · VALORIS</div><div class="reel-title">POV: Du erklärst Social Media im falschen Moment</div><p class="reel-desc">Walk-and-Talk im Auto, Untertitel Wort für Wort.</p></div>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- FEED -->
-<section style="padding-bottom:90px">
-  <div class="wrap">
-    <div class="head-row">
-      <div>
-        <div class="section-tag reveal">Aus dem Feed</div>
-        <h2 class="section-h reveal delay-1">Posts, die man<br><em>speichert statt wegwischt.</em></h2>
-      </div>
-      <a href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener" class="btn-ghost reveal delay-2">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-        Auf Instagram folgen
-      </a>
-    </div>
-    <div class="feed reveal delay-1">
-      <a href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener"><img src="assets/social/post-POST-KW28-kunden-1.jpg" alt="Karussell: Dein nächster Kunde sucht dich" loading="lazy"></a>
-      <a href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener"><img src="assets/social/post-POST-KW28-mitarbeiter-1.jpg" alt="Karussell: Du suchst dringend Leute" loading="lazy"></a>
-      <a href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener"><img src="assets/social/post-POST-KW28-sichtbar-1.jpg" alt="Karussell: Jemand sucht online, was du anbietest" loading="lazy"></a>
-      <a href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener"><img src="assets/social/post-POST-KW30-5sektest-1.jpg" alt="Karussell: Der 5-Sekunden-Test" loading="lazy"></a>
-      <a href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener"><img src="assets/social/post-POST-KW30-minolo-1.jpg" alt="Karussell: Vom Baukasten zum Aushängeschild, Minolo GmbH" loading="lazy"></a>
-      <a href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener"><img src="assets/social/post-POST-KW30-online-1.jpg" alt="Karussell: Woran ein Kunde sieht, ob du professionell bist" loading="lazy"></a>
+      <button class="reel rv" data-full="assets/social/zwickau-check.mp4"><div class="reel-v"><video data-src="assets/social/zwickau-check-loop.mp4" poster="assets/social/zwickau-check.jpg" muted loop playsinline preload="none"></video><span class="pill">LM Services</span></div><div class="reel-t">Zwickau-Check: Profil-Umbau</div><div class="reel-k">Serie</div></button>
+      <button class="reel rv" data-full="assets/social/lm-imagefilm.mp4"><div class="reel-v"><video data-src="assets/social/lm-imagefilm-loop.mp4" poster="assets/social/lm-imagefilm.jpg" muted loop playsinline preload="none"></video><span class="pill">LM Services</span></div><div class="reel-t">Imagefilm mit Drohne</div><div class="reel-k">Kunde</div></button>
+      <button class="reel rv" data-full="assets/social/lm-telefonat.mp4"><div class="reel-v"><video data-src="assets/social/lm-telefonat-loop.mp4" poster="assets/social/lm-telefonat.jpg" muted loop playsinline preload="none"></video><span class="pill">Recruiting</span></div><div class="reel-t">Anruf beim Mähen</div><div class="reel-k">Kunde</div></button>
+      <button class="reel rv" data-full="assets/social/was-zahlst-du.mp4"><div class="reel-v"><video data-src="assets/social/was-zahlst-du-loop.mp4" poster="assets/social/was-zahlst-du.jpg" muted loop playsinline preload="none"></video><span class="pill">VALORIS</span></div><div class="reel-t">Was zahlst du für Social Media?</div><div class="reel-k">Eigener Kanal</div></button>
+      <button class="reel rv" data-full="assets/social/lm-buero.mp4"><div class="reel-v"><video data-src="assets/social/lm-buero-loop.mp4" poster="assets/social/lm-buero.jpg" muted loop playsinline preload="none"></video><span class="pill">Recruiting</span></div><div class="reel-t">Wenn wir das Büro selbst machen</div><div class="reel-k">Kunde</div></button>
+      <button class="reel rv" data-full="assets/social/chill.mp4"><div class="reel-v"><video data-src="assets/social/chill-loop.mp4" poster="assets/social/chill.jpg" muted loop playsinline preload="none"></video><span class="pill">VALORIS</span></div><div class="reel-t">Social Media im falschen Moment</div><div class="reel-k">Eigener Kanal</div></button>
     </div>
   </div>
 </section>
 
 <!-- LEISTUNGEN -->
-<section id="leistungen" style="padding-top:40px">
+<section id="leistungen" style="padding-top:20px">
   <div class="wrap">
-    <div class="section-tag reveal">Leistungen</div>
-    <h2 class="section-h reveal delay-1">Dein ganzer Auftritt,<br><em>aus einer Hand.</em></h2>
-    <p class="section-sub reveal delay-2">Kunden und Bewerber schauen sich dich überall an: auf Instagram, bei Google, auf deiner Seite. Ich sorge dafür, dass das Bild überall stimmt und regelmäßig Neues kommt.</p>
-    <div class="services">
-      <div class="service reveal"><div class="service-num">01</div><div class="service-title">Social-Media-Betreuung</div><p class="service-desc">Redaktionsplan, Posts, Karussells und Stories jede Woche. Du gibst frei, ich veröffentliche. Instagram und Facebook.</p></div>
-      <div class="service reveal delay-1"><div class="service-num">02</div><div class="service-title">Reels &amp; Drehtage</div><p class="service-desc">Ich komme mit Kamera, Mikro und Drohne zu dir in den Betrieb. Daraus schneide ich Reels für mehrere Wochen.</p></div>
-      <div class="service reveal delay-2"><div class="service-num">03</div><div class="service-title">Recruiting</div><p class="service-desc">Gute Leute suchen keinen Job, die scrollen. Wir zeigen dein Team und euren Umgang, damit sich die Richtigen melden.</p></div>
-      <div class="service reveal"><div class="service-num">04</div><div class="service-title">Werbeanzeigen</div><p class="service-desc">Facebook- und Instagram-Ads mit Lead-Formular für Neukunden oder Bewerber. Mit kleinem Budget testen, dann ausbauen.</p></div>
-      <div class="service reveal delay-1"><div class="service-num">05</div><div class="service-title">Google-Profil &amp; Bewertungen</div><p class="service-desc">Dein Eintrag bei Google wird gepflegt: Fotos, Beiträge, Antworten auf Bewertungen. Wer dich sucht, soll Vertrauen fassen.</p></div>
-      <div class="service base reveal delay-2"><div class="service-num">06</div><div class="service-title">Website</div><p class="service-desc">Der Ort, an dem aus Aufmerksamkeit eine Anfrage wird. Schnell, mobil, mit WhatsApp-Button. <a href="preise.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px">Pakete ansehen</a></p></div>
+    <span class="pill kicker rv">✦ Leistungen</span>
+    <h2 class="h2 rv">Was ich für dich <em class="s">mache.</em></h2>
+    <div class="cards">
+      <div class="card rv"><div class="ico" style="background:var(--lav)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><h3>Social-Media-Betreuung</h3><p>Jede Woche neue Posts und Stories. Ich plane und poste, du gibst frei.</p></div>
+      <div class="card rv"><div class="ico" style="background:var(--mint)"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="3"/><path d="m16 10 6-3v10l-6-3"/></svg></div><h3>Reels &amp; Drehtage</h3><p>Ich komme in deinen Betrieb und filme. Daraus werden Reels für Wochen.</p></div>
+      <div class="card rv"><div class="ico" style="background:var(--sky)"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 11v6M14 14h6"/></svg></div><h3>Recruiting</h3><p>Zeig dein Team, wie es wirklich ist. Dann melden sich die Richtigen.</p></div>
+      <div class="card rv"><div class="ico" style="background:#f6e9e1"><svg viewBox="0 0 24 24"><path d="M3 11v2a2 2 0 0 0 2 2h2l5 4V5L7 9H5a2 2 0 0 0-2 2ZM16 8a5 5 0 0 1 0 8M19 5a9 9 0 0 1 0 14"/></svg></div><h3>Werbeanzeigen</h3><p>Instagram- und Facebook-Ads für neue Kunden oder Bewerber.</p></div>
+    </div>
+    <div class="base rv">
+      <p><b>Website &amp; Google-Profil</b> gibt’s auch, als Fundament, damit aus Aufmerksamkeit eine Anfrage wird.</p>
+      <a href="preise.html">Pakete &amp; Preise →</a>
     </div>
   </div>
 </section>
 
 <!-- ÜBER MICH -->
-<section id="ueber-mich" style="background:var(--bg2)">
+<section id="ueber-mich" style="padding-top:30px">
   <div class="wrap about">
-    <div class="about-photos reveal">
-      <figure class="p1"><img src="assets/social/frederic-portrait.jpg" alt="Frederic Bochmann, Porträt" loading="lazy"></figure>
-      <figure class="p2"><img src="assets/social/frederic-lacht.jpg" alt="Frederic Bochmann beim Dreh im Büro" loading="lazy"><figcaption>Am Set, Oktober 2026</figcaption></figure>
+    <div class="about-stage rv">
+      <img src="assets/v2/frederic-hoodie-cut.webp" alt="Frederic Bochmann" loading="lazy" width="1004" height="1200">
+      <span class="pill a1">👋 Hi, ich bin Frederic</span>
+      <span class="pill a2"><span class="dot"></span>Antwort in 24 h</span>
     </div>
     <div>
-      <div class="section-tag reveal">Über mich</div>
-      <h2 class="section-h reveal delay-1">Glück auf,<br><em>ich bin Frederic.</em></h2>
-      <blockquote class="about-quote reveal delay-1">„Die meisten Betriebe sind richtig gut, nur sieht es online keiner.“</blockquote>
-      <p class="reveal delay-2">Ich komme aus Zwickau, komme selbst aus dem Garten- und Landschaftsbau und weiß, wie wenig Zeit im Alltag für Instagram bleibt. Genau deshalb mache ich das für dich: Ich plane, drehe, schneide und poste. Du zeichnest nur ab.</p>
-      <p class="reveal delay-2">Angefangen habe ich mit Websites. Heute ist die Website das Fundament und Social Media das, was Leute wirklich zu dir bringt.</p>
-      <div class="about-facts reveal delay-3">
-        <div><strong>Zwickau</strong><span>vor Ort, persönlich</span></div>
-        <div><strong>1 Person</strong><span>vom Dreh bis zum Post</span></div>
-        <div><strong>24 h</strong><span>Antwortzeit</span></div>
+      <span class="pill kicker rv">Über mich</span>
+      <h2 class="h2 rv">Ein Ansprechpartner.<br>Kein <em class="s">Ticketsystem.</em></h2>
+      <p class="rv">Ich komme aus Zwickau und mache alles selbst: Idee, Dreh, Schnitt, Posten. Du musst nichts vorbereiten, nur da sein.</p>
+      <p class="rv">Angefangen habe ich mit Websites. Heute bringt Social Media die Leute zu dir, die Website ist das Fundament.</p>
+      <!-- PLATZHALTER: morgen 1–2 Arbeitsfotos von Frederic hier einsetzen (assets/v2/arbeit-1.jpg / arbeit-2.jpg) -->
+      <div class="work rv">
+        <figure><img src="assets/social/frederic-lacht.jpg" alt="Frederic beim Dreh" loading="lazy"><figcaption><span class="pill">Am Set</span></figcaption></figure>
+        <figure><img src="assets/social/zwickau-check.jpg" alt="Zwickau-Check mit LM Services" loading="lazy" style="object-position:50% 30%"><figcaption><span class="pill">Beim Kunden</span></figcaption></figure>
       </div>
-      <div class="reveal delay-3" style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="ueber-uns.html" class="btn-ghost">Mehr über mich</a>
-        <a href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener" class="btn-ghost">Instagram</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABLAUF -->
-<section id="ablauf">
-  <div class="wrap">
-    <div class="section-tag reveal">Ablauf</div>
-    <h2 class="section-h reveal delay-1">Von „CHECK“ bis zum<br><em>ersten Reel.</em></h2>
-    <div class="steps">
-      <div class="step reveal"><div class="step-num">1</div><div class="step-title">Check</div><p class="step-desc">Du schreibst „CHECK“. Ich schaue mir Instagram, Google und deine Seite an und schicke dir die 3 wichtigsten Punkte.</p></div>
-      <div class="step reveal delay-1"><div class="step-num">2</div><div class="step-title">15 Minuten</div><p class="step-desc">Kurzes Telefonat: Was willst du erreichen, mehr Kunden oder mehr Bewerber? Danach bekommst du einen klaren Vorschlag.</p></div>
-      <div class="step reveal delay-2"><div class="step-num">3</div><div class="step-title">Drehtag</div><p class="step-desc">Ich komme vorbei und filme Betrieb, Team und Arbeit. Du musst nichts vorbereiten, nur da sein.</p></div>
-      <div class="step reveal delay-3"><div class="step-num">4</div><div class="step-title">Posten &amp; messen</div><p class="step-desc">Jede Woche neue Inhalte, jeden Monat ein ehrlicher Blick auf die Zahlen. Was nicht wirkt, fliegt raus.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- FUNDAMENT -->
-<section class="dark">
-  <div class="wrap base-grid">
-    <div>
-      <div class="section-tag reveal">Das Fundament</div>
-      <h2 class="section-h reveal delay-1">Und die Website?<br><em>Die muss halten.</em></h2>
-      <p class="section-sub reveal delay-2">Social Media bringt Aufmerksamkeit, die Website macht daraus eine Anfrage. Wenn deine Seite im Weg steht, baue ich sie neu, mit Demo vorab und zum Festpreis.</p>
-      <div class="ref-mini reveal delay-3">
-        <a href="https://minolo-gmbh.de" target="_blank" rel="noopener"><small>Dienstleister</small><b>Minolo GmbH ↗</b></a>
-        <a href="https://bochmann-dienstleistungen.github.io/scholz-maler-premium/" target="_blank" rel="noopener"><small>Handwerk</small><b>Malerwerkstätte Scholz ↗</b></a>
-      </div>
-    </div>
-    <div class="reveal delay-2">
-      <ul class="price-list">
-        <li><span>Website Starter<small>Onepager, mobil, WhatsApp, Basis-SEO</small></span><strong>1.590 €</strong></li>
-        <li><span>Website Premium<small>bis 5 Seiten, Cinematic Hero, Google-Profil</small></span><strong>ab 4.990 €</strong></li>
-        <li><span>Individual<small>Großer Auftritt, mehrere Standorte</small></span><strong>auf Anfrage</strong></li>
-        <li><span>Laufende Betreuung<small>Pflege, Updates, SEO-Monitoring</small></span><strong>ab 299 €/Mon.</strong></li>
-      </ul>
-      <p class="base-note">Endpreise, §19 UStG: keine MwSt. Social-Media-Betreuung nach Umfang, Vorschlag nach dem Check.</p>
-      <a href="preise.html" class="btn-ghost" style="margin-top:28px;border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.75)">Alle Pakete &amp; Preise →</a>
+      <a href="ueber-uns.html" class="btn btn-light rv" style="margin-top:22px;border-color:var(--line)">Mehr über mich</a>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta">
-  <div class="section-tag reveal" style="justify-content:center">Jetzt starten</div>
-  <h2 class="cta-h reveal delay-1">Ein Wort genügt:<br><em>„Check“.</em></h2>
-  <p class="cta-sub reveal delay-2">Kostenlos und unverbindlich. Ich schaue mir deinen Auftritt an und sage dir ehrlich, was ich als Erstes ändern würde. Antwort innerhalb von 24 Stunden.</p>
-  <div class="cta-btns reveal delay-3">
-    <a href="check/" class="btn-primary">Online-Check anfordern →</a>
-    <a href="https://ig.me/m/valoris_auftragsstruktur" target="_blank" rel="noopener" class="btn-ghost">Per Instagram-DM</a>
-    <a href="https://wa.me/4915254190819?text=CHECK" class="btn-ghost">Per WhatsApp</a>
+<section style="padding-top:20px">
+  <div class="wrap cta rv">
+    <h2 class="h2">Schreib mir <em class="s">„Check“.</em></h2>
+    <p class="lead">Ich schau mir deinen Auftritt an und sag dir ehrlich, was ich als Erstes ändern würde. Kostenlos.</p>
+    <div class="steps">
+      <span class="pill"><b>1</b>&nbsp;Check</span>
+      <span class="pill"><b>2</b>&nbsp;15 Min. telefonieren</span>
+      <span class="pill"><b>3</b>&nbsp;Drehtag</span>
+      <span class="pill"><b>4</b>&nbsp;Posten &amp; messen</span>
+    </div>
+    <div class="cta-btns">
+      <a href="check/" class="btn btn-dark">Kostenloser Check →</a>
+      <a href="https://ig.me/m/valoris_auftragsstruktur" target="_blank" rel="noopener" class="btn btn-light">Instagram-DM</a>
+      <a href="https://wa.me/4915254190819?text=CHECK" class="btn btn-light">WhatsApp</a>
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="nav-logo">
-        <span class="nav-logo-v">Valoris</span>
-        <span class="nav-logo-sub">Social Media &amp; Werbung · Zwickau</span>
-      </div>
-      <p>Social Media, Recruiting, Werbung und Websites für Betriebe in Zwickau und Sachsen. Eine Marke von Bochmann Dienstleistungen.</p>
+  <div class="wrap foot">
+    <div><b style="color:var(--ink);letter-spacing:.14em">VALORIS</b> · Social Media für Betriebe · Zwickau<br>© <span id="yr">2026</span> Bochmann Dienstleistungen · <a href="tel:+4915254190819">0152 54190819</a> · <a href="mailto:frederic@valoris-auftragsstruktur.de">frederic@valoris-auftragsstruktur.de</a></div>
+    <div class="links">
+      <a href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/people/Valoris-Auftragsstruktur/61564795752910/" target="_blank" rel="noopener">Facebook</a>
+      <a href="preise.html">Preise</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html" onclick="if(window.openLegalDrawer){openLegalDrawer('impressum');return false}">Impressum</a>
+      <a href="datenschutz.html" onclick="if(window.openLegalDrawer){openLegalDrawer('datenschutz');return false}">Datenschutz</a>
     </div>
-    <div class="footer-col">
-      <h4>Leistungen</h4>
-      <ul>
-        <li><a href="#leistungen">Social-Media-Betreuung</a></li>
-        <li><a href="#arbeiten">Reels &amp; Drehtage</a></li>
-        <li><a href="leistungen.html">Website &amp; SEO</a></li>
-        <li><a href="check/">Kostenloser Check</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Unternehmen</h4>
-      <ul>
-        <li><a href="ueber-uns.html">Über mich</a></li>
-        <li><a href="referenzen.html">Website-Referenzen</a></li>
-        <li><a href="preise.html">Preise</a></li>
-        <li><a href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://www.facebook.com/people/Valoris-Auftragsstruktur/61564795752910/" target="_blank" rel="noopener">Facebook</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Rechtliches</h4>
-      <ul>
-        <li><a href="impressum.html" onclick="if(window.openLegalDrawer){openLegalDrawer('impressum');return false}">Impressum</a></li>
-        <li><a href="datenschutz.html" onclick="if(window.openLegalDrawer){openLegalDrawer('datenschutz');return false}">Datenschutz</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© <span id="yr">2026</span> Bochmann Dienstleistungen · VALORIS · Zwickau</span>
-    <span><a href="tel:+4915254190819">0152 54190819</a> · <a href="mailto:frederic@valoris-auftragsstruktur.de">frederic@valoris-auftragsstruktur.de</a></span>
   </div>
 </footer>
 
-<!-- LIGHTBOX -->
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Reel abspielen">
-  <button class="lb-close" id="lbClose">Schließen ✕</button>
-  <video id="lbVideo" controls playsinline></video>
+  <button class="pill lb-x" id="lbX">Schließen ✕</button>
+  <video id="lbV" controls playsinline></video>
 </div>
 
-<a class="wa-fab" href="https://wa.me/4915254190819" aria-label="WhatsApp schreiben"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg></a>
+<a class="wa" href="https://wa.me/4915254190819" aria-label="WhatsApp schreiben"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg></a>
 
 <script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-
-const nav = document.getElementById('mainNav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled', window.scrollY > 60),{passive:true});
-function toggleMenu(){ document.getElementById('navMobile').classList.toggle('open'); }
-
-// Hero-Headline
-requestAnimationFrame(()=>document.getElementById('heroH1').classList.add('visible'));
-
-// Scroll-Reveal (Endzustand garantiert: Fallback nach 2,5 s)
-const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } }),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible')),2500);
-
-// Reel-Loops: nur abspielen, wenn sichtbar
-const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const vio = new IntersectionObserver(es=>es.forEach(e=>{
-  const v = e.target;
-  if(e.isIntersecting){
-    if(!v.src && v.dataset.src) v.src = v.dataset.src;
-    if(!reduce) v.play().catch(()=>{});
-  } else v.pause();
-}),{threshold:.25});
+document.getElementById('yr').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*60+'ms';io.observe(el)});
+setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('in')),2500);
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){if(!v.src&&v.dataset.src)v.src=v.dataset.src;if(!reduce)v.play().catch(()=>{})}else v.pause()}),{threshold:.25});
 document.querySelectorAll('.reel video').forEach(v=>vio.observe(v));
-
-// Lightbox mit Ton
-const lb = document.getElementById('lb'), lbv = document.getElementById('lbVideo');
-document.querySelectorAll('.reel').forEach(r=>r.addEventListener('click',()=>{
-  lbv.src = r.dataset.full; lb.classList.add('open'); lbv.play().catch(()=>{});
-}));
-function closeLb(){ lbv.pause(); lbv.removeAttribute('src'); lbv.load(); lb.classList.remove('open'); }
-document.getElementById('lbClose').addEventListener('click',closeLb);
-lb.addEventListener('click',e=>{ if(e.target===lb) closeLb(); });
-document.addEventListener('keydown',e=>{ if(e.key==='Escape' && lb.classList.contains('open')) closeLb(); });
+const lb=document.getElementById('lb'),lbV=document.getElementById('lbV');
+document.querySelectorAll('.reel').forEach(r=>r.addEventListener('click',()=>{lbV.src=r.dataset.full;lb.classList.add('open');lbV.play().catch(()=>{})}));
+function closeLb(){lbV.pause();lbV.removeAttribute('src');lbV.load();lb.classList.remove('open')}
+document.getElementById('lbX').addEventListener('click',closeLb);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lb.classList.contains('open'))closeLb()});
+if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister()))}
 </script>
 <script src="legal-drawer.js" defer></script>
 <script src="cookie-consent.js" defer></script>
-<script>
-if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister()));}
-</script>
 </body>
 </html>
