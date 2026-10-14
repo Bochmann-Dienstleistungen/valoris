@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Über mich | Frederic Bochmann · VALORIS Zwickau</title>
 <meta name="description" content="Frederic Bochmann, VALORIS aus Zwickau: Social Media, Reels, Recruiting und Werbung für Betriebe aus der Region. Ein Ansprechpartner vom Dreh bis zum Post.">
-<link rel="icon" type="image/png" href="assets/v2/favicon.png">
 <meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
 <link href="https://fonts.bunny.net/css?family=poppins:500,600,700|lato:400,700&display=swap" rel="stylesheet">
@@ -255,13 +254,13 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
 
 <header class="nav" id="nav">
   <div class="nav-in">
-    <a href="index.html" class="logo"><img src="assets/v2/valoris-logo.png" alt="VALORIS by Bochmann Dienstleistungen" width="190" height="36"></a>
+    <a href="/" class="logo"><img src="assets/v2/valoris-logo.png" alt="VALORIS by Bochmann Dienstleistungen" width="190" height="36"></a>
     <ul class="nav-links">
-      <li><a href="index.html#warum">Warum</a></li>
-      <li><a href="index.html#reels">Arbeiten</a></li>
-      <li><a href="index.html#leistungen">Leistungen</a></li>
-      <li><a href="index.html#ueber-mich">Über mich</a></li>
-      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="/#warum">Warum</a></li>
+      <li><a href="/#reels">Arbeiten</a></li>
+      <li><a href="/#leistungen">Leistungen</a></li>
+      <li><a href="/#ueber-mich">Über mich</a></li>
+      <li><a href="/#faq">FAQ</a></li>
     </ul>
     <a href="check/" class="btn btn-dark">Kostenloser Check</a>
     <button class="ham" aria-label="Menü" onclick="document.getElementById('mnav').classList.toggle('open')"><span></span></button>
@@ -269,7 +268,7 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
 </header>
 <div class="mnav" id="mnav" onclick="this.classList.remove('open')">
   <img src="assets/v2/valoris-logo.png" alt="VALORIS by Bochmann Dienstleistungen" class="mnav-logo" width="190" height="36">
-  <a href="index.html">Startseite</a><a href="index.html#reels">Arbeiten</a><a href="index.html#leistungen">Leistungen</a><a href="index.html#faq">FAQ</a><a href="kontakt.html">Kontakt</a>
+  <a href="/">Startseite</a><a href="/#reels">Arbeiten</a><a href="/#leistungen">Leistungen</a><a href="/#faq">FAQ</a><a href="kontakt.html">Kontakt</a>
   <a href="check/" class="btn btn-dark" style="margin-top:24px;justify-content:center;border:0">Kostenloser Check</a>
 </div>
 
@@ -281,7 +280,7 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
       <p class="rv">Hinter VALORIS steckt kein Agentur-Team mit Ticketsystem, sondern ich. Ich plane, drehe, schneide und poste für Betriebe aus der Region, damit Kunden und Bewerber sehen, wie gut ihr wirklich seid.</p>
       <div class="hero-btns rv">
         <a href="https://wa.me/4915254190819" class="btn btn-dark">Schreib mir</a>
-        <a href="index.html#reels" class="btn btn-line">Arbeiten ansehen</a>
+        <a href="/#reels" class="btn btn-line">Arbeiten ansehen</a>
       </div>
       <div class="contact-list rv">
         <a href="tel:+4915254190819">0152 54190819</a>
@@ -355,8 +354,8 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
       <a href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/people/Valoris-Auftragsstruktur/61564795752910/" target="_blank" rel="noopener">Facebook</a>
       <a href="kontakt.html">Kontakt</a>
-      <a href="impressum.html" onclick="if(window.openLegalDrawer){openLegalDrawer('impressum');return false}">Impressum</a>
-      <a href="datenschutz.html" onclick="if(window.openLegalDrawer){openLegalDrawer('datenschutz');return false}">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </div>
   </div>
 </footer>
@@ -371,7 +370,7 @@ if(!window.gsap||reduce){document.querySelectorAll('.rv').forEach(el=>{el.style.
 else{gsap.registerPlugin(ScrollTrigger);gsap.utils.toArray('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.8,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%',once:true}}));
 setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>{if(getComputedStyle(el).opacity==='0'&&el.getBoundingClientRect().top<innerHeight)gsap.to(el,{opacity:1,y:0,duration:.5})}),3000);}
 </script>
-<script src="legal-drawer.js" defer></script>
+<script src="assets/v2/clean-url.js"></script>
 <script src="cookie-consent.js" defer></script>
 </body>
 </html>
