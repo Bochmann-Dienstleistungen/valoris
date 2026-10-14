@@ -21,7 +21,7 @@
 {"@type":"Question","name":"Ich hab keine Zeit für Social Media. Geht das trotzdem?","acceptedAnswer":{"@type":"Answer","text":"Genau dafür gibt es mich. Ich plane, drehe, schneide und poste. Du brauchst etwa eine Stunde für den Drehtag und ein paar Minuten pro Woche zum Freigeben."}},
 {"@type":"Question","name":"Ich will nicht vor die Kamera. Muss ich?","acceptedAnswer":{"@type":"Answer","text":"Nein. Dein Team, eure Arbeit, Vorher-Nachher und Baustellen funktionieren genauso. Wer möchte, kommt vor die Kamera, niemand muss."}},
 {"@type":"Question","name":"Bringt Social Media in meiner Branche überhaupt etwas?","acceptedAnswer":{"@type":"Answer","text":"Wenn deine Kunden oder Bewerber ein Smartphone haben: ja. Gerade Handwerk, Dienstleister und Gastronomie wirken auf Instagram und Facebook stark, weil man die Arbeit sieht."}},
-{"@type":"Question","name":"Was kostet das?","acceptedAnswer":{"@type":"Answer","text":"Das hängt vom Umfang ab. Nach dem kostenlosen Check bekommst du einen klaren Festpreis pro Monat, ohne versteckte Kosten. Websites gibt es ab 1.590 Euro."}},
+{"@type":"Question","name":"Was kostet das?","acceptedAnswer":{"@type":"Answer","text":"Das hängt vom Umfang ab. Nach dem kostenlosen Check bekommst du einen klaren Festpreis pro Monat, ohne versteckte Kosten."}},
 {"@type":"Question","name":"Wie schnell sehe ich Ergebnisse?","acceptedAnswer":{"@type":"Answer","text":"Die ersten Inhalte sind nach dem Drehtag innerhalb weniger Tage online. Reichweite und Anfragen wachsen mit der Regelmäßigkeit. Jeden Monat schauen wir gemeinsam auf die Zahlen."}}
 ]}
 </script>
@@ -217,7 +217,7 @@ section{padding:110px 0}
 /* ÜBER MICH */
 .about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .about-pics{position:relative;aspect-ratio:1/1.08}
-.about-pics .main{position:absolute;left:0;top:0;width:78%;height:88%;border-radius:var(--r);overflow:hidden;box-shadow:0 40px 70px -40px rgba(30,40,80,.5)}
+.about-pics .main{position:absolute;inset:0;border-radius:var(--r);overflow:hidden;box-shadow:0 40px 70px -40px rgba(30,40,80,.5)}
 .about-pics .main img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .about-pics .small{position:absolute;right:0;bottom:0;width:40%;aspect-ratio:4/5;border-radius:22px;overflow:hidden;border:6px solid var(--bg);box-shadow:0 30px 50px -30px rgba(30,40,80,.5)}
 .about-pics .small img{width:100%;height:100%;object-fit:cover}
@@ -311,7 +311,7 @@ footer{padding:60px 0 44px;font-size:.86rem;color:var(--soft)}
 </head>
 <body>
 
-<div class="progress" id="prog"></div>
+
 <nav class="nav">
   <a href="index.html" class="logo">VALORIS</a>
   <ul class="nav-links">
@@ -325,14 +325,14 @@ footer{padding:60px 0 44px;font-size:.86rem;color:var(--soft)}
   <button class="ham" aria-label="Menü" onclick="document.getElementById('mnav').classList.toggle('open')"><span></span></button>
 </nav>
 <div class="mnav" id="mnav" onclick="this.classList.remove('open')">
-  <a href="#warum">Warum</a><a href="#reels">Reels</a><a href="#leistungen">Leistungen</a><a href="#ueber-mich">Über mich</a><a href="#faq">FAQ</a><a href="preise.html">Preise</a>
+  <a href="#warum">Warum</a><a href="#reels">Reels</a><a href="#leistungen">Leistungen</a><a href="#ueber-mich">Über mich</a><a href="#faq">FAQ</a>
   <a href="check/" class="btn btn-dark" style="margin-top:20px;justify-content:center;font-size:1rem;border:0">Kostenloser Check</a>
 </div>
 
 <!-- 1 · HERO -->
 <header class="hero">
   <div class="wrap stage" id="stage">
-    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="grain"></div><div class="halo"></div>
+    
     <div class="hero-text">
       <h1 id="h1"><span class="w"><span>Ich</span></span> <span class="w"><span>mach</span></span> <span class="w"><span>dich</span></span><br><span class="w" style="overflow:visible"><span><em class="s">sichtbar.<svg class="swash" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path id="swash" d="M3 14 C 50 4, 120 4, 197 10" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg></em></span></span></h1>
       <p class="hero-sub">Social Media für Betriebe aus Zwickau und Umgebung. Ich plane, drehe und schneide. Du zeichnest nur ab.</p>
@@ -342,10 +342,7 @@ footer{padding:60px 0 44px;font-size:.86rem;color:var(--soft)}
       </div>
     </div>
     <div class="hero-fig" id="fig"><img src="assets/v2/frederic-studio.webp" alt="Frederic Bochmann, VALORIS" width="1400" height="1750"></div>
-    <div class="float f1"><span class="pill"><svg viewBox="0 0 24 24" fill="#e5484d"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>Zwickau &amp; Umgebung</span></div>
-    <div class="float f2"><span class="pill"><span class="dot"></span>Neues Reel ist online</span></div>
-    <div class="float f3"><span class="pill">💬 „Wie kann ich euch erreichen?“</span></div>
-    <div class="scroll-hint"><i></i>Scroll: was passiert, bevor dich jemand anruft</div>
+                <div class="scroll-hint"><i></i>Scroll: was passiert, bevor dich jemand anruft</div>
   </div>
 </header>
 
@@ -453,7 +450,7 @@ footer{padding:60px 0 44px;font-size:.86rem;color:var(--soft)}
     </div>
     <div class="base rv">
       <p><b>Website &amp; Google-Profil</b> gibt’s auch, als Fundament, damit aus Aufmerksamkeit eine Anfrage wird.</p>
-      <a href="preise.html">Pakete &amp; Preise →</a>
+      <a href="kontakt.html">Anfragen →</a>
     </div>
   </div>
 </section>
@@ -464,9 +461,9 @@ footer{padding:60px 0 44px;font-size:.86rem;color:var(--soft)}
     <div class="about-pics rv">
       <div class="main"><img src="assets/v2/frederic-cafe.jpg" alt="Frederic Bochmann" loading="lazy" width="1086" height="1448"></div>
       <!-- PLATZHALTER: Arbeitsfoto (assets/v2/arbeit-1.jpg) hier einsetzen, sobald da -->
-      <div class="small"><img src="assets/social/frederic-lacht.jpg" alt="Frederic beim Dreh" loading="lazy"></div>
-      <span class="pill a1">👋 Hi, ich bin Frederic</span>
-      <span class="pill a2"><span class="dot"></span>Antwort in 24 h</span>
+      
+      
+      
     </div>
     <div>
       <span class="pill kicker rv">Über mich</span>
@@ -489,7 +486,7 @@ footer{padding:60px 0 44px;font-size:.86rem;color:var(--soft)}
       <details class="rv"><summary>Ich hab keine Zeit für Social Media. Geht das trotzdem?<i></i></summary><p class="ans">Genau dafür gibt es mich. Ich plane, drehe, schneide und poste. Du brauchst etwa eine Stunde für den Drehtag und ein paar Minuten pro Woche zum Freigeben.</p></details>
       <details class="rv"><summary>Ich will nicht vor die Kamera. Muss ich?<i></i></summary><p class="ans">Nein. Dein Team, eure Arbeit, Vorher-Nachher und Baustellen funktionieren genauso. Wer möchte, kommt vor die Kamera, niemand muss.</p></details>
       <details class="rv"><summary>Bringt das in meiner Branche überhaupt etwas?<i></i></summary><p class="ans">Wenn deine Kunden oder Bewerber ein Smartphone haben: ja. Gerade Handwerk, Dienstleister und Gastronomie wirken auf Instagram und Facebook stark, weil man die Arbeit sieht.</p></details>
-      <details class="rv"><summary>Was kostet das?<i></i></summary><p class="ans">Das hängt vom Umfang ab. Nach dem kostenlosen Check bekommst du einen klaren Festpreis pro Monat, ohne versteckte Kosten. Websites gibt es ab 1.590 €, <a href="preise.html" style="text-decoration:underline">alle Pakete hier</a>.</p></details>
+      <details class="rv"><summary>Was kostet das?<i></i></summary><p class="ans">Das hängt vom Umfang ab. Nach dem kostenlosen Check bekommst du einen klaren Festpreis pro Monat, ohne versteckte Kosten.</p></details>
       <details class="rv"><summary>Wie schnell sehe ich Ergebnisse?<i></i></summary><p class="ans">Die ersten Inhalte sind nach dem Drehtag innerhalb weniger Tage online. Reichweite und Anfragen wachsen mit der Regelmäßigkeit. Jeden Monat schauen wir gemeinsam auf die Zahlen.</p></details>
     </div>
   </div>
@@ -498,7 +495,7 @@ footer{padding:60px 0 44px;font-size:.86rem;color:var(--soft)}
 <!-- 8 · CTA -->
 <section style="padding-top:30px">
   <div class="wrap cta rv">
-    <div class="blob b1"></div><div class="blob b2"></div>
+    
     <h2 class="h2">Schreib mir <em class="s">„Check“.</em></h2>
     <p class="lead" style="margin:16px auto 0">Ich schau mir deinen Auftritt an und sag dir ehrlich, was ich als Erstes ändern würde. Kostenlos.</p>
     <div class="flow">
@@ -509,7 +506,7 @@ footer{padding:60px 0 44px;font-size:.86rem;color:var(--soft)}
       <a href="https://ig.me/m/valoris_auftragsstruktur" target="_blank" rel="noopener" class="btn btn-light">Instagram-DM</a>
       <a href="https://wa.me/4915254190819?text=CHECK" class="btn btn-light">WhatsApp</a>
     </div>
-    <div class="marquee" aria-hidden="true"><div>
+    <div hidden class="marquee" aria-hidden="true"><div>
       <span class="pill">Handwerk</span><span class="pill">Umzug &amp; Transport</span><span class="pill">Gastronomie</span><span class="pill">Garten &amp; Landschaft</span><span class="pill">Autohaus &amp; Werkstatt</span><span class="pill">Pflege</span><span class="pill">Friseur &amp; Kosmetik</span><span class="pill">Dienstleister</span>
       <span class="pill">Handwerk</span><span class="pill">Umzug &amp; Transport</span><span class="pill">Gastronomie</span><span class="pill">Garten &amp; Landschaft</span><span class="pill">Autohaus &amp; Werkstatt</span><span class="pill">Pflege</span><span class="pill">Friseur &amp; Kosmetik</span><span class="pill">Dienstleister</span>
     </div></div>
@@ -522,7 +519,7 @@ footer{padding:60px 0 44px;font-size:.86rem;color:var(--soft)}
     <div class="links">
       <a href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/people/Valoris-Auftragsstruktur/61564795752910/" target="_blank" rel="noopener">Facebook</a>
-      <a href="preise.html">Preise</a><a href="kontakt.html">Kontakt</a>
+      <a href="kontakt.html">Kontakt</a>
       <a href="impressum.html" onclick="if(window.openLegalDrawer){openLegalDrawer('impressum');return false}">Impressum</a>
       <a href="datenschutz.html" onclick="if(window.openLegalDrawer){openLegalDrawer('datenschutz');return false}">Datenschutz</a>
     </div>
