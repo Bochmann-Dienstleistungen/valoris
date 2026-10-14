@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="theme-color" content="#0d0d0b">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Über uns – VALORIS Webdesign Zwickau</title>
-<meta name="description" content="Frederic Bochmann — Gründer von VALORIS Webdesign & SEO, Zwickau. Bochmann Dienstleistungen. Websites für lokale Unternehmen in Sachsen.">
+<title>Über mich – Frederic Bochmann · VALORIS Zwickau</title>
+<meta name="description" content="Frederic Bochmann, Gründer von VALORIS in Zwickau: Social Media, Reels, Recruiting und Websites für Betriebe aus der Region. Bochmann Dienstleistungen.">
 <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
 <link href="https://fonts.bunny.net/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -136,40 +136,45 @@ footer a{color:rgba(255,255,255,.4);transition:color .2s}footer a:hover{color:va
   .values-grid{grid-template-columns:1fr}
   .cta-strip{text-align:center;justify-content:center}
 }
+.bts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.bts-grid figure{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:var(--r);background:var(--bg2)}
+.bts-grid img{width:100%;height:100%;object-fit:cover}
+.bts-grid figcaption{position:absolute;left:12px;bottom:10px;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+@media(max-width:800px){.bts-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
 <nav>
-  <a href="index.html" class="nav-logo"><span class="nav-logo-v">Valoris</span><span class="nav-logo-sub">Webdesign &amp; SEO · Zwickau</span></a>
+  <a href="index.html" class="nav-logo"><span class="nav-logo-v">Valoris</span><span class="nav-logo-sub">Social Media &amp; Werbung · Zwickau</span></a>
   <ul class="nav-links">
-    <li><a href="leistungen.html">Leistungen</a></li>
-    <li><a href="referenzen.html">Referenzen</a></li>
+    <li><a href="index.html#arbeiten">Arbeiten</a></li>
+    <li><a href="index.html#leistungen">Leistungen</a></li>
+    <li><a href="ueber-uns.html" class="active">Über mich</a></li>
     <li><a href="preise.html">Preise</a></li>
-    <li><a href="index.html#ablauf">Ablauf</a></li>
-    <li><a href="ueber-uns.html" class="active">Über uns</a></li>
     <li><a href="kontakt.html">Kontakt</a></li>
   </ul>
-  <a href="https://wa.me/4915254190819" class="nav-cta">Kostenlose Beratung</a>
+  <a href="check/" class="nav-cta">Kostenloser Check</a>
   <div class="nav-ham" onclick="document.getElementById('nm').classList.toggle('open')"><span></span><span></span><span></span></div>
 </nav>
 <div class="nav-mobile" id="nm">
-  <a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="referenzen.html">Referenzen</a><a href="preise.html">Preise</a><a href="kontakt.html">Kontakt</a>
+  <a href="index.html">Home</a><a href="index.html#arbeiten">Arbeiten</a><a href="index.html#leistungen">Leistungen</a><a href="check/">Kostenloser Check</a><a href="preise.html">Preise</a><a href="kontakt.html">Kontakt</a>
 </div>
 
 <!-- ABOUT HERO -->
 <div class="about-hero">
   <div class="about-hero-text">
-    <div class="hero-eyebrow">Über VALORIS</div>
-    <h1 class="hero-h">Webdesign aus<br><em>Zwickau.</em><br>Mit Leidenschaft.</h1>
-    <p class="hero-p">VALORIS steht für Webdesign das wirkt. Nicht für Templates die jeder hat — sondern für individuelle Lösungen die lokalen Betrieben wirklich helfen.</p>
+    <div class="hero-eyebrow">Über mich</div>
+    <h1 class="hero-h">Glück auf,<br><em>ich bin Frederic.</em></h1>
+    <p class="hero-p">Hinter VALORIS steckt kein Agentur-Team mit Ticketsystem, sondern ich. Ich plane, drehe, schneide und poste für Betriebe aus der Region, damit Kunden und Bewerber sehen, wie gut ihr wirklich seid.</p>
     <div class="hero-contact">
-      <a href="tel:015254190819">📞 0152 54190819</a>
-      <a href="mailto:frederic@valoris-auftragsstruktur.de">✉️ frederic@valoris-auftragsstruktur.de</a>
-      <a href="https://wa.me/4915254190819">💬 WhatsApp</a>
+      <a href="tel:+4915254190819">0152 54190819</a>
+      <a href="mailto:frederic@valoris-auftragsstruktur.de">frederic@valoris-auftragsstruktur.de</a>
+      <a href="https://wa.me/4915254190819">WhatsApp</a>
+      <a href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener">Instagram @valoris_auftragsstruktur</a>
     </div>
   </div>
   <div class="about-hero-visual">
-    <img src="assets/frederic-bochmann.jpg" alt="Frederic Bochmann, Inhaber von VALORIS Webdesign &amp; SEO" loading="eager" width="620" height="780">
+    <img src="assets/social/frederic-portrait.jpg" alt="Frederic Bochmann, Inhaber von VALORIS" loading="eager" width="620" height="780" style="object-position:50% 30%">
     <div class="about-hero-caption"><strong>Frederic Bochmann</strong><span>Inhaber · VALORIS</span></div>
   </div>
 </div>
@@ -178,53 +183,66 @@ footer a{color:rgba(255,255,255,.4);transition:color .2s}footer a:hover{color:va
 <section>
   <div class="mission-grid">
     <div class="reveal-left">
-      <blockquote class="mission-quote">„Jeder lokale Betrieb verdient eine Website die seiner Qualität entspricht."</blockquote>
+      <blockquote class="mission-quote">„Die meisten Betriebe sind richtig gut, nur sieht es online keiner.“</blockquote>
     </div>
     <div class="reveal-right">
-      <div class="section-tag">Unsere Mission</div>
+      <div class="section-tag">Worum es mir geht</div>
       <div class="mission-text">
-        <p>VALORIS wurde gegründet weil zu viele gute Handwerker, Gastronomen und Dienstleister im Internet unsichtbar sind — obwohl ihre Arbeit erstklassig ist.</p>
-        <p>Das Modell ist einfach: Wir bauen zuerst eine fertige Demo-Website, bevor der Kunde auch nur einen Cent zahlt. Er sieht sein Ergebnis — mit echtem Logo, echten Daten, echten Fotos — und entscheidet dann.</p>
-        <p>Kein Risiko. Kein Vertrauen ins Blaue. Nur Ergebnisse die überzeugen.</p>
+        <p>Zu viele gute Handwerker, Dienstleister und Gastronomen sind online unsichtbar, obwohl ihre Arbeit erstklassig ist. Und wer heute Leute sucht, merkt: Bewerber schauen zuerst auf Instagram, nicht in die Zeitung.</p>
+        <p>Angefangen habe ich mit Websites. Heute ist die Website das Fundament, und Social Media ist das, was Kunden und Bewerber wirklich zu dir bringt: echte Gesichter, euer Team, eure Arbeit.</p>
+        <p>Ich komme zu dir in den Betrieb, filme, schneide und plane. Du zeichnest nur ab.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- HINTER DEN KULISSEN -->
+<section class="bts">
+  <div class="section-tag reveal">Hinter den Kulissen</div>
+  <h2 class="section-h reveal delay-1">Am Set, im Auto,<br><em>beim Kunden.</em></h2>
+  <div class="bts-grid">
+    <figure class="reveal"><img src="assets/social/frederic-lacht.jpg" alt="Frederic beim Dreh im Büro" loading="lazy"><figcaption>Büro-Dreh, Oktober 2026</figcaption></figure>
+    <figure class="reveal delay-1"><img src="assets/social/chill.jpg" alt="Frederic im Reel „Chill doch mal“" loading="lazy"><figcaption>Reel im Auto</figcaption></figure>
+    <figure class="reveal delay-2"><img src="assets/social/zwickau-check.jpg" alt="Zwickau-Check mit LM Services" loading="lazy"><figcaption>Zwickau-Check · LM Services</figcaption></figure>
+    <figure class="reveal delay-3"><img src="assets/frederic-bochmann.jpg" alt="Frederic Bochmann privat" loading="lazy" style="object-position:50% 30%"><figcaption>Auch mal Pause</figcaption></figure>
+  </div>
+  <div class="reveal" style="margin-top:40px"><a href="index.html#arbeiten" class="btn-primary">Reels ansehen →</a></div>
+</section>
+
 <!-- VALUES -->
 <section style="background:var(--bg2);padding-top:80px;padding-bottom:80px">
-  <div class="section-tag reveal">Was uns antreibt</div>
-  <h2 class="section-h reveal delay-1">Unsere<br><em>Prinzipien</em></h2>
+  <div class="section-tag reveal">Wie ich arbeite</div>
+  <h2 class="section-h reveal delay-1">Meine<br><em>Prinzipien</em></h2>
   <div class="values-grid">
     <div class="value-card reveal delay-1">
       <div class="value-num">01</div>
-      <div class="value-title">Demo zuerst</div>
-      <p class="value-desc">Wir liefern bevor wir fragen. Jede Zusammenarbeit beginnt mit einer fertigen Website — nicht mit einem Angebot.</p>
+      <div class="value-title">Echt statt Hochglanz</div>
+      <p class="value-desc">Keine Stockfotos, keine KI-Gesichter. Gezeigt wird dein Betrieb, wie er wirklich ist, und genau das schafft Vertrauen.</p>
     </div>
     <div class="value-card reveal delay-2">
       <div class="value-num">02</div>
       <div class="value-title">Ehrliche Preise</div>
-      <p class="value-desc">Was wir vereinbaren, das zahlen Sie. Keine versteckten Kosten, keine Nachberechnungen, keine langen Verträge.</p>
+      <p class="value-desc">Was wir vereinbaren, zahlst du. Keine versteckten Kosten, keine Nachberechnungen, keine langen Verträge.</p>
     </div>
     <div class="value-card reveal delay-3">
       <div class="value-num">03</div>
       <div class="value-title">Lokal &amp; persönlich</div>
-      <p class="value-desc">Kein anonymes Agentur-Modell. Sie haben einen Ansprechpartner — Frederic — der Ihre Region kennt und erreichbar ist.</p>
+      <p class="value-desc">Kein anonymes Agentur-Modell. Du hast einen Ansprechpartner, der deine Region kennt und erreichbar ist.</p>
     </div>
     <div class="value-card reveal delay-1">
       <div class="value-num">04</div>
-      <div class="value-title">Industrie-spezifisch</div>
-      <p class="value-desc">Ein Dachdecker braucht eine andere Website als ein Restaurant. Wir verstehen das — und bauen entsprechend.</p>
+      <div class="value-title">Erst prüfen, dann reden</div>
+      <p class="value-desc">Jede Zusammenarbeit beginnt mit einem kostenlosen Check deines Auftritts, nicht mit einem Angebot.</p>
     </div>
     <div class="value-card reveal delay-2">
       <div class="value-num">05</div>
-      <div class="value-title">Schnell &amp; zuverlässig</div>
-      <p class="value-desc">Demo in 48 Stunden. Live in einer Woche. Feedback-Runden so viele wie nötig — ohne Aufpreis.</p>
+      <div class="value-title">Zahlen statt Bauchgefühl</div>
+      <p class="value-desc">Jeden Monat ein ehrlicher Blick auf Reichweite, Anfragen und Bewerbungen. Was nicht wirkt, fliegt raus.</p>
     </div>
     <div class="value-card reveal delay-3">
       <div class="value-num">06</div>
       <div class="value-title">Langfristige Partner</div>
-      <p class="value-desc">Wir wollen nicht einmal verkaufen und verschwinden. Wir wollen, dass Ihre Website langfristig für Sie arbeitet.</p>
+      <p class="value-desc">Social Media wirkt nicht in einer Woche. Ich will nicht einmal verkaufen und verschwinden, sondern dich dauerhaft sichtbar machen.</p>
     </div>
   </div>
 </section>
@@ -263,7 +281,7 @@ footer a{color:rgba(255,255,255,.4);transition:color .2s}footer a:hover{color:va
       <div class="tl-content">
         <div class="tl-year">2026</div>
         <div class="tl-title">Heute</div>
-        <p class="tl-desc">Vollständige Agentur-Dienstleistungen: Webdesign, SEO, Google Ads, monatliche Betreuung — alles aus einer Hand, regional und persönlich.</p>
+        <p class="tl-desc">Schwerpunkt Social Media: Reels, Drehtage, Recruiting und Werbeanzeigen für Betriebe aus der Region. Website und Google bleiben das Fundament.</p>
       </div>
     </div>
   </div>
@@ -271,20 +289,21 @@ footer a{color:rgba(255,255,255,.4);transition:color .2s}footer a:hover{color:va
 
 <!-- CTA STRIP -->
 <div class="cta-strip">
-  <h3>Bereit für<br><em>Ihre Website?</em></h3>
-  <a href="https://wa.me/4915254190819" class="btn-white">💬 Jetzt kostenlos anfragen</a>
+  <h3>Neugierig, wie dein<br><em>Auftritt wirkt?</em></h3>
+  <a href="check/" class="btn-white">Kostenlosen Check anfordern</a>
 </div>
 
 <div class="bottom-cta">
-  <h2 class="cta-h reveal">Demo ansehen —<br><em>kostenlos &amp; unverbindlich</em></h2>
-  <p class="cta-sub reveal delay-1">Wir zeigen Ihnen wie Ihre neue Website aussieht, bevor Sie irgendetwas entscheiden müssen.</p>
-  <div class="reveal delay-2"><a href="https://wa.me/4915254190819" class="btn-primary">💬 Demo anfragen</a></div>
+  <h2 class="cta-h reveal">Ein Wort genügt:<br><em>„Check“.</em></h2>
+  <p class="cta-sub reveal delay-1">Schreib mir auf Instagram oder WhatsApp. Ich schaue mir deinen Auftritt an und sage dir ehrlich, was ich als Erstes ändern würde.</p>
+  <div class="reveal delay-2" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap"><a href="check/" class="btn-primary">Online-Check anfordern</a><a href="https://wa.me/4915254190819?text=CHECK" class="btn-primary" style="background:#25D366">Per WhatsApp</a></div>
 </div>
-<footer><p>© 2026 Bochmann Dienstleistungen · VALORIS Webdesign &amp; SEO · <a href="#" onclick="openLegalDrawer('impressum');return false">Impressum</a> · <a href="#" onclick="openLegalDrawer('datenschutz');return false">Datenschutz</a></p></footer>
+<footer><p>© <span id="yr">2026</span> Bochmann Dienstleistungen · VALORIS Social Media &amp; Werbung · <a href="#" onclick="openLegalDrawer('impressum');return false">Impressum</a> · <a href="#" onclick="openLegalDrawer('datenschutz');return false">Datenschutz</a></p></footer>
 <script>
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>obs.observe(el));
 </script>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 <script src="legal-drawer.js" defer></script>
 <script src="cookie-consent.js" defer></script>
 </body>
