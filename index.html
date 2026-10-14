@@ -91,7 +91,14 @@ h1{font-size:clamp(2.9rem,6vw,5rem);font-weight:700;line-height:1.04;letter-spac
 .res{display:flex;gap:10px;align-items:center;padding:10px;border-radius:12px;margin-bottom:8px}
 .res .av{width:36px;height:36px;border-radius:50%;background:#ececef;flex:none}
 .res .ln{height:8px;border-radius:4px;background:#ececef}
-.res.hit{background:#fff1ec;box-shadow:inset 0 0 0 1.5px rgba(255,90,54,.25)}
+.res.hit{position:relative;background:#fff1ec;box-shadow:inset 0 0 0 1.5px rgba(255,90,54,.25);opacity:0;transform:translateY(8px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.res.hit.show{opacity:1;transform:none}
+.tap{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:rgba(17,17,17,.18);transform:scale(0);opacity:0}
+.tap.go{animation:tap .7s var(--ease)}
+@keyframes tap{0%{transform:scale(.3);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.call{animation:none}.alive.on .call{animation:pulse 1.6s ease-in-out .6s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(31,164,99,.45)}50%{box-shadow:0 0 0 10px rgba(31,164,99,0)}}
+.step{cursor:pointer}
 .res.hit .av{background:var(--accent)}
 .res b{display:block;font-size:.8rem}.res small{color:var(--soft);font-size:.7rem}
 .prof-top{display:flex;align-items:center;gap:14px;margin-bottom:10px}
@@ -112,8 +119,9 @@ h1{font-size:clamp(2.9rem,6vw,5rem);font-weight:700;line-height:1.04;letter-spac
 .timer b{font-size:1.3rem;font-variant-numeric:tabular-nums}
 .call{position:absolute;left:16px;right:16px;bottom:18px;text-align:center;padding:12px;border-radius:14px;background:var(--green);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:.82rem}
 .steps{position:relative;padding-left:34px}
-.steps svg.track{position:absolute;left:8px;top:6px;height:calc(100% - 12px);width:4px;overflow:visible}
-.step{position:relative;padding:12px 0 22px;opacity:.35;transition:opacity .4s}
+.steps .track{position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:#ddd;border-radius:2px;overflow:hidden}
+.steps .track i{display:block;width:100%;height:0;background:var(--accent);transition:height .8s var(--ease)}
+.step{position:relative;padding:12px 0 22px;opacity:.35;transition:opacity .5s}
 .step.on{opacity:1}
 .step::before{content:'';position:absolute;left:-31px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--bg2);box-shadow:inset 0 0 0 2px #bbb}
 .step.on::before{background:var(--accent);box-shadow:none}
@@ -280,9 +288,9 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
       <div class="notch"></div>
       <div class="screen">
         <div class="scr on">
-          <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>maler zwickau<span class="caret"></span></div>
+          <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span id="typed"></span><span class="caret"></span></div>
           <div class="res"><span class="av"></span><div style="flex:1"><div class="ln" style="width:70%"></div><div class="ln" style="width:45%;margin-top:6px"></div></div></div>
-          <div class="res hit"><span class="av"></span><div><b>dein.betrieb</b><small>Empfohlen von Nachbarn</small></div></div>
+          <div class="res hit" id="hit"><span class="av"></span><span class="tap"></span><div><b>dein.betrieb</b><small>Empfohlen von Nachbarn</small></div></div>
           <div class="res"><span class="av"></span><div style="flex:1"><div class="ln" style="width:60%"></div><div class="ln" style="width:35%;margin-top:6px"></div></div></div>
           <div class="res"><span class="av"></span><div style="flex:1"><div class="ln" style="width:75%"></div><div class="ln" style="width:40%;margin-top:6px"></div></div></div>
         </div>
@@ -307,7 +315,7 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
       </div>
     </div>
     <div class="steps" id="steps">
-      <svg class="track" viewBox="0 0 4 100" preserveAspectRatio="none"><line x1="2" y1="0" x2="2" y2="100" stroke="#ddd" stroke-width="2" vector-effect="non-scaling-stroke"/><line id="trk" x1="2" y1="0" x2="2" y2="100" stroke="#ff5a36" stroke-width="2" vector-effect="non-scaling-stroke" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
+      <div class="track"><i id="trk"></i></div>
       <div class="step on"><small>01</small><h3>Jemand hört von dir.</h3><p>Empfehlung, Firmenwagen, Google. Und dann wird nachgeschaut.</p></div>
       <div class="step"><small>02</small><h3>Er schaut dich an.</h3><p>Zuerst auf Instagram und Google. Was er dort sieht, ist dein erster Eindruck.</p></div>
       <div class="step"><small>03</small><h3>Er entscheidet in Sekunden.</h3><p>Wirkt der Betrieb lebendig und echt, oder seit Monaten still?</p></div>
@@ -451,22 +459,29 @@ function setStep(i){
   if(i===2){let n=3;const t=document.getElementById('tm');t.textContent=n;tmTimer=setInterval(()=>{n=n>1?n-1:3;t.textContent=n},900)}
 }
 
+/* Infografik als selbstlaufende Animation (kein Scroll-Pin) */
+const trk=document.getElementById('trk'),typed=document.getElementById('typed'),hit=document.getElementById('hit'),tap=hit.querySelector('.tap');
+const DUR=[3600,3000,3200,4200];let run=false,timers=[],idx=0;
+function later(f,ms){timers.push(setTimeout(f,ms))}
+function clearAll(){timers.forEach(clearTimeout);timers=[]}
+function lineTo(i){trk.style.height=((i+1)/4*100)+'%'}
+function play(i){
+  clearAll();idx=i;setStep(i);lineTo(i);
+  if(i===0){typed.textContent='';hit.classList.remove('show');tap.classList.remove('go');
+    const w='maler zwickau';[...w].forEach((c,k)=>later(()=>typed.textContent+=c,250+k*90));
+    later(()=>hit.classList.add('show'),250+w.length*90+250);
+    later(()=>{tap.classList.remove('go');void tap.offsetWidth;tap.classList.add('go')},DUR[0]-700);}
+  if(run)later(()=>play((i+1)%4),DUR[i]);
+}
+stp.forEach((s,k)=>s.addEventListener('click',()=>{run=true;play(k)}));
+if(reduce){setStep(3);trk.style.height='100%';typed.textContent='maler zwickau';hit.classList.add('show')}
+else new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!run){run=true;play(0)}else if(!e.isIntersecting&&run){run=false;clearAll()}}),{threshold:.35}).observe(document.getElementById('jgrid'));
+
 if(!window.gsap||reduce){
   document.querySelectorAll('.rv').forEach(el=>{el.style.opacity=1;el.style.transform='none'});
-  setStep(3);document.getElementById('trk').style.strokeDashoffset=0;
 }else{
   gsap.registerPlugin(ScrollTrigger);
   gsap.utils.toArray('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.8,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%',once:true}}));
-  const mm=gsap.matchMedia();
-  mm.add('(min-width:1001px)',()=>{
-    ScrollTrigger.create({trigger:'#jgrid',start:'center center',end:'+=1200',pin:true,scrub:.6,anticipatePin:1,
-      snap:{snapTo:[0,1/3,2/3,1],duration:{min:.2,max:.5},delay:.05,ease:'power2.inOut'},
-      onUpdate:s=>{document.getElementById('trk').style.strokeDashoffset=1-s.progress;setStep(Math.round(s.progress*3))}});
-  });
-  mm.add('(max-width:1000px)',()=>{
-    stp.forEach((s,k)=>ScrollTrigger.create({trigger:s,start:'top 70%',onEnter:()=>setStep(Math.max(cur,k))}));
-    ScrollTrigger.create({trigger:'#steps',start:'top 70%',end:'bottom 60%',scrub:true,onUpdate:s=>document.getElementById('trk').style.strokeDashoffset=1-s.progress});
-  });
   document.querySelectorAll('.cnt').forEach(c=>{const o={v:0};gsap.to(o,{v:+c.dataset.to,duration:1.4,ease:'power2.out',scrollTrigger:{trigger:c,start:'top 85%',once:true},onUpdate:()=>c.textContent=Math.round(o.v)})});
   setTimeout(()=>ScrollTrigger.refresh(),400);
   setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>{if(getComputedStyle(el).opacity==='0'&&el.getBoundingClientRect().top<innerHeight)gsap.to(el,{opacity:1,y:0,duration:.5})}),3000);
