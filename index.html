@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>VALORIS | Social Media für Betriebe in Zwickau</title>
-<meta name="description" content="Social Media, Reels, Recruiting und Werbung für Betriebe in Zwickau und Umgebung. Frederic Bochmann plant, dreht und schneidet. Kostenloser Online-Check.">
+<meta name="description" content="Mehr Anfragen und mehr Bewerbungen über Social Media: Reels, Recruiting und Werbung für Betriebe in Zwickau und Umgebung. Frederic Bochmann plant, dreht und schneidet. Kostenloser Online-Check.">
 <meta property="og:title" content="VALORIS | Ich mach dich sichtbar.">
 <meta property="og:description" content="Social Media für Betriebe aus Zwickau und Umgebung.">
 <meta property="og:image" content="https://www.valoris-auftragsstruktur.de/assets/v2/frederic-studio.webp">
@@ -21,6 +21,7 @@
 {"@type":"Question","name":"Ich habe keine Zeit für Social Media. Geht das trotzdem?","acceptedAnswer":{"@type":"Answer","text":"Genau dafür gibt es mich. Ich plane, drehe, schneide und poste. Du brauchst etwa eine Stunde für den Drehtag und ein paar Minuten pro Woche zum Freigeben."}},
 {"@type":"Question","name":"Ich will nicht vor die Kamera. Muss ich?","acceptedAnswer":{"@type":"Answer","text":"Nein. Dein Team, eure Arbeit, Vorher-Nachher und Baustellen funktionieren genauso. Wer möchte, kommt vor die Kamera, niemand muss."}},
 {"@type":"Question","name":"Bringt das in meiner Branche etwas?","acceptedAnswer":{"@type":"Answer","text":"Wenn deine Kunden oder Bewerber ein Smartphone haben: ja. Gerade Handwerk, Dienstleister und Gastronomie wirken auf Instagram und Facebook stark, weil man die Arbeit sieht."}},
+{"@type":"Question","name":"Hilft das auch bei der Mitarbeitersuche?","acceptedAnswer":{"@type":"Answer","text":"Ja, sogar besonders. Gute Fachkräfte suchen selten aktiv, aber sie scrollen. Wenn sie dein Team und euren Alltag sehen, bewerben sie sich eher. Auf Wunsch schalte ich zusätzlich gezielte Recruiting-Anzeigen in deiner Region."}},
 {"@type":"Question","name":"Was kostet das?","acceptedAnswer":{"@type":"Answer","text":"Das hängt vom Umfang ab. Nach dem kostenlosen Check bekommst du ein klares Angebot mit festem Monatspreis, ohne versteckte Kosten."}},
 {"@type":"Question","name":"Wie schnell sehe ich Ergebnisse?","acceptedAnswer":{"@type":"Answer","text":"Die ersten Inhalte sind nach dem Drehtag innerhalb weniger Tage online. Reichweite und Anfragen wachsen mit der Regelmäßigkeit. Jeden Monat schauen wir gemeinsam auf die Zahlen."}}
 ]}
@@ -82,7 +83,7 @@ h1{font-size:clamp(2.9rem,6vw,5rem);font-weight:700;line-height:1.04;letter-spac
 .phone{position:relative;width:290px;height:590px;margin:0 auto;border-radius:44px;background:#111;padding:10px;box-shadow:0 40px 80px -40px rgba(0,0,0,.45)}
 .screen{position:relative;width:100%;height:100%;border-radius:35px;overflow:hidden;background:#fff}
 .notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:88px;height:24px;border-radius:20px;background:#111;z-index:5}
-.scr{position:absolute;inset:0;padding:46px 16px 16px;opacity:0;transform:translateY(12px);transition:opacity .5s var(--ease),transform .5s var(--ease);font-size:.78rem}
+.scr{position:absolute;inset:0;padding:44px 14px 14px;opacity:0;transform:translateY(12px);transition:opacity .5s var(--ease),transform .5s var(--ease);font-size:.78rem}
 .scr.on{opacity:1;transform:none}
 .search{display:flex;align-items:center;gap:8px;background:#f1f1f3;border-radius:12px;padding:10px 12px;margin-bottom:16px}
 .search svg{width:14px;height:14px;stroke:var(--mute);fill:none;stroke-width:2}
@@ -99,25 +100,41 @@ h1{font-size:clamp(2.9rem,6vw,5rem);font-weight:700;line-height:1.04;letter-spac
 .call{animation:none}.alive.on .call{animation:pulse 1.6s ease-in-out .6s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(31,164,99,.45)}50%{box-shadow:0 0 0 10px rgba(31,164,99,0)}}
 .step{cursor:pointer}
-.res.hit .av{background:var(--accent)}
 .res b{display:block;font-size:.8rem}.res small{color:var(--soft);font-size:.7rem}
 .prof-top{display:flex;align-items:center;gap:14px;margin-bottom:10px}
 .prof-top .av{width:56px;height:56px;border-radius:50%;background:#ececef;flex:none}
-.alive .prof-top .av{background:var(--accent);box-shadow:0 0 0 2.5px #fff,0 0 0 4.5px var(--accent)}
 .stats{display:flex;gap:14px;font-size:.7rem;color:var(--soft)}
 .stats b{display:block;color:var(--ink);font-size:.86rem}
 .bio b{font-size:.82rem}.bio p{color:var(--soft);font-size:.72rem;line-height:1.45;margin:2px 0 10px}
 .grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
 .grid9 i{aspect-ratio:1;background:#efeff2;display:block}
-.alive .grid9 i{background:#d9d9de;transform:scale(.7);opacity:0;transition:transform .45s var(--ease),opacity .45s}
-.alive .grid9 i:nth-child(odd){background:#c9c9cf}
-.alive .grid9 i:nth-child(3n){background:#ffd2c5}
+.alive .grid9 i{transform:scale(.7);opacity:0;transition:transform .45s var(--ease),opacity .45s}
 .alive.on .grid9 i{transform:none;opacity:1}
 .alive.on .grid9 i:nth-child(2){transition-delay:.05s}.alive.on .grid9 i:nth-child(3){transition-delay:.1s}.alive.on .grid9 i:nth-child(4){transition-delay:.15s}.alive.on .grid9 i:nth-child(5){transition-delay:.2s}.alive.on .grid9 i:nth-child(6){transition-delay:.25s}.alive.on .grid9 i:nth-child(7){transition-delay:.3s}.alive.on .grid9 i:nth-child(8){transition-delay:.35s}.alive.on .grid9 i:nth-child(9){transition-delay:.4s}
+.igbar{display:flex;align-items:center;justify-content:space-between;margin:-6px 0 12px;font-size:.8rem}
+.igbar svg{width:16px;height:16px;fill:none;stroke:var(--ink);stroke-width:2}.igbar svg circle{fill:var(--ink);stroke:none}
+.av-stale,.av-live{display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.02em}
+.av-stale{background:#e4e4e8!important;color:#999}
+.av-live{background:#1f3b63!important;color:#fff;box-shadow:0 0 0 2.5px #fff,0 0 0 4.5px #e1306c!important}
+.av.sm{font-size:.62rem}
+.stats{flex:1;justify-content:space-around;text-align:center}
+.bio em{display:block;font-style:normal;color:var(--mute);font-size:.68rem}
+.bio .job{color:#1f3b63;font-weight:700}
+.igbtns{display:flex;gap:6px;margin:4px 0 10px}.igbtns span{flex:1;text-align:center;padding:6px;border-radius:8px;background:#efeff2;font-weight:700;font-size:.72rem}.igbtns .f{background:#0095f6;color:#fff}
+.hls{display:flex;gap:10px;margin:2px 0 8px;font-size:.6rem;text-align:center;color:var(--soft)}
+.hls span{display:flex;flex-direction:column;align-items:center;gap:3px}
+.hls i{width:42px;height:42px;border-radius:50%;background-size:cover;background-position:center;box-shadow:inset 0 0 0 2px #fff,0 0 0 1px #d9d9de}
+.tabs{display:flex;justify-content:center;border-top:1px solid #eee;padding:6px 0;margin-bottom:2px}.tabs svg{width:16px;height:16px;fill:none;stroke:var(--ink);stroke-width:1.6}
+.grid9 i{background-size:cover;background-position:center}
+.grid9.stale i{filter:saturate(.55) brightness(1.04) contrast(.9)}
+.alive .grid9 i{background-color:#ddd}
+.ctas{position:absolute;left:14px;right:14px;bottom:14px;display:flex;gap:8px}
+.ctas span{flex:1;text-align:center;padding:11px;border-radius:12px;color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:.8rem}
+.ctas .apply{background:#111}
 .note{margin-top:10px;text-align:center;color:var(--mute);font-size:.7rem}
 .timer{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#111;color:#fff;border-radius:14px;padding:14px 20px;font-family:'Poppins',sans-serif;font-weight:600;font-size:.9rem;white-space:nowrap}
 .timer b{font-size:1.3rem;font-variant-numeric:tabular-nums}
-.call{position:absolute;left:16px;right:16px;bottom:18px;text-align:center;padding:12px;border-radius:14px;background:var(--green);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:.82rem}
+.call{background:var(--green)}
 .steps{position:relative;padding-left:34px}
 .steps .track{position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:#ddd;border-radius:2px;overflow:hidden}
 .steps .track i{display:block;width:100%;height:0;background:var(--accent);transition:height .8s var(--ease)}
@@ -261,14 +278,14 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
     <div>
       <div class="eyebrow rv">Social Media aus Zwickau</div>
       <h1 class="rv">Ich mach dich sichtbar.</h1>
-      <p class="rv">Social Media für Betriebe aus Zwickau und Umgebung. Ich plane, drehe und schneide. Du zeichnest nur ab.</p>
+      <p class="rv">Mehr Anfragen und mehr Bewerbungen über Social Media. Für Betriebe aus Zwickau und Umgebung. Ich plane, drehe und schneide. Du zeichnest nur ab.</p>
       <div class="hero-btns rv">
         <a href="https://wa.me/4915254190819?text=CHECK" class="btn btn-dark">Jetzt anfragen <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg></a>
         <a href="#reels" class="btn btn-line">Arbeiten ansehen</a>
       </div>
       <div class="trust rv">
         <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Kostenloser Check</span>
-        <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Dreh vor Ort</span>
+        <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Kunden &amp; Mitarbeiter</span>
         <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Antwort in 24 h</span>
       </div>
     </div>
@@ -282,7 +299,7 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
     <div>
       <div class="eyebrow rv">Die ersten Sekunden</div>
       <h2 class="rv">Bevor dich jemand anruft, hat er dich längst angeschaut.</h2>
-      <p class="lead rv">Kunden und Bewerber entscheiden, bevor du überhaupt weißt, dass es sie gibt. So läuft das ab.</p>
+      <p class="lead rv">Kunden und Bewerber entscheiden, bevor du überhaupt weißt, dass es sie gibt. So läuft das ab, egal ob jemand einen Maler sucht oder einen neuen Job.</p>
     </div>
     <div class="phone rv" aria-hidden="true">
       <div class="notch"></div>
@@ -290,37 +307,43 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
         <div class="scr on">
           <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span id="typed"></span><span class="caret"></span></div>
           <div class="res"><span class="av"></span><div style="flex:1"><div class="ln" style="width:70%"></div><div class="ln" style="width:45%;margin-top:6px"></div></div></div>
-          <div class="res hit" id="hit"><span class="av"></span><span class="tap"></span><div><b>dein.betrieb</b><small>Empfohlen von Nachbarn</small></div></div>
+          <div class="res hit" id="hit"><span class="av av-stale sm">MW</span><span class="tap"></span><div><b>malerbetrieb.weber</b><small id="hitsub">Malerbetrieb · Zwickau</small></div></div>
           <div class="res"><span class="av"></span><div style="flex:1"><div class="ln" style="width:60%"></div><div class="ln" style="width:35%;margin-top:6px"></div></div></div>
           <div class="res"><span class="av"></span><div style="flex:1"><div class="ln" style="width:75%"></div><div class="ln" style="width:40%;margin-top:6px"></div></div></div>
         </div>
         <div class="scr">
-          <div class="prof-top"><span class="av"></span><div class="stats"><span><b>3</b>Beiträge</span><span><b>41</b>Follower</span></div></div>
-          <div class="bio"><b>Dein Betrieb</b><p>Malerbetrieb · Zwickau</p></div>
-          <div class="grid9"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="igbar"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><b>malerbetrieb.weber</b><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg></div><div class="prof-top"><span class="av av-stale">MW</span><div class="stats"><span><b>3</b>Beiträge</span><span><b>41</b>Follower</span><span><b>12</b>Gefolgt</span></div></div>
+          <div class="bio"><b>Malerbetrieb Weber</b><em>Maler und Lackierer</em><p>Zwickau</p></div>
+          <div class="igbtns"><span class="f">Folgen</span><span>Nachricht</span></div>
+          <div class="tabs"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9.3h16M4 14.7h16M9.3 4v16M14.7 4v16"/></svg></div>
+          <div class="grid9 stale"><i style="background-image:url(assets/v2/feed/t9.jpg)"></i><i style="background-image:url(assets/v2/feed/t8.jpg)"></i><i style="background-image:url(assets/v2/feed/t6.jpg)"></i></div>
           <div class="note">Letzter Beitrag: vor 8 Monaten</div>
         </div>
         <div class="scr">
-          <div class="prof-top"><span class="av"></span><div class="stats"><span><b>3</b>Beiträge</span><span><b>41</b>Follower</span></div></div>
-          <div class="bio"><b>Dein Betrieb</b><p>Malerbetrieb · Zwickau</p></div>
-          <div class="grid9" style="opacity:.4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="igbar"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><b>malerbetrieb.weber</b><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg></div><div class="prof-top"><span class="av av-stale">MW</span><div class="stats"><span><b>3</b>Beiträge</span><span><b>41</b>Follower</span><span><b>12</b>Gefolgt</span></div></div>
+          <div class="bio"><b>Malerbetrieb Weber</b><em>Maler und Lackierer</em><p>Zwickau</p></div>
+          <div class="igbtns"><span class="f">Folgen</span><span>Nachricht</span></div>
+          <div class="tabs"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9.3h16M4 14.7h16M9.3 4v16M14.7 4v16"/></svg></div>
+          <div class="grid9 stale"><i style="background-image:url(assets/v2/feed/t9.jpg)"></i><i style="background-image:url(assets/v2/feed/t8.jpg)"></i><i style="background-image:url(assets/v2/feed/t6.jpg)"></i></div>
           <span class="timer">Noch <b id="tm">3</b> Sekunden</span>
         </div>
         <div class="scr alive">
-          <div class="prof-top"><span class="av"></span><div class="stats"><span><b>128</b>Beiträge</span><span><b>1.240</b>Follower</span></div></div>
-          <div class="bio"><b>Dein Betrieb</b><p>Malerbetrieb · Zwickau<br>Unser Team · Baustellen · Vorher/Nachher</p></div>
-          <div class="grid9"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <span class="call">Anrufen</span>
+          <div class="igbar"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg><b>malerbetrieb.weber</b><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg></div><div class="prof-top"><span class="av av-live">MW</span><div class="stats"><span><b>128</b>Beiträge</span><span><b>1.240</b>Follower</span><span><b>214</b>Gefolgt</span></div></div>
+          <div class="bio"><b>Malerbetrieb Weber</b><em>Maler und Lackierer</em><p>Wände, Fassaden, Treppenhäuser in Zwickau<br><span class="job">Wir suchen Verstärkung: Maler/in &amp; Azubi 2027</span></p></div>
+          <div class="hls"><span><i style="background-image:url(assets/v2/feed/t4.jpg)"></i>Team</span><span><i style="background-image:url(assets/v2/feed/t7.jpg)"></i>Jobs</span><span><i style="background-image:url(assets/v2/feed/t2.jpg)"></i>Projekte</span><span><i style="background-image:url(assets/v2/feed/t5.jpg)"></i>Kunden</span></div>
+          <div class="tabs"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9.3h16M4 14.7h16M9.3 4v16M14.7 4v16"/></svg></div>
+          <div class="grid9"><i style="background-image:url(assets/v2/feed/t1.jpg)"></i><i style="background-image:url(assets/v2/feed/t2.jpg)"></i><i style="background-image:url(assets/v2/feed/t3.jpg)"></i><i style="background-image:url(assets/v2/feed/t4.jpg)"></i><i style="background-image:url(assets/v2/feed/t5.jpg)"></i><i style="background-image:url(assets/v2/feed/t6.jpg)"></i><i style="background-image:url(assets/v2/feed/t7.jpg)"></i><i style="background-image:url(assets/v2/feed/t8.jpg)"></i><i style="background-image:url(assets/v2/feed/t9.jpg)"></i></div>
+          <div class="ctas"><span class="call">Anrufen</span><span class="apply">Bewerben</span></div>
         </div>
       </div>
     </div>
     <div class="steps" id="steps">
       <div class="track"><i id="trk"></i></div>
-      <div class="step on"><small>01</small><h3>Jemand hört von dir.</h3><p>Empfehlung, Firmenwagen, Google. Und dann wird nachgeschaut.</p></div>
+      <div class="step on"><small>01</small><h3>Jemand hört von dir.</h3><p>Ein Kunde über eine Empfehlung, ein Bewerber über deine Stellenanzeige. Beide schauen nach.</p></div>
       <div class="step"><small>02</small><h3>Er schaut dich an.</h3><p>Zuerst auf Instagram und Google. Was er dort sieht, ist dein erster Eindruck.</p></div>
-      <div class="step"><small>03</small><h3>Er entscheidet in Sekunden.</h3><p>Wirkt der Betrieb lebendig und echt, oder seit Monaten still?</p></div>
-      <div class="step"><small>04</small><h3>Er ruft an. Oder den Nächsten.</h3><p>Genau an dieser Stelle setze ich an.</p>
-        <p class="result"><span class="no">Stilles Profil: er scrollt weiter.</span><br><span class="yes">Lebendiges Profil: er ruft an.</span></p></div>
+      <div class="step"><small>03</small><h3>Er entscheidet in Sekunden.</h3><p>Wirkt der Betrieb lebendig und echt? Sieht er aus wie ein guter Arbeitgeber? Oder ist es seit Monaten still?</p></div>
+      <div class="step"><small>04</small><h3>Er ruft an oder bewirbt sich.</h3><p>Oder er geht zum Nächsten. Genau an dieser Stelle setze ich an.</p>
+        <p class="result"><span class="no">Stilles Profil: Kunde und Bewerber scrollen weiter.</span><br><span class="yes">Lebendiges Profil: Anfrage oder Bewerbung.</span></p></div>
     </div>
   </div>
 </section>
@@ -366,8 +389,8 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
     <div class="cards">
       <div class="card rv"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg><h3>Social-Media-Betreuung</h3><p>Jede Woche neue Posts und Stories. Ich plane und poste, du gibst frei.</p></div>
       <div class="card rv"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="3"/><path d="m16 10 6-3v10l-6-3"/></svg><h3>Reels &amp; Drehtage</h3><p>Ich komme in deinen Betrieb und filme. Daraus werden Reels für Wochen.</p></div>
-      <div class="card rv"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 11v6M14 14h6"/></svg><h3>Recruiting</h3><p>Zeig dein Team, wie es wirklich ist. Dann melden sich die Richtigen.</p></div>
-      <div class="card rv"><svg viewBox="0 0 24 24"><path d="M3 11v2a2 2 0 0 0 2 2h2l5 4V5L7 9H5a2 2 0 0 0-2 2ZM16 8a5 5 0 0 1 0 8M19 5a9 9 0 0 1 0 14"/></svg><h3>Werbeanzeigen</h3><p>Instagram- und Facebook-Ads für neue Kunden oder Bewerber.</p></div>
+      <div class="card rv"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 11v6M14 14h6"/></svg><h3>Mitarbeitergewinnung</h3><p>Zeig dein Team und euren Alltag, wie er wirklich ist. Dann bewerben sich die Richtigen.</p></div>
+      <div class="card rv"><svg viewBox="0 0 24 24"><path d="M3 11v2a2 2 0 0 0 2 2h2l5 4V5L7 9H5a2 2 0 0 0-2 2ZM16 8a5 5 0 0 1 0 8M19 5a9 9 0 0 1 0 14"/></svg><h3>Werbeanzeigen</h3><p>Instagram- und Facebook-Ads in deiner Region, für neue Kunden oder gezielt für Bewerber.</p></div>
       <div class="card card-wide rv"><p><b style="color:var(--ink)">Website &amp; Google-Profil</b> gibt es auch, damit aus Aufmerksamkeit eine Anfrage wird.</p><a href="kontakt.html" class="btn btn-line">Anfragen</a></div>
     </div>
   </div>
@@ -398,6 +421,7 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
       <details class="rv"><summary>Ich habe keine Zeit für Social Media. Geht das trotzdem?<i></i></summary><p class="ans">Genau dafür gibt es mich. Ich plane, drehe, schneide und poste. Du brauchst etwa eine Stunde für den Drehtag und ein paar Minuten pro Woche zum Freigeben.</p></details>
       <details class="rv"><summary>Ich will nicht vor die Kamera. Muss ich?<i></i></summary><p class="ans">Nein. Dein Team, eure Arbeit, Vorher-Nachher und Baustellen funktionieren genauso. Wer möchte, kommt vor die Kamera, niemand muss.</p></details>
       <details class="rv"><summary>Bringt das in meiner Branche etwas?<i></i></summary><p class="ans">Wenn deine Kunden oder Bewerber ein Smartphone haben: ja. Gerade Handwerk, Dienstleister und Gastronomie wirken auf Instagram und Facebook stark, weil man die Arbeit sieht.</p></details>
+      <details class="rv"><summary>Hilft das auch bei der Mitarbeitersuche?<i></i></summary><p class="ans">Ja, sogar besonders. Gute Fachkräfte suchen selten aktiv, aber sie scrollen. Wenn sie dein Team und euren Alltag sehen, bewerben sie sich eher. Auf Wunsch schalte ich zusätzlich gezielte Recruiting-Anzeigen in deiner Region.</p></details>
       <details class="rv"><summary>Was kostet das?<i></i></summary><p class="ans">Das hängt vom Umfang ab. Nach dem kostenlosen Check bekommst du ein klares Angebot mit festem Monatspreis, ohne versteckte Kosten.</p></details>
       <details class="rv"><summary>Wie schnell sehe ich Ergebnisse?<i></i></summary><p class="ans">Die ersten Inhalte sind nach dem Drehtag innerhalb weniger Tage online. Reichweite und Anfragen wachsen mit der Regelmäßigkeit. Jeden Monat schauen wir gemeinsam auf die Zahlen.</p></details>
     </div>
@@ -408,7 +432,7 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
 <section style="padding-top:0">
   <div class="wrap cta rv">
     <h2>Schreib mir „Check“.</h2>
-    <p class="lead">Ich schaue mir deinen Auftritt an und sage dir ehrlich, was ich als Erstes ändern würde. Kostenlos und unverbindlich.</p>
+    <p class="lead">Ich schaue mir deinen Auftritt an und sage dir ehrlich, was ich als Erstes ändern würde. Für mehr Anfragen und mehr Bewerbungen. Kostenlos und unverbindlich.</p>
     <div class="cta-btns">
       <a href="https://wa.me/4915254190819?text=CHECK" class="btn btn-white">Per WhatsApp <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg></a>
       <a href="https://ig.me/m/valoris_auftragsstruktur" target="_blank" rel="noopener" class="btn btn-ghost-w">Instagram</a>
@@ -461,14 +485,14 @@ function setStep(i){
 
 /* Infografik als selbstlaufende Animation (kein Scroll-Pin) */
 const trk=document.getElementById('trk'),typed=document.getElementById('typed'),hit=document.getElementById('hit'),tap=hit.querySelector('.tap');
-const DUR=[3600,3000,3200,4200];let run=false,timers=[],idx=0;
+const DUR=[3600,3000,3200,4400];let run=false,timers=[],idx=0,loop=0;const Q=[['maler zwickau','Malerbetrieb · Zwickau'],['maler jobs zwickau','Sucht Verstärkung · 2 Stellen']];
 function later(f,ms){timers.push(setTimeout(f,ms))}
 function clearAll(){timers.forEach(clearTimeout);timers=[]}
 function lineTo(i){trk.style.height=((i+1)/4*100)+'%'}
 function play(i){
   clearAll();idx=i;setStep(i);lineTo(i);
   if(i===0){typed.textContent='';hit.classList.remove('show');tap.classList.remove('go');
-    const w='maler zwickau';[...w].forEach((c,k)=>later(()=>typed.textContent+=c,250+k*90));
+    const q=Q[loop++%2];document.getElementById('hitsub').textContent=q[1];const w=q[0];[...w].forEach((c,k)=>later(()=>typed.textContent+=c,250+k*90));
     later(()=>hit.classList.add('show'),250+w.length*90+250);
     later(()=>{tap.classList.remove('go');void tap.offsetWidth;tap.classList.add('go')},DUR[0]-700);}
   if(run)later(()=>play((i+1)%4),DUR[i]);
