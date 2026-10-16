@@ -235,6 +235,56 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
   .btn{padding:15px 22px}
 }
 @media(prefers-reduced-motion:reduce){.caret{animation:none}html{scroll-behavior:auto}}
+
+
+/* Schritte rechts: Nummern-Kreise statt dünner Linie */
+.steps{padding-left:58px;counter-reset:st}
+.steps .track{left:15px;top:26px;bottom:auto;width:3px;background:#e6e6ea;border-radius:3px}
+.steps .track i{background:linear-gradient(180deg,#ff8a6b,var(--accent));border-radius:3px;transition:height .9s cubic-bezier(.22,1,.36,1)}
+.step{counter-increment:st;padding:10px 0 24px;opacity:.45;transition:opacity .5s,transform .5s cubic-bezier(.22,1,.36,1)}
+.step.on{opacity:.75}.step.cur{opacity:1;transform:translateX(4px)}
+.step small{display:none}
+.step::before{content:counter(st);left:-58px;top:10px;width:32px;height:32px;display:grid;place-items:center;font:600 .82rem/1 'Poppins',sans-serif;color:#9a9aa2;background:#fff;box-shadow:inset 0 0 0 2px #e1e1e6;transition:background .4s,color .4s,box-shadow .4s,transform .4s cubic-bezier(.2,1.5,.4,1)}
+.step.on::before{content:'✓';background:#fff;color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
+.step.cur::before{content:counter(st);background:var(--accent);color:#fff;box-shadow:0 0 0 6px rgba(255,90,54,.15),0 8px 18px -6px rgba(255,90,54,.6);transform:scale(1.08)}
+.step h3{transition:color .4s}
+.step.cur h3{color:var(--ink)}
+/* Handy-Infografik: lebendiger (iPhone-Look, Float, Tilt, Neon-Marker, Banner, Herzen) */
+.phwrap{perspective:1200px;--rx:0deg;--ry:0deg}
+.phwrap .phone{background:linear-gradient(145deg,#4a4a4e,#1d1d20 40%,#2c2c30);padding:11px;border-radius:50px;box-shadow:0 0 0 1.5px #0d0d0f,inset 0 0 0 1px rgba(255,255,255,.18),0 50px 90px -40px rgba(0,0,0,.55),0 18px 40px -20px rgba(255,90,54,.25);transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .4s cubic-bezier(.22,1,.36,1);animation:phfloat 6s ease-in-out infinite}
+.phwrap .phone::before,.phwrap .phone::after{content:'';position:absolute;width:3px;border-radius:2px;background:#2a2a2e}
+.phwrap .phone::before{left:-3px;top:120px;height:56px;box-shadow:0 70px 0 #2a2a2e}
+.phwrap .phone::after{right:-3px;top:150px;height:80px}
+@keyframes phfloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
+.phwrap .screen{border-radius:40px}
+.phwrap .notch{top:19px;width:84px;height:25px;border-radius:20px}
+.sbar{position:absolute;left:34px;right:30px;top:20px;z-index:6;display:flex;justify-content:space-between;align-items:center;font:600 12.5px/1 -apple-system,'Helvetica Neue',Arial,sans-serif;color:#111;pointer-events:none}
+.sic{display:flex;align-items:flex-end;gap:2px}.sic i{width:3px;background:#111;border-radius:1px}.sic i:nth-child(1){height:4px}.sic i:nth-child(2){height:6px}.sic i:nth-child(3){height:8px}.sic i:nth-child(4){height:10px;margin-right:5px}
+.sic b{width:22px;height:11px;border-radius:3px;border:1.5px solid #111;position:relative;background:linear-gradient(90deg,#111 70%,transparent 70%);background-clip:content-box;padding:1px}
+.scr{padding-top:50px;transition:opacity .55s var(--ease),transform .55s var(--ease),filter .55s var(--ease);filter:blur(6px);transform:translateY(18px) scale(.97)}
+.scr.on{filter:none;transform:none}
+.stale-scr.on .grid9,.stale-scr.on .prof-top,.stale-scr.on .bio{filter:grayscale(.6);transition:filter 1.2s}
+.stale-scr.flick{opacity:0!important;transform:translateY(-60px) rotate(-4deg) scale(.95)!important;transition:all .45s cubic-bezier(.6,0,.8,.4)!important}
+.res.hit.show{animation:hitpop .5s cubic-bezier(.2,1.5,.4,1)}
+@keyframes hitpop{0%{transform:scale(.9)}100%{transform:none}}
+.pmk{position:relative;display:inline-block;padding:1px 5px;border-radius:5px;transition:box-shadow .4s,background .4s}
+.pmk.red.on{box-shadow:0 0 0 1.5px #ff3b30,0 0 10px rgba(255,59,48,.7),0 0 22px rgba(255,59,48,.35);background:rgba(255,59,48,.06);color:#d92d20}
+.pmk.green.on{box-shadow:0 0 0 1.5px #22c55e,0 0 10px rgba(34,197,94,.7),0 0 22px rgba(34,197,94,.35);background:rgba(34,197,94,.07)}
+.av-live{position:relative;isolation:isolate}
+.alive .av-live::before{content:'';position:absolute;inset:-5px;border-radius:50%;background:conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);z-index:-1;animation:ring 3s linear infinite;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 3px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 3px))}
+.alive .av-live{box-shadow:0 0 0 2.5px #fff!important}
+@keyframes ring{to{transform:rotate(1turn)}}
+.alive.on .grid9 i{animation:tile .5s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes tile{0%{transform:scale(.6);opacity:0}100%{transform:none;opacity:1}}
+.alive.on .grid9 i:nth-child(1){animation-delay:.05s}.alive.on .grid9 i:nth-child(2){animation-delay:.1s}.alive.on .grid9 i:nth-child(3){animation-delay:.15s}.alive.on .grid9 i:nth-child(4){animation-delay:.2s}.alive.on .grid9 i:nth-child(5){animation-delay:.25s}.alive.on .grid9 i:nth-child(6){animation-delay:.3s}.alive.on .grid9 i:nth-child(7){animation-delay:.35s}.alive.on .grid9 i:nth-child(8){animation-delay:.4s}.alive.on .grid9 i:nth-child(9){animation-delay:.45s}
+.hearts{position:absolute;right:30px;bottom:70px;width:40px;height:160px;pointer-events:none}
+.hearts span{position:absolute;bottom:0;left:50%;font-size:20px;color:#ff3040;animation:heart 1.8s ease-out forwards;text-shadow:0 2px 6px rgba(0,0,0,.2)}
+@keyframes heart{0%{opacity:0;transform:translate(-50%,0) scale(.4)}15%{opacity:1;transform:translate(-50%,-14px) scale(1.15)}100%{opacity:0;transform:translate(calc(-50% + var(--dx)),-150px) scale(.9) rotate(var(--r))}}
+.pnotes{position:absolute;left:8px;right:8px;top:44px;z-index:7;display:grid;gap:6px;pointer-events:none}
+.pnotes .ios{padding:8px 10px;border-radius:15px;gap:8px;background:rgba(250,250,252,.92);box-shadow:0 10px 26px rgba(0,0,0,.22)}
+.pnotes .ios .ap{width:26px;height:26px;border-radius:7px}.pnotes .ios .ap svg{width:15px;height:15px}
+.pnotes .ios .tx div{font-size:10.5px}.pnotes .ios .tx p{font-size:10.5px}.pnotes .ios .tx div span{font-size:9.5px}
+@media(prefers-reduced-motion:reduce){.phwrap .phone,.alive .av-live::before,.alive.on .grid9 i{animation:none}.scr{filter:none}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>

@@ -244,6 +244,56 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
   .btn{padding:15px 22px}
 }
 @media(prefers-reduced-motion:reduce){.caret{animation:none}html{scroll-behavior:auto}}
+
+
+/* Schritte rechts: Nummern-Kreise statt dünner Linie */
+.steps{padding-left:58px;counter-reset:st}
+.steps .track{left:15px;top:26px;bottom:auto;width:3px;background:#e6e6ea;border-radius:3px}
+.steps .track i{background:linear-gradient(180deg,#ff8a6b,var(--accent));border-radius:3px;transition:height .9s cubic-bezier(.22,1,.36,1)}
+.step{counter-increment:st;padding:10px 0 24px;opacity:.45;transition:opacity .5s,transform .5s cubic-bezier(.22,1,.36,1)}
+.step.on{opacity:.75}.step.cur{opacity:1;transform:translateX(4px)}
+.step small{display:none}
+.step::before{content:counter(st);left:-58px;top:10px;width:32px;height:32px;display:grid;place-items:center;font:600 .82rem/1 'Poppins',sans-serif;color:#9a9aa2;background:#fff;box-shadow:inset 0 0 0 2px #e1e1e6;transition:background .4s,color .4s,box-shadow .4s,transform .4s cubic-bezier(.2,1.5,.4,1)}
+.step.on::before{content:'✓';background:#fff;color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
+.step.cur::before{content:counter(st);background:var(--accent);color:#fff;box-shadow:0 0 0 6px rgba(255,90,54,.15),0 8px 18px -6px rgba(255,90,54,.6);transform:scale(1.08)}
+.step h3{transition:color .4s}
+.step.cur h3{color:var(--ink)}
+/* Handy-Infografik: lebendiger (iPhone-Look, Float, Tilt, Neon-Marker, Banner, Herzen) */
+.phwrap{perspective:1200px;--rx:0deg;--ry:0deg}
+.phwrap .phone{background:linear-gradient(145deg,#4a4a4e,#1d1d20 40%,#2c2c30);padding:11px;border-radius:50px;box-shadow:0 0 0 1.5px #0d0d0f,inset 0 0 0 1px rgba(255,255,255,.18),0 50px 90px -40px rgba(0,0,0,.55),0 18px 40px -20px rgba(255,90,54,.25);transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .4s cubic-bezier(.22,1,.36,1);animation:phfloat 6s ease-in-out infinite}
+.phwrap .phone::before,.phwrap .phone::after{content:'';position:absolute;width:3px;border-radius:2px;background:#2a2a2e}
+.phwrap .phone::before{left:-3px;top:120px;height:56px;box-shadow:0 70px 0 #2a2a2e}
+.phwrap .phone::after{right:-3px;top:150px;height:80px}
+@keyframes phfloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
+.phwrap .screen{border-radius:40px}
+.phwrap .notch{top:19px;width:84px;height:25px;border-radius:20px}
+.sbar{position:absolute;left:34px;right:30px;top:20px;z-index:6;display:flex;justify-content:space-between;align-items:center;font:600 12.5px/1 -apple-system,'Helvetica Neue',Arial,sans-serif;color:#111;pointer-events:none}
+.sic{display:flex;align-items:flex-end;gap:2px}.sic i{width:3px;background:#111;border-radius:1px}.sic i:nth-child(1){height:4px}.sic i:nth-child(2){height:6px}.sic i:nth-child(3){height:8px}.sic i:nth-child(4){height:10px;margin-right:5px}
+.sic b{width:22px;height:11px;border-radius:3px;border:1.5px solid #111;position:relative;background:linear-gradient(90deg,#111 70%,transparent 70%);background-clip:content-box;padding:1px}
+.scr{padding-top:50px;transition:opacity .55s var(--ease),transform .55s var(--ease),filter .55s var(--ease);filter:blur(6px);transform:translateY(18px) scale(.97)}
+.scr.on{filter:none;transform:none}
+.stale-scr.on .grid9,.stale-scr.on .prof-top,.stale-scr.on .bio{filter:grayscale(.6);transition:filter 1.2s}
+.stale-scr.flick{opacity:0!important;transform:translateY(-60px) rotate(-4deg) scale(.95)!important;transition:all .45s cubic-bezier(.6,0,.8,.4)!important}
+.res.hit.show{animation:hitpop .5s cubic-bezier(.2,1.5,.4,1)}
+@keyframes hitpop{0%{transform:scale(.9)}100%{transform:none}}
+.pmk{position:relative;display:inline-block;padding:1px 5px;border-radius:5px;transition:box-shadow .4s,background .4s}
+.pmk.red.on{box-shadow:0 0 0 1.5px #ff3b30,0 0 10px rgba(255,59,48,.7),0 0 22px rgba(255,59,48,.35);background:rgba(255,59,48,.06);color:#d92d20}
+.pmk.green.on{box-shadow:0 0 0 1.5px #22c55e,0 0 10px rgba(34,197,94,.7),0 0 22px rgba(34,197,94,.35);background:rgba(34,197,94,.07)}
+.av-live{position:relative;isolation:isolate}
+.alive .av-live::before{content:'';position:absolute;inset:-5px;border-radius:50%;background:conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);z-index:-1;animation:ring 3s linear infinite;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 3px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 3px))}
+.alive .av-live{box-shadow:0 0 0 2.5px #fff!important}
+@keyframes ring{to{transform:rotate(1turn)}}
+.alive.on .grid9 i{animation:tile .5s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes tile{0%{transform:scale(.6);opacity:0}100%{transform:none;opacity:1}}
+.alive.on .grid9 i:nth-child(1){animation-delay:.05s}.alive.on .grid9 i:nth-child(2){animation-delay:.1s}.alive.on .grid9 i:nth-child(3){animation-delay:.15s}.alive.on .grid9 i:nth-child(4){animation-delay:.2s}.alive.on .grid9 i:nth-child(5){animation-delay:.25s}.alive.on .grid9 i:nth-child(6){animation-delay:.3s}.alive.on .grid9 i:nth-child(7){animation-delay:.35s}.alive.on .grid9 i:nth-child(8){animation-delay:.4s}.alive.on .grid9 i:nth-child(9){animation-delay:.45s}
+.hearts{position:absolute;right:30px;bottom:70px;width:40px;height:160px;pointer-events:none}
+.hearts span{position:absolute;bottom:0;left:50%;font-size:20px;color:#ff3040;animation:heart 1.8s ease-out forwards;text-shadow:0 2px 6px rgba(0,0,0,.2)}
+@keyframes heart{0%{opacity:0;transform:translate(-50%,0) scale(.4)}15%{opacity:1;transform:translate(-50%,-14px) scale(1.15)}100%{opacity:0;transform:translate(calc(-50% + var(--dx)),-150px) scale(.9) rotate(var(--r))}}
+.pnotes{position:absolute;left:8px;right:8px;top:44px;z-index:7;display:grid;gap:6px;pointer-events:none}
+.pnotes .ios{padding:8px 10px;border-radius:15px;gap:8px;background:rgba(250,250,252,.92);box-shadow:0 10px 26px rgba(0,0,0,.22)}
+.pnotes .ios .ap{width:26px;height:26px;border-radius:7px}.pnotes .ios .ap svg{width:15px;height:15px}
+.pnotes .ios .tx div{font-size:10.5px}.pnotes .ios .tx p{font-size:10.5px}.pnotes .ios .tx div span{font-size:9.5px}
+@media(prefers-reduced-motion:reduce){.phwrap .phone,.alive .av-live::before,.alive.on .grid9 i{animation:none}.scr{filter:none}}
 </style>
 <style>
 .hero h1{max-width:12ch}
@@ -269,6 +319,23 @@ form input[type=text]:focus{outline:none;border-color:var(--ink)}
 .consent a{text-decoration:underline}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 button.btn{border:0;cursor:pointer;font-family:'Poppins',sans-serif}
+.chero{padding-bottom:70px}.chero .hero-grid{align-items:start}
+.chero p{margin:22px 0 26px}
+.s3{list-style:none;display:grid;gap:14px;margin:0 0 26px;padding:0;max-width:470px}
+.s3 li{display:flex;gap:14px;align-items:flex-start}
+.s3 b{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:600;font-size:.95rem}
+.s3 span{color:var(--soft);font-size:.96rem;line-height:1.45}
+.s3 strong{display:block;color:var(--ink);font-family:'Poppins',sans-serif;font-weight:600;font-size:1.02rem}
+.chero .formwrap{margin:0;box-shadow:0 40px 80px -48px rgba(0,0,0,.35)}
+.who{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.who img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 30%}
+.who b{display:block;font-family:'Poppins',sans-serif;font-weight:600}
+.who small{color:var(--soft)}
+.endcta{margin-top:44px}
+.formwrap button.btn-line{border:1.5px solid var(--ink);background:#fff}
+.formwrap button.btn-line:hover{background:var(--ink);color:#fff}
+form .consent{font-family:"Lato",sans-serif;font-weight:400;font-size:.86rem}
+.chero .trust{margin-top:0;gap:20px}
 @media(max-width:960px){.cards3,.steps4{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.cards3,.steps4{grid-template-columns:1fr}.formwrap{padding:26px 20px;border-radius:22px}}
 .replay2{position:absolute;inset:auto 0 0 0;margin:auto;display:none}
@@ -298,23 +365,38 @@ button.btn{border:0;cursor:pointer;font-family:'Poppins',sans-serif}
   <a href="/check/" class="btn btn-dark" style="margin-top:24px;justify-content:center;border:0">Kostenloser Check</a>
 </div>
 
-<section class="hero">
+<section class="hero chero">
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow rv">Kostenloser Check für Inhaber</div>
       <h1 class="rv">Wie wirkt dein Betrieb online?</h1>
-      <p class="rv">Du machst gute Arbeit. Aber sieht man das auch, bevor dich jemand anruft? Ich schaue mir deinen Betrieb mit den Augen deiner Kunden und Bewerber an und zeige dir, wo du gerade Aufträge und Leute verlierst. Kostenlos, ehrlich und ohne Verkaufsgespräch.</p>
-      <div class="hero-btns rv">
-        <a href="https://wa.me/4915254190819?text=CHECK%20%E2%80%93%20ich%20h%C3%A4tte%20gern%20meinen%20kostenlosen%20Online-Check.%20Mein%20Betrieb%3A%20" class="btn btn-dark">Meinen Betrieb checken <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg></a>
-        <a href="#anfrage" class="btn btn-line">Lieber per Formular</a>
-      </div>
+      <p class="rv">Schick mir den Namen deines Betriebs. Ich zeig dir, was Kunden und Bewerber online von dir sehen und was du besser machen kannst.</p>
+      <ol class="s3 rv">
+        <li><b>1</b><span><strong>Du schickst mir deinen Betrieb</strong>Per WhatsApp oder Formular. 30 Sekunden.</span></li>
+        <li><b>2</b><span><strong>Ich schau mir alles an</strong>Instagram, Google, Bewertungen, Website.</span></li>
+        <li><b>3</b><span><strong>Du bekommst 3 klare Tipps</strong>Innerhalb von 24 Stunden. Umsetzen musst du nichts.</span></li>
+      </ol>
       <div class="trust rv">
-        <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Kostenlos für Inhaber</span>
-        <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Kein Vertreterbesuch</span>
-        <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Antwort in 24 h</span>
+        <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Kostenlos</span>
+        <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Kein Verkaufsgespräch</span>
+        <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Persönlich von mir</span>
       </div>
     </div>
-    <div class="hero-img rv"><img src="../assets/v2/frederic-studio.webp" alt="Frederic Bochmann, VALORIS" width="1400" height="1750"></div>
+    <div class="formwrap rv" id="anfrage">
+      <div class="who"><img src="../assets/v2/frederic-avatar.jpg" alt="Frederic Bochmann" width="56" height="56"><div><b>Frederic Bochmann</b><small>prüft deinen Betrieb persönlich</small></div></div>
+      <a href="https://wa.me/4915254190819?text=CHECK%20%E2%80%93%20ich%20h%C3%A4tte%20gern%20meinen%20kostenlosen%20Online-Check.%20Mein%20Betrieb%3A%20" class="btn btn-dark">Per WhatsApp checken <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg></a>
+      <div class="or">oder hier eintragen</div>
+      <form action="https://formspree.io/f/mlgpooqw" method="POST">
+        <input type="hidden" name="_subject" value="CHECK-Anfrage (Online-Check)">
+        <input type="hidden" name="Quelle" value="valoris-auftragsstruktur.de/check">
+        <input type="hidden" name="_next" value="https://www.valoris-auftragsstruktur.de/check/danke.html">
+        <div class="hp" aria-hidden="true"><label>Nicht ausfüllen <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        <div><label for="f-betrieb">Name deines Betriebs</label><input id="f-betrieb" type="text" name="Betrieb" autocomplete="organization" placeholder="z. B. Malerbetrieb Weber, Zwickau" required></div>
+        <div><label for="f-kontakt">Deine WhatsApp-Nummer oder E-Mail</label><input id="f-kontakt" type="text" name="Kontakt" required></div>
+        <label class="consent"><input type="checkbox" name="Einwilligung" value="ja" required><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. Mehr in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</span></label>
+        <button class="btn btn-line" type="submit">Kostenlosen Check anfordern</button>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -365,76 +447,18 @@ button.btn{border:0;cursor:pointer;font-family:'Poppins',sans-serif}
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="center">
-      <div class="eyebrow rv">Was ich mir bei deinem Betrieb anschaue</div>
-      <h2 class="rv">Alles, was Kunden und Bewerber sehen, bevor sie sich melden.</h2>
-    </div>
-    <div class="cards cards3">
-      <div class="card rv"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg><h3>Instagram &amp; Facebook</h3><p>Name, Beschreibung, Highlights und Beiträge. Versteht man in drei Sekunden, was du machst?</p></div>
-      <div class="card rv"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><h3>Google-Profil</h3><p>Fotos, Öffnungszeiten, Leistungen und Einträge. Wirst du in der Region gefunden?</p></div>
-      <div class="card rv"><svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9Z"/></svg><h3>Bewertungen</h3><p>Wie viele, wie aktuell und antwortest du darauf? Das entscheidet oft, wer den Auftrag bekommt.</p></div>
-      <div class="card rv"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg><h3>Website</h3><p>Handy-Ansicht, Ladezeit und ob dich ein Kunde mit einem Klick erreicht.</p></div>
-      <div class="card rv"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2A5 5 0 0 1 21 19"/></svg><h3>Wirkung auf Bewerber</h3><p>Sieht man dein Team und euren Alltag? Würde sich eine gute Fachkraft bei dir bewerben?</p></div>
-      <div class="card rv"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg><h3>Impressum &amp; Datenschutz</h3><p>Kurzer Blick auf typische Abmahnrisiken.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="journey">
-  <div class="wrap">
-    <div class="center">
-      <div class="eyebrow rv">So läuft's</div>
-      <h2 class="rv">Vier Schritte. Kaum Zeit für dich als Chef.</h2>
-    </div>
-    <div class="steps4">
-      <div class="rv"><h3>Du schickst mir deinen Betrieb</h3><p>Name oder Instagram-Profil per WhatsApp oder Formular. Mehr brauche ich nicht.</p></div>
-      <div class="rv"><h3>Ich schau mir alles an</h3><p>Mit den Augen eines Kunden, der dich zum ersten Mal sucht.</p></div>
-      <div class="rv"><h3>Du bekommst dein Ergebnis</h3><p>Vorher/Nachher plus die drei Punkte, die deinem Betrieb am meisten bringen.</p></div>
-      <div class="rv"><h3>Du entscheidest</h3><p>Selbst umsetzen, mit mir oder gar nicht. Alles in Ordnung.</p></div>
-    </div>
-  </div>
-</section>
-
 <section id="faq">
   <div class="wrap">
     <div class="center">
-      <div class="eyebrow rv">Klartext</div>
+      <div class="eyebrow rv">Kurz gefragt</div>
       <h2 class="rv">Wo ist der Haken?</h2>
     </div>
     <div class="faq">
-      <details class="rv"><summary>Warum machst du das umsonst?<i></i></summary><p class="ans">Weil der Check zeigt, wie ich arbeite. Wenn er dir etwas bringt, meldest du dich vielleicht irgendwann wieder. Wenn nicht, hast du trotzdem ein ehrliches Feedback.</p></details>
-      <details class="rv"><summary>Ich habe als Chef keine Zeit dafür.<i></i></summary><p class="ans">Brauchst du nicht. Eine Nachricht reicht, den Rest mache ich. Das Ergebnis liest du in fünf Minuten.</p></details>
-      <details class="rv"><summary>Ich habe schon jemanden für Social Media.<i></i></summary><p class="ans">Dann gib ihm das Ergebnis. Der Check gehört dir, egal wer ihn umsetzt.</p></details>
-      <details class="rv"><summary>Wer macht den Check?<i></i></summary><p class="ans">Ich, Frederic, persönlich. Keine automatische Auswertung, kein Callcenter, sondern meine ehrliche Meinung.</p></details>
+      <details class="rv"><summary>Warum ist das kostenlos?<i></i></summary><p class="ans">Weil du so siehst, wie ich arbeite. Wenn es dir was bringt, meldest du dich vielleicht wieder. Wenn nicht, ist das auch okay.</p></details>
+      <details class="rv"><summary>Wie viel Zeit kostet mich das?<i></i></summary><p class="ans">Eine Nachricht. Den Rest mache ich. Das Ergebnis liest du in fünf Minuten.</p></details>
+      <details class="rv"><summary>Muss ich danach etwas kaufen?<i></i></summary><p class="ans">Nein. Du kannst die Tipps selbst umsetzen, mit mir oder gar nicht.</p></details>
     </div>
-  </div>
-</section>
-
-<section id="anfrage" class="journey">
-  <div class="wrap">
-    <div class="center">
-      <div class="eyebrow rv">Check für deinen Betrieb</div>
-      <h2 class="rv">Dauert 30 Sekunden.</h2>
-      <p class="lead rv">Für Inhaber und Geschäftsführer von Handwerksbetrieben, Dienstleistern und Gastronomie in Zwickau und Umgebung.</p>
-    </div>
-    <div class="formwrap rv">
-      <a href="https://wa.me/4915254190819?text=CHECK%20%E2%80%93%20ich%20h%C3%A4tte%20gern%20meinen%20kostenlosen%20Online-Check.%20Mein%20Betrieb%3A%20" class="btn btn-dark">Per WhatsApp checken <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg></a>
-      <div class="or">oder hier</div>
-      <form action="https://formspree.io/f/mlgpooqw" method="POST">
-        <input type="hidden" name="_subject" value="CHECK-Anfrage (Online-Check)">
-        <input type="hidden" name="Quelle" value="valoris-auftragsstruktur.de/check">
-        <input type="hidden" name="_next" value="https://www.valoris-auftragsstruktur.de/check/danke.html">
-        <div class="hp" aria-hidden="true"><label>Nicht ausfüllen <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
-        <div><label for="f-name">Dein Name (Inhaber/in)</label><input id="f-name" type="text" name="Name" autocomplete="name" required></div>
-        <div><label for="f-betrieb">Dein Betrieb</label><input id="f-betrieb" type="text" name="Betrieb" autocomplete="organization" required></div>
-        <div><label for="f-link">Instagram-Name oder Website</label><input id="f-link" type="text" name="Instagram/Website" placeholder="@deinbetrieb oder www.…"></div>
-        <div><label for="f-kontakt">WhatsApp oder E-Mail</label><input id="f-kontakt" type="text" name="Kontakt" required></div>
-        <label class="consent"><input type="checkbox" name="Einwilligung" value="ja" required><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. Mehr in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</span></label>
-        <button class="btn btn-dark" type="submit">Check für meinen Betrieb anfordern</button>
-      </form>
-    </div>
+    <div class="center endcta rv"><a href="https://wa.me/4915254190819?text=CHECK%20%E2%80%93%20ich%20h%C3%A4tte%20gern%20meinen%20kostenlosen%20Online-Check.%20Mein%20Betrieb%3A%20" class="btn btn-dark">Jetzt Betrieb checken <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg></a></div>
   </div>
 </section>
 
