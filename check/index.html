@@ -243,29 +243,8 @@ footer{padding:64px 0 48px;font-size:.92rem;color:var(--soft)}
 </style>
 <style>
 .hero h1{max-width:12ch}
-.plate{max-width:900px;margin:40px auto 0}
-.vn{display:grid;grid-template-columns:1fr 1fr;max-width:900px;margin:56px auto 0;text-align:center;font-family:'Poppins',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
-.vn span:first-child{color:var(--soft)}.vn span:last-child{color:var(--accent)}
-.vn{position:relative;align-items:end}
-.vn{height:200px}
-.vn>span{align-self:end}
-.arrow{position:absolute;left:50%;top:0;transform:translateX(-50%);width:min(52%,440px);text-align:center;color:var(--accent)}
-.arrow b{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:7px 16px;font-size:.82rem;font-weight:700;letter-spacing:.06em;box-shadow:0 10px 24px -10px rgba(255,90,54,.7);animation:pill 3.6s var(--ease) infinite}
-.arrow svg{display:block;width:100%;height:auto;margin-top:-4px;overflow:visible;fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
-.arrow .ln{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 3.6s cubic-bezier(.65,0,.35,1) infinite}
-.arrow .hd{stroke-dasharray:1;stroke-dashoffset:1;animation:head 3.6s ease-out infinite}
-@keyframes draw{0%{stroke-dashoffset:1;opacity:1}35%{stroke-dashoffset:0}85%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
-@keyframes head{0%,33%{stroke-dashoffset:1;opacity:1}45%{stroke-dashoffset:0}85%{opacity:1;stroke-dashoffset:0}100%{opacity:0;stroke-dashoffset:0}}
-@keyframes pill{0%,100%{transform:scale(1)}40%{transform:scale(1.08)}50%{transform:scale(1)}}
-@media(prefers-reduced-motion:reduce){.arrow .ln,.arrow .hd,.arrow b{animation:none;stroke-dashoffset:0}}
-.facts.lm{margin-top:40px}
-.facts.lm .fact{background:#fff}
-.lm-note{text-align:center;color:var(--soft);font-size:.85rem;margin-top:18px}
-@media(max-width:600px){.vn{grid-template-columns:1fr 1fr;margin-top:40px}.vn{height:130px}.arrow{width:62%}.arrow b{font-size:.62rem;padding:5px 10px}.arrow svg{stroke-width:6}.facts.lm{grid-template-columns:repeat(3,1fr);gap:8px}.facts.lm .fact{padding:16px 12px}.facts.lm .num{font-size:2rem;margin-top:8px}.facts.lm h3{font-size:.78rem;margin:8px 0 0}.facts.lm p{display:none}.facts.lm .tag{font-size:.6rem}}
-.midcta{text-align:center;margin-top:48px}
 .for{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .for span{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.88rem;color:var(--soft)}
-.plate img{width:100%;height:auto;display:block}
 .cap{text-align:center;color:var(--soft);font-size:.92rem;margin-top:18px}
 .cards3{grid-template-columns:repeat(3,1fr)}
 .steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px;counter-reset:s}
@@ -288,58 +267,9 @@ form input[type=text]:focus{outline:none;border-color:var(--ink)}
 button.btn{border:0;cursor:pointer;font-family:'Poppins',sans-serif}
 @media(max-width:960px){.cards3,.steps4{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.cards3,.steps4{grid-template-columns:1fr}.formwrap{padding:26px 20px;border-radius:22px}}
-
-
-/* Reel-Ablauf (Stil Yakiv: echte Kulisse, schwebende Karte, Neon-Marker, Karaoke-UT, iOS-Banner) */
-.reelwrap{display:grid;grid-template-columns:420px 1fr;gap:64px;align-items:center;max-width:1040px;margin:72px auto 0}
-.stage{position:relative;aspect-ratio:9/16;border-radius:30px;overflow:hidden;background:#111;box-shadow:0 50px 90px -40px rgba(0,0,0,.6);isolation:isolate}
-.stage video,.stage .bgimg{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;filter:blur(3px) brightness(.55) saturate(1.1);z-index:-2}
-.stage::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 55%,rgba(0,0,0,.7))}
-.sc-day{position:absolute;left:16px;top:16px;display:flex;align-items:center;gap:8px;font:800 15px/1 'Helvetica Neue',Arial,sans-serif;color:#fff;letter-spacing:.06em;text-shadow:0 2px 8px rgba(0,0,0,.6)}
-.sc-day i{width:9px;height:9px;border-radius:50%;background:#ff3b30;box-shadow:0 0 10px #ff3b30;animation:rec 1s steps(2) infinite}
-@keyframes rec{50%{opacity:.2}}
-.sc-wz{position:absolute;right:14px;bottom:12px;font:700 10px/1 'Helvetica Neue',Arial,sans-serif;letter-spacing:.1em;color:rgba(255,255,255,.7)}
-.persp{position:absolute;inset:0;perspective:1800px;perspective-origin:50% 40%}
-.shade{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,0) 52%,rgba(0,0,0,.55) 68%,rgba(0,0,0,.85))}
-.card3d{position:absolute;left:50%;top:41%;width:58%;transform-style:preserve-3d;transition:transform 1.1s cubic-bezier(.22,1,.36,1);will-change:transform}
-.card3d .fr{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.12) inset;background:#0b0b0d}
-.card3d img{display:block;width:100%;height:auto}
-.card3d .fr::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.16),rgba(255,255,255,0) 40%,rgba(255,255,255,.05) 85%);pointer-events:none}
-.mk{position:absolute;border:2.5px solid #22c55e;border-radius:7px;box-shadow:0 0 10px #22c55e,0 0 26px #22c55e,inset 0 0 10px rgba(34,197,94,.5);opacity:0;transform:scale(1.25);transition:opacity .35s,transform .45s cubic-bezier(.2,1.5,.4,1)}
-.mk.on{opacity:1;transform:none}
-.mk b{position:absolute;right:-11px;top:-11px;width:22px;height:22px;border-radius:50%;background:#22c55e;color:#fff;font:900 13px/22px Arial;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,.4)}
-.notes{position:absolute;left:10px;right:10px;top:44px;display:grid;gap:7px;z-index:3}
-.ios{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:18px;background:rgba(245,245,247,.82);-webkit-backdrop-filter:blur(18px) saturate(1.6);backdrop-filter:blur(18px) saturate(1.6);box-shadow:0 10px 30px rgba(0,0,0,.35);font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;color:#111;animation:drop .55s cubic-bezier(.2,1.3,.4,1) both}
-.ios.out{animation:lift .4s ease-in both}
-.ios .ap{flex:none;width:30px;height:30px;border-radius:8px;display:grid;place-items:center}
-.ios .ap svg{width:18px;height:18px}
-.ios .igp{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
-.ios .wap{background:#25d366}
-.ios .tx{flex:1;min-width:0;line-height:1.25}
-.ios .tx div{display:flex;justify-content:space-between;font-size:12px;font-weight:700}
-.ios .tx div span{font-weight:400;color:#666;font-size:11px}
-.ios .tx p{font-size:12px;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#222}
-@keyframes drop{0%{opacity:0;transform:translateY(-30px) scale(.94)}100%{opacity:1;transform:none}}
-@keyframes lift{to{opacity:0;transform:translateY(-14px) scale(.96)}}
-.ut{position:absolute;left:14px;right:14px;bottom:7%;text-align:center;line-height:1.02;z-index:4;text-shadow:0 4px 18px rgba(0,0,0,.8),0 1px 3px rgba(0,0,0,.9)}
-.ut span{display:block;opacity:0;transform:translateY(10px) scale(.96);transition:opacity .3s,transform .45s cubic-bezier(.2,1.4,.4,1)}
-.ut.on span{opacity:1;transform:none}
-.ut.on span:nth-child(2){transition-delay:.18s}
-.ut .s{font:800 30px/1.05 'Helvetica Neue',Arial,sans-serif;color:#fff;letter-spacing:-.5px}
-.ut .k{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:46px;color:#f0fff4;text-shadow:0 0 16px #22c55e,0 0 40px #16a34a,0 4px 14px rgba(0,0,0,.7)}
 .replay2{position:absolute;inset:auto 0 0 0;margin:auto;display:none}
-.reelside{min-width:0}.reelside .eyebrow{margin-bottom:12px}
-.reelside h3{font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:700;line-height:1.15;letter-spacing:-.02em}
-.kpis{margin-top:30px;display:grid;gap:12px}
-.kpi{display:flex;align-items:baseline;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);transition:color .3s}
-.kpi .num{font-size:3.2rem;margin:0;min-width:110px;color:var(--ink);transition:color .3s}
-.kpi p{color:var(--soft);font-size:1rem}
-.kpi.hit .num{color:#16a34a}
-.preplay{margin-top:26px;background:none;border:0;cursor:pointer;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--soft);text-decoration:underline;text-underline-offset:4px;padding:0}
-.preplay:hover{color:var(--ink)}
-@media(max-width:860px){.reelwrap{grid-template-columns:1fr;gap:34px;margin-top:56px}.stage{max-width:380px;width:100%;margin:0 auto}.reelside{text-align:center}.kpi{justify-content:center}.kpi .num{min-width:0;font-size:2.4rem}}
-@media(prefers-reduced-motion:reduce){.card3d,.mk,.ut span{transition:none}.ios{animation:none}}
 </style>
+<link rel="stylesheet" href="../assets/v2/case.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -384,22 +314,26 @@ button.btn{border:0;cursor:pointer;font-family:'Poppins',sans-serif}
   </div>
 </section>
 
-<section class="journey">
+
+<section class="journey" id="beispiel">
   <div class="wrap">
     <div class="center">
       <div class="eyebrow rv">Beispiel aus Werdau</div>
       <h2 class="rv">So sieht ein Check aus.</h2>
-      <p class="lead rv">LM Services von Lukas Müller, echte Screenshots: gleicher Betrieb, gleiche Arbeit. Nach dem Check sieht jeder sofort, was er anbietet, wo er arbeitet, dass er Leute sucht und wie man ihn erreicht.</p>
+      <p class="lead rv">LM Services von Lukas Müller, echte Screenshots: gleicher Betrieb, gleiche Arbeit. Nach dem Umbau sieht jeder sofort, was er anbietet, wo er arbeitet, dass er Leute sucht und wie man ihn erreicht.</p>
     </div>
     <div class="vn rv"><span>Vorher</span><div class="arrow"><b>In den ersten 10 Tagen</b><svg viewBox="0 0 400 110"><path class="ln" pathLength="1" d="M18 98 C 60 20, 330 0, 372 88"/><path class="hd" pathLength="1" d="M346 74 L374 92 L384 60"/></svg></div><span>Nachher</span></div>
-    <div class="plate rv"><img src="img/lm-vorher-nachher.jpg" alt="Instagram-Profil von LM Services vorher und nachher: klarer Name, Leistungen, Region, Google-Bewertung, Stellenaufruf und neue Reels" width="1600" height="1570" loading="lazy"></div>
+    <div class="plate rv"><img src="../check/img/lm-vorher-nachher.jpg" alt="Instagram-Profil von LM Services vorher und nachher: klarer Name, Leistungen, Region, Google-Bewertung, Stellenaufruf und neue Reels" width="1600" height="1570" loading="lazy"></div>
     <div class="reelwrap">
       <div class="stage rv" id="stage" aria-label="Ablauf bei LM Services als kurzes Video">
         <video src="../assets/social/lm-imagefilm-loop.mp4" poster="../assets/social/lm-imagefilm.jpg" muted loop playsinline preload="metadata"></video>
-        <div class="persp"><div class="card3d" id="card"><div class="fr"><img src="img/lm-nachher.jpg" alt="" width="760" height="1557">
-          <div class="mk" id="mk1" style="left:29%;top:8.6%;width:68%;height:4.6%"><b>✓</b></div>
-          <div class="mk" id="mk2" style="left:2.5%;top:22.2%;width:80%;height:10.4%"><b>✓</b></div>
-          <div class="mk" id="mk3" style="left:66.6%;top:71.6%;width:33%;height:21.6%"><b>✓</b></div>
+        <div class="persp"><div class="card3d" id="card"><div class="fr"><img src="../check/img/lm-nachher.jpg" alt="" width="760" height="1557">
+          <div class="mk" id="mk1" style="left:27.4%;top:8.6%;width:58.0%;height:4.6%"><b>✓</b></div>
+          <div class="mk" id="mk2" style="left:2.6%;top:22.7%;width:77.0%;height:2.4%"><b>✓</b></div>
+          <div class="mk" id="mk3" style="left:2.6%;top:26.6%;width:31.0%;height:2.3%"><b>✓</b></div>
+          <div class="mk" id="mk4" style="left:2.6%;top:28.6%;width:45.0%;height:2.3%"><b>✓</b></div>
+          <div class="mk" id="mk5" style="left:59.4%;top:47.9%;width:27.8%;height:4.6%"><b>✓</b></div>
+          <div class="mk" id="mk6" style="left:66.4%;top:71.4%;width:33.4%;height:22.0%"><b>✓</b></div>
         </div></div></div>
         <div class="shade"></div>
         <div class="notes" id="notes"></div>
@@ -414,6 +348,10 @@ button.btn{border:0;cursor:pointer;font-family:'Poppins',sans-serif}
           <div class="kpi rv" id="k1"><div class="num">7</div><p>Bewerbungen in den ersten 10 Tagen</p></div>
           <div class="kpi rv" id="k2"><div class="num">20+</div><p>Anfragen im ersten Monat</p></div>
           <div class="kpi rv" id="k3"><div class="num">4</div><p>neue Leute eingestellt</p></div>
+        </div>
+        <div class="iglinks rv">
+          <a class="iglink" href="https://www.instagram.com/lm._services_/" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="#fff"/></svg></i><span>LM Services ansehen<small>@lm._services_</small></span></a>
+          <a class="iglink" href="https://www.instagram.com/valoris_auftragsstruktur/" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="#fff"/></svg></i><span>Mein Instagram<small>@valoris_auftragsstruktur</small></span></a>
         </div>
         <button class="preplay" id="pReplay" type="button">↻ Video nochmal abspielen</button>
       </div>
@@ -521,48 +459,6 @@ setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>{if(getComputedStyle
 </script>
 <script src="../assets/v2/clean-url.js"></script>
 
-<script>
-(function(){
-  const st=document.getElementById('stage'); if(!st) return;
-  const $=id=>document.getElementById(id), card=$('card'), notes=$('notes'), ut=$('ut'), vid=st.querySelector('video');
-  const IG='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff"/></svg>';
-  const WA='<svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-3-1-5.6-3.6-6.5-6.2-.3-.9.1-2.1.9-2.6.3-.2.8-.2 1 .2l.9 2.1c.1.3 0 .6-.2.8l-.5.6c.6 1.2 1.6 2.2 2.8 2.8l.6-.6c.2-.2.5-.3.8-.2l2 1c.3.2.4.5.3.8Z"/></svg>';
-  // Kamera-Positionen der Karte
-  const CAM={start:'translate(-50%,-50%) rotateY(-20deg) rotateX(6deg) scale(.82)',
-             full:'translate(-50%,-50%) rotateY(-10deg) rotateX(4deg) rotateZ(-1.5deg)',
-             bio:'translate(-50%,-50%) translateY(16%) rotateY(-6deg) rotateX(3deg) scale(1.3)',
-             grid:'translate(-50%,-50%) translate(-10%,-24%) rotateY(-10deg) rotateX(4deg) scale(1.3)',
-             end:'translate(-50%,-50%) rotateY(9deg) rotateX(3deg) rotateZ(1.5deg) scale(.95)'};
-  const T=[ // [Sekunde, Aktion]
-    [0,  ()=>{cam('start');say('Lukas, LM Services:','vorher unsichtbar.');day(0)}],
-    [.4, ()=>cam('full')],
-    [1.8,()=>{say('Wir bauen sein Profil','neu auf.');mk(1)}],
-    [3.0,()=>{cam('bio');mk(2)}],
-    [4.4,()=>{day(2);note('ig','lm._services_','Hey, sucht ihr noch Leute? 👋')}],
-    [5.2,()=>{day(3);say('Tag 3:','erste Bewerbungen');note('wa','Bewerbung','Hallo, ich würde gern als Umzugshelfer…')}],
-    [6.4,()=>{day(6);note('ig','lm._services_','Bewerbung als Fahrer Klasse B')}],
-    [7.4,()=>{cam('grid');mk(3);day(10);say('Tag 10:','7 Bewerber.');hit(1);note('wa','Bewerbung','Wann kann ich mal vorbeikommen?')}],
-    [9.2,()=>{cam('full');day(18);say('Und die Kunden?','20+ Anfragen.');hit(2);note('ig','Neue Anfrage','Umzug 3-Zimmer, Werdau. Geht das im Mai?')}],
-    [10.3,()=>{day(24);note('wa','Neue Anfrage','Entrümpelung Keller, wann habt ihr Zeit?')}],
-    [11.6,()=>{cam('end');day(30);say('Nach 30 Tagen:','4 neue Leute im Team.');hit(3);note('wa','Lukas','4 Neue eingestellt. Läuft 🔥')}],
-  ];
-  let timers=[];
-  function cam(k){card.style.transform=CAM[k]}
-  function day(d){$('sday').textContent='TAG '+d}
-  function say(a,b){ut.classList.remove('on');setTimeout(()=>{ut.children[0].textContent=a;ut.children[1].textContent=b;ut.classList.add('on')},120)}
-  function mk(n){$('mk'+n).classList.add('on')}
-  function hit(n){$('k'+n).classList.add('hit')}
-  function note(app,ti,tx){const d=document.createElement('div');d.className='ios';
-    d.innerHTML='<i class="ap '+app+'p">'+(app==='ig'?IG:WA)+'</i><div class="tx"><div>'+(app==='ig'?'Instagram':'WhatsApp')+' · '+ti+'<span>jetzt</span></div><p>'+tx+'</p></div>';
-    notes.prepend(d);const all=[...notes.children];if(all.length>2){const o=all[all.length-1];o.classList.add('out');setTimeout(()=>o.remove(),380)}}
-  function reset(){timers.forEach(clearTimeout);timers=[];notes.innerHTML='';ut.classList.remove('on');[1,2,3].forEach(n=>{$('mk'+n).classList.remove('on');$('k'+n).classList.remove('hit')})}
-  function play(){reset();try{vid.currentTime=0;vid.play()}catch(e){}T.forEach(([t,f])=>timers.push(setTimeout(f,t*1000)))}
-  function final(){reset();cam('full');[1,2,3].forEach(n=>{mk(n);hit(n)});day(30);ut.children[0].textContent='Nach 30 Tagen:';ut.children[1].textContent='4 neue Leute im Team.';ut.classList.add('on')}
-  $('pReplay').addEventListener('click',()=>{matchMedia('(prefers-reduced-motion: reduce)').matches?final():play();st.scrollIntoView({behavior:'smooth',block:'center'})});
-  cam('start');
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches){final();return}
-  let done=false;new IntersectionObserver((es,o)=>{es.forEach(x=>{if(x.isIntersecting&&!done){done=true;setTimeout(play,300);o.disconnect()}})},{threshold:.5}).observe(st);
-})();
-</script>
+<script src="../assets/v2/case.js"></script>
 </body>
 </html>
