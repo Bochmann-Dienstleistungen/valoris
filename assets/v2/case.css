@@ -56,6 +56,10 @@
 .ut.on span:nth-child(2){transition-delay:.18s}
 .ut .s{font:800 30px/1.05 'Helvetica Neue',Arial,sans-serif;color:#fff;letter-spacing:-.5px}
 .ut .k{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:46px;color:#f0fff4;text-shadow:0 0 16px #22c55e,0 0 40px #16a34a,0 4px 14px rgba(0,0,0,.7)}
+.lack-head{margin-top:110px}
+.lackvid{position:relative;aspect-ratio:9/16;border-radius:30px;overflow:hidden;background:#111;box-shadow:0 50px 90px -40px rgba(0,0,0,.6)}
+.lackvid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:860px){.lackvid{max-width:380px;width:100%;margin:0 auto}.lack-head{margin-top:80px}}
 .reelside{min-width:0}.reelside .eyebrow{margin-bottom:12px}
 .reelside h3{font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:700;line-height:1.15;letter-spacing:-.02em}
 .kpis{margin-top:30px;display:grid;gap:12px}
